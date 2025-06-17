@@ -22,67 +22,67 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-[#E8D8B9]">
+    <section id="team" className="py-20 bg-[#E8D8B9] transition-all duration-700">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1A1A1A] mb-6">Our Team</h2>
-          <p className="text-xl text-[#1A1A1A] max-w-3xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-[#1A1A1A] mb-6 transition-all duration-300 hover:text-[#C9A34C]">Our Team</h2>
+          <p className="text-xl text-[#1A1A1A] max-w-3xl mx-auto animate-fade-in animation-delay-300">
             Thought leaders with unparalleled access to capital, industry reach, and deep expertise across entertainment and finance.
           </p>
         </div>
         
         {/* Team Photo */}
-        <div className="mb-16">
+        <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
             src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1200&h=400" 
             alt="Music industry executives and entertainment investment professionals"
-            className="w-full h-64 object-cover rounded-2xl shadow-xl"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all hover:shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6">
-                <span className="text-white font-bold text-xl">{member.name.charAt(0)}</span>
+            <div key={index} className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in group" style={{animationDelay: `${700 + index * 200}ms`}}>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform">
+                <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
               </div>
-              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">{member.name}</h3>
-              <p className="text-[#C9A34C] mb-4 font-medium">{member.role}</p>
-              <p className="text-[#1A1A1A]">{member.description}</p>
+              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C]">{member.name}</h3>
+              <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300">{member.role}</p>
+              <p className="text-[#1A1A1A] transition-colors duration-300">{member.description}</p>
             </div>
           ))}
         </div>
         
-        <div className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/30">
-          <h3 className="text-2xl font-semibold text-white mb-6 text-center">Board of Directors</h3>
+        <div className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/30 hover:border-[#C9A34C]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#C9A34C]/20 animate-fade-in animation-delay-1300">
+          <h3 className="text-2xl font-semibold text-white mb-6 text-center transition-colors duration-300 hover:text-[#C9A34C]">Board of Directors</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Music className="w-6 h-6 text-[#C9A34C]" />
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A34C]/40 group-hover:scale-110">
+                <Music className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <p className="text-white font-medium">Entertainment</p>
-              <p className="text-gray-400 text-sm">Industry Veterans</p>
+              <p className="text-white font-medium transition-colors duration-300 group-hover:text-[#C9A34C]">Entertainment</p>
+              <p className="text-gray-400 text-sm transition-colors duration-300">Industry Veterans</p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Briefcase className="w-6 h-6 text-[#C9A34C]" />
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A34C]/40 group-hover:scale-110">
+                <Briefcase className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <p className="text-white font-medium">Finance</p>
-              <p className="text-gray-400 text-sm">Capital Markets</p>
+              <p className="text-white font-medium transition-colors duration-300 group-hover:text-[#C9A34C]">Finance</p>
+              <p className="text-gray-400 text-sm transition-colors duration-300">Capital Markets</p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Users className="w-6 h-6 text-[#C9A34C]" />
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A34C]/40 group-hover:scale-110">
+                <Users className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <p className="text-white font-medium">Technology</p>
-              <p className="text-gray-400 text-sm">Innovation Leaders</p>
+              <p className="text-white font-medium transition-colors duration-300 group-hover:text-[#C9A34C]">Technology</p>
+              <p className="text-gray-400 text-sm transition-colors duration-300">Innovation Leaders</p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Scale className="w-6 h-6 text-[#C9A34C]" />
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9A34C]/40 group-hover:scale-110">
+                <Scale className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 group-hover:rotate-12" />
               </div>
-              <p className="text-white font-medium">Legal</p>
-              <p className="text-gray-400 text-sm">IP Specialists</p>
+              <p className="text-white font-medium transition-colors duration-300 group-hover:text-[#C9A34C]">Legal</p>
+              <p className="text-gray-400 text-sm transition-colors duration-300">IP Specialists</p>
             </div>
           </div>
         </div>

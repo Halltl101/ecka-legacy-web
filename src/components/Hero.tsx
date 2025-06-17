@@ -7,66 +7,66 @@ const Hero = () => {
     <section className="min-h-screen bg-black flex items-center">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-700 hover:scale-105">
                 Turning Assets to
-                <span className="text-[#C9A34C] block">Legacy</span>
+                <span className="text-[#C9A34C] block animate-fade-in animation-delay-300">Legacy</span>
               </h1>
-              <p className="text-xl text-white font-medium">
+              <p className="text-xl text-white font-medium animate-fade-in animation-delay-500">
                 Growing IP Value Year After Year
               </p>
             </div>
             
-            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl">
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl animate-fade-in animation-delay-700">
               Ecka Holdings is an intellectual property investment firm focused on music and entertainment assets, 
               with a mission to preserve and grow culturally significant works while delivering exceptional returns.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animation-delay-1000">
+              <button className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform">
                 Request Investor Overview
               </button>
-              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all">
+              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform">
                 Schedule Intro Call
               </button>
             </div>
           </div>
           
-          <div className="space-y-8">
+          <div className="space-y-8 animate-fade-in animation-delay-500">
             {/* Music Legacy Visual */}
-            <div className="relative">
+            <div className="relative group">
               <img 
                 src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&h=600" 
                 alt="Professional music recording studio with mixing console and equipment"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl transition-opacity duration-300 group-hover:opacity-75"></div>
             </div>
             
             {/* Stats Card */}
-            <div className="bg-[#1A1A1A] p-8 rounded-2xl border border-[#C9A34C]/30">
+            <div className="bg-[#1A1A1A] p-8 rounded-2xl border border-[#C9A34C]/30 hover:border-[#C9A34C]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#C9A34C]/20 transform hover:-translate-y-2">
               <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5" />
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <TrendingUp className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     Portfolio Value
                   </span>
-                  <span className="text-2xl font-bold text-[#C9A34C]">$2B+</span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">$2B+</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300 flex items-center gap-2">
-                    <Music className="w-5 h-5" />
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <Music className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     Deal Experience
                   </span>
-                  <span className="text-2xl font-bold text-[#C9A34C]">Decades</span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">Decades</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-300 flex items-center gap-2">
-                    <Globe className="w-5 h-5" />
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <Globe className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     Global Reach
                   </span>
-                  <span className="text-2xl font-bold text-[#C9A34C]">Worldwide</span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">Worldwide</span>
                 </div>
               </div>
             </div>
