@@ -24,6 +24,12 @@ const TeamDetails = () => {
       image: "/placeholder.svg"
     },
     {
+      name: "Brandon Jarnigan",
+      role: "Chief Financial Officer",
+      bio: "I'm Brandon Jarnigan. I hold a master's degree in finance from the University of North Carolina and began my career at American Express in New York. About a decade ago, I moved with my family to Nashville, where I took on a key pricing role at Asurion. I later helped scale Built Technologies, leading successful funding rounds with Goldman Sachs and Google Ventures that brought the company to a $1.5 billion valuation. As a Nashville native, I'm passionate about finance, NIL rights, and music royalties—and I'm proud to help bridge the worlds of tech, entertainment, and capital.",
+      image: "/placeholder.svg"
+    },
+    {
       name: "Christopher Meatto",
       role: "General Counsel",
       bio: "With over 45 years of experience as both an attorney and financial executive, I am celebrated for my sharp legal acumen. Graduating from Fordham University, I embarked on a distinguished career path. Earning my J.D. from Harvard Law School in 1974, I have since offered invaluable counsel and leadership across diverse legal arenas.",
