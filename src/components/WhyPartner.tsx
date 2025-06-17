@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Music2, Users, BarChart3, DollarSign, Globe2 } from 'lucide-react';
 
@@ -15,8 +16,8 @@ const WhyPartner = () => {
         {/* Business Partnership Image */}
         <div className="mb-16">
           <img 
-            src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&h=400" 
-            alt="Diverse business handshake representing inclusive partnership and collaboration between different ethnicities"
+            src="/lovable-uploads/1f9dfec4-2751-47bb-9d05-364c46207911.png" 
+            alt="Diverse business executives in a professional meeting discussing strategic partnerships and collaboration"
             className="w-full h-64 object-cover rounded-2xl shadow-xl"
           />
         </div>
