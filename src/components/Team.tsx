@@ -34,8 +34,8 @@ const Team = () => {
         {/* Atlanta Skyline Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="https://images.unsplash.com/photo-1595584706862-7e0e2d07fa5f?auto=format&fit=crop&w=1200&h=400" 
-            alt="Atlanta city skyline at dusk with modern skyscrapers representing business excellence and growth"
+            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&h=400" 
+            alt="Atlanta city skyline with modern skyscrapers representing business excellence and growth"
             className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
