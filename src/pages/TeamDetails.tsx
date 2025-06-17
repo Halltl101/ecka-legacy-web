@@ -6,21 +6,21 @@ import { ArrowLeft } from 'lucide-react';
 const TeamDetails = () => {
   const teamMembers = [
     {
-      name: "John Smith",
+      name: "T.V. Hall",
       role: "Chief Executive Officer",
-      bio: "Harvard Business School graduate with over 15 years of experience in entertainment industry M&A. Previously led landmark deals including major catalog acquisitions and has deep connections throughout the music industry.",
+      bio: "I am the Founder and a seasoned M&A executive with over $38B in transaction experience. As a former Billboard-charting artist, I am also a minority owner of the ECHL Allen Americans hockey team and serve as Vice President of the Harvard Business School Alumni Club of Atlanta. I hold an MBA and MSF.",
       image: "/placeholder.svg"
     },
     {
-      name: "Sarah Johnson",
-      role: "Chief Investment Officer",
-      bio: "Former Goldman Sachs executive with extensive experience in entertainment finance and IP valuation. Grammy-nominated producer with Billboard chart success across multiple genres.",
+      name: "Tony Hansen",
+      role: "Chief Marketing Officer",
+      bio: "I am a seasoned entrepreneur and music expert who manages Grammy-nominated platinum-selling artists and successful tours. With my track record in launching and marketing projects for major labels, including GDE/ATLANTIC RECORDS, BUVISION ENTERTAINMENT/COLUMBIA RECORDS, and NUVISION ENTERTAINMENT, I excel in brand promotion.",
       image: "/placeholder.svg"
     },
     {
-      name: "Michael Chen",
+      name: "Alex Benton",
       role: "Chief Operating Officer",
-      bio: "Technology and operations expert with background in scaling entertainment companies. Previously served as COO at major streaming platforms and music distribution companies.",
+      bio: "I am an entrepreneur who has scaled businesses in both the entertainment and real estate industry. With over six years in the music industry, I have contributed to award-winning visual projects for Capitol Records and Atlantic Records, excelling in leadership and operations.",
       image: "/placeholder.svg"
     }
   ];
