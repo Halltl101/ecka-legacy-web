@@ -31,11 +31,11 @@ const Team = () => {
           </p>
         </div>
         
-        {/* Team Photo */}
+        {/* Night Skyline Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1200&h=400" 
-            alt="Music industry executives and entertainment investment professionals"
+            src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=1200&h=400" 
+            alt="City skyline at night with starry sky representing vision and ambition"
             className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
