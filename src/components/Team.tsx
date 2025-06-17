@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Music, Briefcase, Users, Scale } from 'lucide-react';
 
@@ -35,7 +36,7 @@ const Team = () => {
           <img 
             src="/lovable-uploads/8cbf983b-94cd-46e7-8d2b-4ab72a205152.png" 
             alt="Atlanta city skyline at night featuring downtown skyscrapers and urban architecture representing business growth and opportunity"
-            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            className="w-full h-64 object-cover object-top rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         
