@@ -37,8 +37,8 @@ const Hero = () => {
             {/* Music Legacy Visual */}
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&h=600" 
-                alt="Child listening to music with headphones, representing the generational impact of musical legacy preservation"
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&h=600" 
+                alt="Professional music recording studio with mixing console and equipment"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl"></div>
