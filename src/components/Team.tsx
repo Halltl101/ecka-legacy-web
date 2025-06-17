@@ -1,22 +1,27 @@
+
 import React from 'react';
 import { Music, Briefcase, Users, Scale } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   const teamMembers = [
     {
       name: "Leadership Team",
       role: "Executive Leadership",
-      description: "Harvard Business School graduates with Billboard success, Grammy experience, and involvement in landmark deals including Queen's catalog sale."
+      description: "Harvard Business School graduates with Billboard success, Grammy experience, and involvement in landmark deals including Queen's catalog sale.",
+      isClickable: true
     },
     {
       name: "Investment Committee",
       role: "Strategic Oversight",
-      description: "Decades of combined experience in entertainment M&A, IP valuation, and international market expansion."
+      description: "Decades of combined experience in entertainment M&A, IP valuation, and international market expansion.",
+      isClickable: false
     },
     {
       name: "Advisory Board",
       role: "Industry Expertise",
-      description: "Diverse experience across telecom, entertainment, sports, law, technology, and finance sectors."
+      description: "Diverse experience across telecom, entertainment, sports, law, technology, and finance sectors.",
+      isClickable: false
     }
   ];
 
@@ -42,9 +47,17 @@ const Team = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in group" style={{animationDelay: `${700 + index * 200}ms`}}>
-              <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform">
-                <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
-              </div>
+              {member.isClickable ? (
+                <Link to="/team" className="block">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform cursor-pointer">
+                    <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
+                  </div>
+                </Link>
+              ) : (
+                <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform">
+                  <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
+                </div>
+              )}
               <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C]">{member.name}</h3>
               <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300">{member.role}</p>
               <p className="text-[#1A1A1A] transition-colors duration-300">{member.description}</p>
