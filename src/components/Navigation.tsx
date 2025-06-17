@@ -8,9 +8,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/337120fa-d457-4de5-9025-24045ffd0228.png" 
+              src="/ecka-logo.png" 
               alt="Ecka Holdings Logo" 
               className="h-10 w-auto mr-3"
+              onError={(e) => {
+                console.log('Logo failed to load:', e);
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
             />
             <div>
               <span className="text-2xl font-bold text-white">ECKA</span>

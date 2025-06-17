@@ -21,9 +21,13 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-4">
             <img 
-              src="/lovable-uploads/337120fa-d457-4de5-9025-24045ffd0228.png" 
+              src="/ecka-logo.png" 
               alt="Ecka Holdings Logo" 
               className="h-8 w-auto mr-3"
+              onError={(e) => {
+                console.log('Footer logo failed to load:', e);
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
             />
             <div>
               <span className="text-2xl font-bold text-white">ECKA</span>
