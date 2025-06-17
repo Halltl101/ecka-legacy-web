@@ -22,6 +22,18 @@ const TeamDetails = () => {
       role: "Chief Operating Officer",
       bio: "I am an entrepreneur who has scaled businesses in both the entertainment and real estate industry. With over six years in the music industry, I have contributed to award-winning visual projects for Capitol Records and Atlantic Records, excelling in leadership and operations.",
       image: "/placeholder.svg"
+    },
+    {
+      name: "Christopher Meatto",
+      role: "General Counsel",
+      bio: "With over 45 years of experience as both an attorney and financial executive, I am celebrated for my sharp legal acumen. Graduating from Fordham University, I embarked on a distinguished career path. Earning my J.D. from Harvard Law School in 1974, I have since offered invaluable counsel and leadership across diverse legal arenas.",
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Sean Collins",
+      role: "VP of A&R and M&A",
+      bio: "I am a seasoned music industry professional with over 25 years of experience, excelling as a music executive. My career spans from collaborating with artists like Wyclef Jean and Canibus to placing records for industry giants such as Jay-Z, Chris Brown, and 50 Cent. I have successfully negotiated publishing and artist deals with major players like Warner Chappell, Sony ATV, and Empire, showcasing my versatile expertise in both artistic and business domains.",
+      image: "/placeholder.svg"
     }
   ];
 
