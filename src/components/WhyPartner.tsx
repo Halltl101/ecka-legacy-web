@@ -16,8 +16,8 @@ const WhyPartner = () => {
         {/* Music Publishing Image */}
         <div className="mb-16">
           <img 
-            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&h=400" 
-            alt="Music production and publishing workspace"
+            src="https://images.unsplash.com/photo-1574190350085-0d0c69d42793?auto=format&fit=crop&w=1200&h=400" 
+            alt="Professional live music performance venue representing entertainment investment"
             className="w-full h-64 object-cover rounded-2xl shadow-xl"
           />
         </div>
