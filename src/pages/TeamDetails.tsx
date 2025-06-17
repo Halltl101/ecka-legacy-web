@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -38,6 +39,24 @@ const TeamDetails = () => {
       name: "Sean Collins",
       role: "VP of A&R and M&A",
       bio: "I am a seasoned music industry professional with over 25 years of experience, excelling as a music executive. My career spans from collaborating with artists like Wyclef Jean and Canibus to placing records for industry giants such as Jay-Z, Chris Brown, and 50 Cent. I have successfully negotiated publishing and artist deals with major players like Warner Chappell, Sony ATV, and Empire, showcasing my versatile expertise in both artistic and business domains.",
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Kate Hyman",
+      role: "Acquisitions Lead",
+      bio: "Kate comes from a family deeply entrenched in entertainment; her grandfather bought Warner Brothers, and her father led the studio. With a career spanning successful joint ventures and A&R roles across prestigious labels, Kate is a visionary in the industry. Her innovative approach merges creativity with commercial savvy. From crafting film soundtracks to pioneering tributes, Kate's influence reverberates worldwide.",
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Ric Aliberte",
+      role: "Acquisitions Lead",
+      bio: "Ric, a seasoned music industry veteran, opened Boston's first full-line record store while at Harvard. His early career saw him discover Queen and work with legends at Elektra/Asylum Records. Managing acts like Kiss and Billy Idol, he later founded R.A.M. Inc., representing top producers. Ric's consultancy with Queen members contributed to the success of the Bohemian Rhapsody movie.",
+      image: "/placeholder.svg"
+    },
+    {
+      name: "Erik Steigen",
+      role: "VP Publishing",
+      bio: "Erik Steigen brings over two decades of experience in music publishing, royalty administration, and catalog management to his role leading publishing at Ecka. He previously oversaw publishing and royalties for a major business management firm in Los Angeles, administered catalogs for iconic artists like Lionel Richie, Brian Wilson, and Don Felder, and co-founded an independent publishing administration company representing Grammy and Emmy-winning talent. Erik is also the founder of USA Media Rights® and has led financial and legal due diligence for high-value entertainment asset sales.",
       image: "/placeholder.svg"
     }
   ];
