@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Music, TrendingUp, Globe } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -32,19 +33,39 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="hidden lg:block">
+          <div className="space-y-8">
+            {/* Music Industry Visual */}
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&h=600" 
+                alt="Music studio equipment representing music IP investment"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-2xl"></div>
+            </div>
+            
+            {/* Stats Card */}
             <div className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 p-8 rounded-2xl backdrop-blur-sm border border-yellow-500/30">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-300">Portfolio Value</span>
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5" />
+                    Portfolio Value
+                  </span>
                   <span className="text-2xl font-bold text-white">$2B+</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-300">Deal Experience</span>
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <Music className="w-5 h-5" />
+                    Deal Experience
+                  </span>
                   <span className="text-2xl font-bold text-white">Decades</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-300">Global Reach</span>
+                  <span className="text-slate-300 flex items-center gap-2">
+                    <Globe className="w-5 h-5" />
+                    Global Reach
+                  </span>
                   <span className="text-2xl font-bold text-white">Worldwide</span>
                 </div>
               </div>

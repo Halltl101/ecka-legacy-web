@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Music2, Users, BarChart3, DollarSign, Globe2 } from 'lucide-react';
 
 const WhyPartner = () => {
   return (
@@ -10,6 +11,15 @@ const WhyPartner = () => {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             We're redefining music IP with a forward-thinking acquisition model, artist-first relationships, and data-driven asset selection.
           </p>
+        </div>
+        
+        {/* Music Publishing Image */}
+        <div className="mb-16">
+          <img 
+            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&h=400" 
+            alt="Music production and publishing workspace"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl"
+          />
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -56,26 +66,31 @@ const WhyPartner = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
           <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <Music2 className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Strategic Expertise</h4>
             <p className="text-slate-400 text-sm">Decades in entertainment, tech, and finance</p>
           </div>
           
           <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <Users className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Artist Relationships</h4>
             <p className="text-slate-400 text-sm">Artist-first acquisition and management</p>
           </div>
           
           <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <BarChart3 className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Data-Driven</h4>
             <p className="text-slate-400 text-sm">Tech-enabled forecasting and scoring</p>
           </div>
           
           <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <DollarSign className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Flexible Capital</h4>
             <p className="text-slate-400 text-sm">Joint ventures and creative structuring</p>
           </div>
           
           <div className="bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700">
+            <Globe2 className="w-8 h-8 text-yellow-500 mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Global Expansion</h4>
             <p className="text-slate-400 text-sm">International market focus</p>
           </div>

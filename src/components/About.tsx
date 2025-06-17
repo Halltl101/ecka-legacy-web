@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Music, TrendingUp, Target } from 'lucide-react';
 
 const About = () => {
   return (
@@ -12,10 +13,19 @@ const About = () => {
           </p>
         </div>
         
+        {/* Music Industry Image */}
+        <div className="mb-16">
+          <img 
+            src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&h=400" 
+            alt="Recording studio representing music IP investment"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl"
+          />
+        </div>
+        
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-yellow-500/50 transition-all">
             <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
-              <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+              <Target className="w-6 h-6 text-yellow-500" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-4">Mission Focus</h3>
             <p className="text-slate-300">
@@ -25,7 +35,7 @@ const About = () => {
           
           <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-yellow-500/50 transition-all">
             <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
-              <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+              <Music className="w-6 h-6 text-yellow-500" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-4">Legacy Management</h3>
             <p className="text-slate-300">
@@ -35,7 +45,7 @@ const About = () => {
           
           <div className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-yellow-500/50 transition-all">
             <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-6">
-              <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+              <TrendingUp className="w-6 h-6 text-yellow-500" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-4">Strategic Growth</h3>
             <p className="text-slate-300">

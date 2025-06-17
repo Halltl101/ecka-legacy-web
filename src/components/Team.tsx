@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Music, Briefcase, Users, Scale } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
@@ -30,6 +31,15 @@ const Team = () => {
           </p>
         </div>
         
+        {/* Team Photo */}
+        <div className="mb-16">
+          <img 
+            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1200&h=400" 
+            alt="Music industry professionals and investors"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl"
+          />
+        </div>
+        
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-yellow-500/50 transition-all">
@@ -48,28 +58,28 @@ const Team = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                <Music className="w-6 h-6 text-yellow-500" />
               </div>
               <p className="text-white font-medium">Entertainment</p>
               <p className="text-slate-400 text-sm">Industry Veterans</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                <Briefcase className="w-6 h-6 text-yellow-500" />
               </div>
               <p className="text-white font-medium">Finance</p>
               <p className="text-slate-400 text-sm">Capital Markets</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                <Users className="w-6 h-6 text-yellow-500" />
               </div>
               <p className="text-white font-medium">Technology</p>
               <p className="text-slate-400 text-sm">Innovation Leaders</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <div className="w-6 h-6 bg-yellow-500 rounded"></div>
+                <Scale className="w-6 h-6 text-yellow-500" />
               </div>
               <p className="text-white font-medium">Legal</p>
               <p className="text-slate-400 text-sm">IP Specialists</p>
