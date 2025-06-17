@@ -20,8 +20,15 @@ const Index = () => {
       <footer className="bg-black py-8 border-t border-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-4">
-            <span className="text-2xl font-bold text-white">ECKA</span>
-            <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
+            <img 
+              src="/lovable-uploads/337120fa-d457-4de5-9025-24045ffd0228.png" 
+              alt="Ecka Holdings Logo" 
+              className="h-8 w-auto mr-3"
+            />
+            <div>
+              <span className="text-2xl font-bold text-white">ECKA</span>
+              <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
+            </div>
           </div>
           <p className="text-gray-400">
             © 2024 Ecka Holdings Corp. All rights reserved. | Turning Assets to Legacy.

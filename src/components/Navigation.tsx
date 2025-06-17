@@ -7,8 +7,15 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-white">ECKA</span>
-            <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
+            <img 
+              src="/lovable-uploads/337120fa-d457-4de5-9025-24045ffd0228.png" 
+              alt="Ecka Holdings Logo" 
+              className="h-10 w-auto mr-3"
+            />
+            <div>
+              <span className="text-2xl font-bold text-white">ECKA</span>
+              <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
+            </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
