@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Music2, Users, BarChart3, DollarSign, Globe2 } from 'lucide-react';
 
@@ -26,7 +25,6 @@ const WhyPartner = () => {
           <div className="space-y-8">
             <div className="bg-[#1A1A1A] p-6 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-semibold text-white mb-4">Traditional Approach</h3>
-              <p className="text-gray-400 mb-2">Harbor View & Others:</p>
               <p className="text-gray-300">Traditional asset managers focused on financial returns only</p>
             </div>
             
