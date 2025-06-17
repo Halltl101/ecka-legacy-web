@@ -16,8 +16,8 @@ const WhyPartner = () => {
         {/* Business Partnership Image */}
         <div className="mb-16">
           <img 
-            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1200&h=400" 
-            alt="Diverse group of executives in a modern boardroom discussing partnership opportunities and strategic collaboration"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&h=400" 
+            alt="Diverse executives in a professional boardroom meeting discussing strategic partnerships and business collaboration"
             className="w-full h-64 object-cover rounded-2xl shadow-xl"
           />
         </div>
