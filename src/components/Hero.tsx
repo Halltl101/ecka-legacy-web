@@ -34,11 +34,11 @@ const Hero = () => {
           </div>
           
           <div className="space-y-8">
-            {/* Music Industry Visual */}
+            {/* Music Legacy Visual */}
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&h=600" 
-                alt="Professional recording studio mixing board representing music IP investment"
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&h=600" 
+                alt="Child listening to music with headphones, representing the generational impact of musical legacy preservation"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl"></div>
