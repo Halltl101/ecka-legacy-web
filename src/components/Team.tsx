@@ -34,7 +34,7 @@ const Team = () => {
         {/* Team Photo */}
         <div className="mb-16">
           <img 
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=400" 
+            src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1200&h=400" 
             alt="Music industry executives and entertainment investment professionals"
             className="w-full h-64 object-cover rounded-2xl shadow-xl"
           />

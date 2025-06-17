@@ -37,7 +37,7 @@ const Hero = () => {
             {/* Music Industry Visual */}
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1571974599782-87624638275c?auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&h=600" 
                 alt="Professional recording studio mixing board representing music IP investment"
                 className="rounded-2xl shadow-2xl"
               />
