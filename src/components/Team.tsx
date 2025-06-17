@@ -22,11 +22,11 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-slate-800">
+    <section id="team" className="py-20 bg-[#E8D8B9]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">Our Team</h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-[#1A1A1A] mb-6">Our Team</h2>
+          <p className="text-xl text-[#1A1A1A] max-w-3xl mx-auto">
             Thought leaders with unparalleled access to capital, industry reach, and deep expertise across entertainment and finance.
           </p>
         </div>
@@ -42,47 +42,47 @@ const Team = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-slate-700/50 p-8 rounded-xl border border-slate-600 hover:border-yellow-500/50 transition-all">
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
+            <div key={index} className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all hover:shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6">
                 <span className="text-white font-bold text-xl">{member.name.charAt(0)}</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-              <p className="text-yellow-400 mb-4 font-medium">{member.role}</p>
-              <p className="text-slate-300">{member.description}</p>
+              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2">{member.name}</h3>
+              <p className="text-[#C9A34C] mb-4 font-medium">{member.role}</p>
+              <p className="text-[#1A1A1A]">{member.description}</p>
             </div>
           ))}
         </div>
         
-        <div className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 p-8 rounded-xl border border-slate-600">
+        <div className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/30">
           <h3 className="text-2xl font-semibold text-white mb-6 text-center">Board of Directors</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Music className="w-6 h-6 text-yellow-500" />
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                <Music className="w-6 h-6 text-[#C9A34C]" />
               </div>
               <p className="text-white font-medium">Entertainment</p>
-              <p className="text-slate-400 text-sm">Industry Veterans</p>
+              <p className="text-gray-400 text-sm">Industry Veterans</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Briefcase className="w-6 h-6 text-yellow-500" />
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-[#C9A34C]" />
               </div>
               <p className="text-white font-medium">Finance</p>
-              <p className="text-slate-400 text-sm">Capital Markets</p>
+              <p className="text-gray-400 text-sm">Capital Markets</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Users className="w-6 h-6 text-yellow-500" />
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                <Users className="w-6 h-6 text-[#C9A34C]" />
               </div>
               <p className="text-white font-medium">Technology</p>
-              <p className="text-slate-400 text-sm">Innovation Leaders</p>
+              <p className="text-gray-400 text-sm">Innovation Leaders</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                <Scale className="w-6 h-6 text-yellow-500" />
+              <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                <Scale className="w-6 h-6 text-[#C9A34C]" />
               </div>
               <p className="text-white font-medium">Legal</p>
-              <p className="text-slate-400 text-sm">IP Specialists</p>
+              <p className="text-gray-400 text-sm">IP Specialists</p>
             </div>
           </div>
         </div>

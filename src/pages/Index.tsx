@@ -9,7 +9,7 @@ import Contact from '../components/Contact';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <Hero />
       <About />
@@ -17,13 +17,13 @@ const Index = () => {
       <Team />
       <Contact />
       
-      <footer className="bg-slate-950 py-8 border-t border-slate-800">
+      <footer className="bg-black py-8 border-t border-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-4">
             <span className="text-2xl font-bold text-white">ECKA</span>
-            <span className="text-sm text-slate-400 ml-2">Holdings Corp</span>
+            <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
           </div>
-          <p className="text-slate-400">
+          <p className="text-gray-400">
             © 2024 Ecka Holdings Corp. All rights reserved. | Turning Assets to Legacy.
           </p>
         </div>
