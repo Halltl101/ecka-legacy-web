@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Music, Briefcase, Users, Scale } from 'lucide-react';
+import { Music, Briefcase, Users, Scale, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Team = () => {
@@ -46,21 +46,37 @@ const Team = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in group" style={{animationDelay: `${700 + index * 200}ms`}}>
+            <div key={index} className={`bg-white p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in group ${
+              member.isClickable 
+                ? 'border-[#C9A34C]/40 hover:border-[#C9A34C] cursor-pointer ring-2 ring-[#C9A34C]/20 hover:ring-[#C9A34C]/50' 
+                : 'border-[#C9A34C]/20 hover:border-[#C9A34C]/50'
+            }`} style={{animationDelay: `${700 + index * 200}ms`}}>
               {member.isClickable ? (
                 <Link to="/team" className="block">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform cursor-pointer">
                     <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C] flex items-center justify-between">
+                    {member.name}
+                    <ArrowRight className="w-5 h-5 text-[#C9A34C] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0" />
+                  </h3>
+                  <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300">{member.role}</p>
+                  <p className="text-[#1A1A1A] transition-colors duration-300 mb-4">{member.description}</p>
+                  <div className="text-[#C9A34C] text-sm font-medium flex items-center opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                    Click to meet the team
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </div>
                 </Link>
               ) : (
-                <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform">
-                  <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
-                </div>
+                <>
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 transform">
+                    <span className="text-white font-bold text-xl transition-transform duration-300">{member.name.charAt(0)}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C]">{member.name}</h3>
+                  <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300">{member.role}</p>
+                  <p className="text-[#1A1A1A] transition-colors duration-300">{member.description}</p>
+                </>
               )}
-              <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C]">{member.name}</h3>
-              <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300">{member.role}</p>
-              <p className="text-[#1A1A1A] transition-colors duration-300">{member.description}</p>
             </div>
           ))}
         </div>
