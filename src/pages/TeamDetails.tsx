@@ -1,8 +1,13 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import BackgroundRemovalProcessor from '../components/BackgroundRemovalProcessor';
 
 const TeamDetails = () => {
+  const [showProcessor, setShowProcessor] = useState(false);
+  const [processedImages, setProcessedImages] = useState<{ [key: string]: string }>({});
+
   const teamMembers = [
     {
       name: "T.V. Hall",
@@ -60,16 +65,39 @@ const TeamDetails = () => {
     }
   ];
 
+  const imagesToProcess = [
+    { name: "T.V. Hall", url: "/lovable-uploads/f436b027-f96d-47ac-8f8a-581352ab83cb.png" },
+    { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" }
+  ];
+
+  const handleProcessedImages = (results: { [key: string]: string }) => {
+    setProcessedImages(results);
+    setShowProcessor(false);
+  };
+
+  const getImageSrc = (memberName: string, originalImage: string) => {
+    return processedImages[memberName] || originalImage;
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <Link 
-          to="/" 
-          className="inline-flex items-center text-[#C9A34C] hover:text-white transition-colors duration-300 mb-8"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Home
-        </Link>
+        <div className="flex justify-between items-center mb-8">
+          <Link 
+            to="/" 
+            className="inline-flex items-center text-[#C9A34C] hover:text-white transition-colors duration-300"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Home
+          </Link>
+          
+          <button
+            onClick={() => setShowProcessor(true)}
+            className="bg-[#C9A34C] text-white px-4 py-2 rounded-lg hover:bg-[#B8923E] transition-colors"
+          >
+            Remove Backgrounds
+          </button>
+        </div>
         
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-6">Leadership Team</h1>
@@ -81,9 +109,9 @@ const TeamDetails = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full mx-auto mb-6 flex items-center justify-center">
+              <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <img 
-                  src={member.image} 
+                  src={getImageSrc(member.name, member.image)}
                   alt={member.name}
                   className="w-full h-full rounded-full object-cover"
                   onError={(e) => {
@@ -99,6 +127,13 @@ const TeamDetails = () => {
           ))}
         </div>
       </div>
+      
+      {showProcessor && (
+        <BackgroundRemovalProcessor 
+          images={imagesToProcess}
+          onProcessed={handleProcessedImages}
+        />
+      )}
     </div>
   );
 };
