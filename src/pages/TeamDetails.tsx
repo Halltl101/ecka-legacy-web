@@ -8,7 +8,7 @@ const TeamDetails = () => {
       name: "T.V. Hall",
       role: "Chief Executive Officer",
       bio: "I am the Founder and a seasoned M&A executive with over $38B in transaction experience. As a former Billboard-charting artist, I am also a minority owner of the ECHL Allen Americans hockey team and serve as Vice President of the Harvard Business School Alumni Club of Atlanta. I hold an MBA and MSF.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/f436b027-f96d-47ac-8f8a-581352ab83cb.png"
     },
     {
       name: "Tony Hansen",
