@@ -24,7 +24,7 @@ const TeamDetails = () => {
       name: "Alex Benton",
       role: "Chief Operating Officer",
       bio: "Alex Benton is an entrepreneur who has scaled businesses in both the entertainment and real estate industry. With over six years in the music industry, he has contributed to award-winning visual projects for Capitol Records and Atlantic Records, excelling in leadership and operations.",
-      image: "/lovable-uploads/239056a2-3936-479d-b761-83405a1a2cb7.png"
+      image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
     },
     {
       name: "Brandon Jarnigan",
@@ -67,7 +67,7 @@ const TeamDetails = () => {
   const imagesToProcess = [
     { name: "T.V. Hall", url: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png" },
     { name: "Tony Hansen", url: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png" },
-    { name: "Alex Benton", url: "/lovable-uploads/239056a2-3936-479d-b761-83405a1a2cb7.png" },
+    { name: "Alex Benton", url: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png" },
     { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" }
   ];
 
