@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
@@ -12,10 +11,6 @@ const Index = () => {
     <div className="min-h-screen bg-black">
       <Navigation />
       <Hero />
-      <About />
-      <WhyPartner />
-      <Team />
-      <Contact />
       
       {/* YouTube Video Section */}
       <section className="py-20 bg-black">
@@ -37,6 +32,11 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <About />
+      <WhyPartner />
+      <Team />
+      <Contact />
       
       <footer className="bg-black py-8 border-t border-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-6 text-center">
