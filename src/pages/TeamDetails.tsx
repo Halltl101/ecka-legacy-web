@@ -1,5 +1,4 @@
 
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -93,15 +92,6 @@ const TeamDetails = () => {
           </p>
         </div>
         
-        {/* Team Photo */}
-        <div className="mb-16 animate-fade-in animation-delay-500">
-          <img 
-            src="/lovable-uploads/239056a2-3936-479d-b761-83405a1a2cb7.png" 
-            alt="Ecka Holdings leadership team members gathered together representing collaboration and expertise in entertainment and finance"
-            className="w-full h-64 object-cover object-center rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform">
@@ -129,4 +119,3 @@ const TeamDetails = () => {
 };
 
 export default TeamDetails;
-
