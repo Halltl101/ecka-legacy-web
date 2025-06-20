@@ -11,7 +11,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center group">
             <img 
-              src="/ecka-logo.png" 
+              src="/lovable-uploads/ceb4005b-d633-46e4-a183-4c991c0095a2.png" 
               alt="Ecka Holdings Logo" 
               className="h-10 w-auto mr-3 transition-transform duration-300 group-hover:scale-110"
               onError={(e) => {

@@ -43,7 +43,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-4">
             <img 
-              src="/ecka-logo.png" 
+              src="/lovable-uploads/ceb4005b-d633-46e4-a183-4c991c0095a2.png" 
               alt="Ecka Holdings Logo" 
               className="h-8 w-auto mr-3"
               onError={(e) => {
