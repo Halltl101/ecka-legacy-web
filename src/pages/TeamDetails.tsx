@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -11,7 +12,7 @@ const TeamDetails = () => {
     {
       name: "T.V. Hall",
       role: "Chief Executive Officer",
-      bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist and Harvard MBA. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
+      bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist with MBA and MSF. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
       image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
     },
     {
@@ -23,7 +24,7 @@ const TeamDetails = () => {
     {
       name: "Alex Benton",
       role: "Chief Operating Officer",
-      bio: "Entrepreneur with extensive experience scaling businesses in entertainment and real estate. Six years in music industry with award-winning projects for Capitol Records and Atlantic Records, excelling in operations and leadership.",
+      bio: "Entrepreneur with extensive experience scaling businesses in entertainment and real estate. Award-winning project leader for Capitol Records and Atlantic Records, excelling in operations and strategic leadership.",
       image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
     },
     {
@@ -35,7 +36,7 @@ const TeamDetails = () => {
     {
       name: "Christopher Meatto",
       role: "General Counsel",
-      bio: "Over 45 years as attorney and financial executive. Harvard Law School J.D. (1974) and Fordham University graduate with distinguished career across diverse legal and financial sectors.",
+      bio: "Over 45 years as attorney and financial executive. Harvard Law School J.D. and Fordham University graduate with distinguished career across diverse legal and financial sectors.",
       image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png"
     },
     {
