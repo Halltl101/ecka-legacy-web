@@ -35,7 +35,7 @@ const Index = () => {
             </div>
           </div>
           <p className="text-gray-400">
-            © 2024 Ecka Holdings Corp. All rights reserved. | Turning Assets to Legacy.
+            © 2025 Ecka Holdings Corp. All rights reserved. | Turning Assets to Legacy.
           </p>
         </div>
       </footer>
