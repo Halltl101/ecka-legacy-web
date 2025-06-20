@@ -16,7 +16,7 @@ const About = () => {
         {/* Concert with Fire Effects Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=600" 
+            src="/lovable-uploads/75aa37fb-6107-46ad-a0c7-13e5d0826a62.png" 
             alt="Live music concert with crowd and stage lighting effects"
             className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
             onError={(e) => {
