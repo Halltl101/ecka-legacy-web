@@ -13,11 +13,11 @@ const About = () => {
           </p>
         </div>
         
-        {/* Music Industry Image */}
+        {/* Music Performance Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=400" 
-            alt="Music production studio with professional audio equipment"
+            src="/lovable-uploads/ff2dfd68-f3d2-42c2-9860-7a314de0771f.png" 
+            alt="Female performer on stage with microphone in dramatic lighting showcasing live music performance"
             className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
