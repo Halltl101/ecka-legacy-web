@@ -57,7 +57,7 @@ const WhyPartner = () => {
               <div className="w-3 h-3 bg-[#C9A34C] rounded-full mt-2"></div>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-2">Global Scalability</h4>
-                <p className="text-gray-300">International expansion focus with cross-border capabilities in Asia and LATAM markets</p>
+                <p className="text-gray-300">International expansion focus with cross-border capabilities in Europe, Africa, Asia and LATAM markets</p>
                 <div className="flex space-x-3 mt-2">
                   <div className="flex items-center space-x-1">
                     <MapPin className="w-4 h-4 text-[#C9A34C]" />
