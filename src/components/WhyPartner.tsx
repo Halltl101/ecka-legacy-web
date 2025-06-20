@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Music2, Users, BarChart3, DollarSign, Globe2 } from 'lucide-react';
+import { Music2, Users, BarChart3, DollarSign, Globe2, MapPin, Compass } from 'lucide-react';
 
 const WhyPartner = () => {
   return (
@@ -92,6 +92,16 @@ const WhyPartner = () => {
             <Globe2 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Global Expansion</h4>
             <p className="text-gray-400 text-sm">International market focus</p>
+            <div className="flex justify-center space-x-2 mt-3">
+              <div className="flex items-center space-x-1">
+                <MapPin className="w-4 h-4 text-[#C9A34C]" />
+                <span className="text-xs text-gray-300">Africa</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <Compass className="w-4 h-4 text-[#C9A34C]" />
+                <span className="text-xs text-gray-300">Europe</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
