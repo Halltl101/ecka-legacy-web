@@ -36,7 +36,7 @@ const TeamDetails = () => {
       name: "Christopher Meatto",
       role: "General Counsel",
       bio: "With over 45 years of experience as both an attorney and financial executive, Christopher Meatto is celebrated for his sharp legal acumen. Graduating from Fordham University, he embarked on a distinguished career path. Earning his J.D. from Harvard Law School in 1974, he has since offered invaluable counsel and leadership across diverse legal arenas.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png"
     },
     {
       name: "Sean Collins",
@@ -68,7 +68,8 @@ const TeamDetails = () => {
     { name: "T.V. Hall", url: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png" },
     { name: "Tony Hansen", url: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png" },
     { name: "Alex Benton", url: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png" },
-    { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" }
+    { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" },
+    { name: "Christopher Meatto", url: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png" }
   ];
 
   const handleProcessedImages = (results: { [key: string]: string }) => {
