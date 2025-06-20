@@ -67,7 +67,7 @@ const WhyPartner = () => {
           <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
             <Music2 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Strategic Expertise</h4>
-            <p className="text-gray-400 text-sm">10+ years in entertainment, tech, and finance</p>
+            <p className="text-gray-400 text-sm">Decades in entertainment, tech, and finance</p>
           </div>
           
           <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
