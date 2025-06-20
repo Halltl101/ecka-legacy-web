@@ -13,6 +13,15 @@ const About = () => {
           </p>
         </div>
         
+        {/* Concert with Fire Effects Image */}
+        <div className="mb-16 animate-fade-in animation-delay-500">
+          <img 
+            src="https://media.istockphoto.com/id/1430729287/video/crowd-of-people-dancing-and-jumping-at-pop-music-festival-party-with-fire-effects.jpg?s=640x640&k=20&c=8QhV4wL5XVwZhxvF2nJ8uC4Hc6LvQvX7pZ9sE2dA1bY=" 
+            alt="Crowd of people dancing and jumping at pop music festival party with fire effects"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+        
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in animation-delay-700">
             <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 hover:bg-[#C9A34C]/40 hover:scale-110">
