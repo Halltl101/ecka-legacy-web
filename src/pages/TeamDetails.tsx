@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -61,7 +60,7 @@ const TeamDetails = () => {
       name: "Erik Steigen",
       role: "VP Publishing",
       bio: "Erik Steigen brings over two decades of experience in music publishing, royalty administration, and catalog management to his role leading publishing at Ecka. He previously oversaw publishing and royalties for a major business management firm in Los Angeles, administered catalogs for iconic artists like Lionel Richie, Brian Wilson, and Don Felder, and co-founded an independent publishing administration company representing Grammy and Emmy-winning talent. Erik is also the founder of USA Media Rights® and has led financial and legal due diligence for high-value entertainment asset sales.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png"
     }
   ];
 
