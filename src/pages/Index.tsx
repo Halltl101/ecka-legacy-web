@@ -17,6 +17,27 @@ const Index = () => {
       <Team />
       <Contact />
       
+      {/* YouTube Video Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl">
+              <iframe 
+                width="100%" 
+                height="315" 
+                src="https://www.youtube.com/embed/YcXk7-gk414?si=nZlWd0JKJkZKXlgI" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen
+                className="rounded-2xl shadow-xl"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <footer className="bg-black py-8 border-t border-[#1A1A1A]">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center mb-4">
