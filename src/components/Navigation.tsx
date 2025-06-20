@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -19,7 +20,7 @@ const Navigation = () => {
               }}
             />
             <div className="transition-all duration-300 group-hover:scale-105">
-              <span className="text-2xl font-bold text-white transition-colors duration-300 group-hover:text-[#C9A34C]">ECKA</span>
+              <span className="text-4xl font-bold text-white transition-colors duration-300 group-hover:text-[#C9A34C]">ECKA</span>
               <span className="text-sm text-gray-400 ml-2 transition-colors duration-300">Holdings Corp</span>
             </div>
           </div>
