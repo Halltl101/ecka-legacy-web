@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Music2, Users, BarChart3, DollarSign, Globe2, MapPin, Compass } from 'lucide-react';
 
@@ -91,7 +90,7 @@ const WhyPartner = () => {
           <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
             <Globe2 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
             <h4 className="text-lg font-semibold text-white mb-2">Global Expansion</h4>
-            <p className="text-gray-400 text-sm">International market focus</p>
+            <p className="text-gray-400 text-sm">Domestic and International market focus</p>
           </div>
         </div>
       </div>
