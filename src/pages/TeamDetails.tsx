@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -13,7 +12,7 @@ const TeamDetails = () => {
       name: "T.V. Hall",
       role: "Chief Executive Officer",
       bio: "T.V. Hall is the Founder and a seasoned M&A executive with over $38B in transaction experience. As a former Billboard-charting artist, he is also a minority owner of the ECHL Allen Americans hockey team and serves as Vice President of the Harvard Business School Alumni Club of Atlanta. He holds an MBA and MSF.",
-      image: "/lovable-uploads/f436b027-f96d-47ac-8f8a-581352ab83cb.png"
+      image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
     },
     {
       name: "Tony Hansen",
@@ -66,7 +65,7 @@ const TeamDetails = () => {
   ];
 
   const imagesToProcess = [
-    { name: "T.V. Hall", url: "/lovable-uploads/f436b027-f96d-47ac-8f8a-581352ab83cb.png" },
+    { name: "T.V. Hall", url: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png" },
     { name: "Tony Hansen", url: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png" },
     { name: "Alex Benton", url: "/lovable-uploads/239056a2-3936-479d-b761-83405a1a2cb7.png" },
     { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" }
