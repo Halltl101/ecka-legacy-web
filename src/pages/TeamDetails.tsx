@@ -11,55 +11,55 @@ const TeamDetails = () => {
     {
       name: "T.V. Hall",
       role: "Chief Executive Officer",
-      bio: "T.V. Hall is the Founder and a seasoned M&A executive with over $38B in transaction experience. As a former Billboard-charting artist, he is also a minority owner of the ECHL Allen Americans hockey team and serves as Vice President of the Harvard Business School Alumni Club of Atlanta. He holds an MBA and MSF.",
+      bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist and Harvard MBA. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
       image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
     },
     {
       name: "Tony Hansen",
       role: "Chief Marketing Officer",
-      bio: "Tony Hansen is a seasoned entrepreneur and music expert who manages Grammy-nominated platinum-selling artists and successful tours. With his track record in launching and marketing projects for major labels, including GDE/ATLANTIC RECORDS, BUVISION ENTERTAINMENT/COLUMBIA RECORDS, and NUVISION ENTERTAINMENT, he excels in brand promotion.",
+      bio: "Seasoned entrepreneur managing Grammy-nominated platinum-selling artists. Proven track record with major labels including Atlantic Records and Columbia Records, specializing in brand promotion and artist development.",
       image: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png"
     },
     {
       name: "Alex Benton",
       role: "Chief Operating Officer",
-      bio: "Alex Benton is an entrepreneur who has scaled businesses in both the entertainment and real estate industry. With over six years in the music industry, he has contributed to award-winning visual projects for Capitol Records and Atlantic Records, excelling in leadership and operations.",
+      bio: "Entrepreneur with extensive experience scaling businesses in entertainment and real estate. Six years in music industry with award-winning projects for Capitol Records and Atlantic Records, excelling in operations and leadership.",
       image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
     },
     {
       name: "Brandon Jarnigan",
       role: "Chief Financial Officer",
-      bio: "Brandon Jarnigan holds a master's degree in finance from the University of North Carolina and began his career at American Express in New York. About a decade ago, he moved with his family to Nashville, where he took on a key pricing role at Asurion. He later helped scale Built Technologies, leading successful funding rounds with Goldman Sachs and Google Ventures that brought the company to a $1.5 billion valuation. As a Nashville native, he's passionate about finance, NIL rights, and music royalties—and he's proud to help bridge the worlds of tech, entertainment, and capital.",
+      bio: "Master's in Finance from UNC. Former American Express executive and key leader at Built Technologies through successful funding rounds with Goldman Sachs and Google Ventures, achieving $1.5B valuation.",
       image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png"
     },
     {
       name: "Christopher Meatto",
       role: "General Counsel",
-      bio: "With over 45 years of experience as both an attorney and financial executive, Christopher Meatto is celebrated for his sharp legal acumen. Graduating from Fordham University, he embarked on a distinguished career path. Earning his J.D. from Harvard Law School in 1974, he has since offered invaluable counsel and leadership across diverse legal arenas.",
+      bio: "Over 45 years as attorney and financial executive. Harvard Law School J.D. (1974) and Fordham University graduate with distinguished career across diverse legal and financial sectors.",
       image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png"
     },
     {
       name: "Sean Collins",
       role: "VP of A&R and M&A",
-      bio: "Sean Collins is a seasoned music industry professional with over 25 years of experience, excelling as a music executive. His career spans from collaborating with artists like Wyclef Jean and Canibus to placing records for industry giants such as Jay-Z, Chris Brown, and 50 Cent. He has successfully negotiated publishing and artist deals with major players like Warner Chappell, Sony ATV, and Empire, showcasing his versatile expertise in both artistic and business domains.",
+      bio: "25+ years music industry veteran. Collaborated with major artists including Jay-Z, Chris Brown, and 50 Cent. Successfully negotiated deals with Warner Chappell, Sony ATV, and Empire.",
       image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png"
     },
     {
       name: "Kate Hyman",
       role: "Acquisitions Lead",
-      bio: "Kate Hyman comes from a family deeply entrenched in entertainment; her grandfather bought Warner Brothers, and her father led the studio. With a career spanning successful joint ventures and A&R roles across prestigious labels, Kate is a visionary in the industry. Her innovative approach merges creativity with commercial savvy. From crafting film soundtracks to pioneering tributes, Kate's influence reverberates worldwide.",
+      bio: "Entertainment industry legacy with grandfather who bought Warner Brothers. Extensive experience in joint ventures and A&R across prestigious labels, merging creativity with commercial expertise.",
       image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png"
     },
     {
       name: "Ric Aliberte",
       role: "Acquisitions Lead",
-      bio: "Ric Aliberte, a seasoned music industry veteran, opened Boston's first full-line record store while at Harvard. His early career saw him discover Queen and work with legends at Elektra/Asylum Records. Managing acts like Kiss and Billy Idol, he later founded R.A.M. Inc., representing top producers. Ric's consultancy with Queen members contributed to the success of the Bohemian Rhapsody movie.",
+      bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.",
       image: "/placeholder.svg"
     },
     {
       name: "Erik Steigen",
       role: "VP Publishing",
-      bio: "Erik Steigen brings over two decades of experience in music publishing, royalty administration, and catalog management to his role leading publishing at Ecka. He previously oversaw publishing and royalties for a major business management firm in Los Angeles, administered catalogs for iconic artists like Lionel Richie, Brian Wilson, and Don Felder, and co-founded an independent publishing administration company representing Grammy and Emmy-winning talent. Erik is also the founder of USA Media Rights® and has led financial and legal due diligence for high-value entertainment asset sales.",
+      bio: "20+ years in music publishing and royalty administration. Former LA business management firm executive managing catalogs for Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.",
       image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png"
     }
   ];
