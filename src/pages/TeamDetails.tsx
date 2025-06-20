@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import BackgroundRemovalProcessor from '../components/BackgroundRemovalProcessor';
@@ -6,6 +6,10 @@ import BackgroundRemovalProcessor from '../components/BackgroundRemovalProcessor
 const TeamDetails = () => {
   const [showProcessor, setShowProcessor] = useState(false);
   const [processedImages, setProcessedImages] = useState<{ [key: string]: string }>({});
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const teamMembers = [
     {
