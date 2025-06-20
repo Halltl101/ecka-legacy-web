@@ -29,11 +29,9 @@ const Contact = () => {
             <p className="text-gray-300 mb-6 transition-colors duration-300">
               Get access to our investor overview and portfolio performance data.
             </p>
-            <LeadForm>
-              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] text-[#C9A34C] hover:text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform w-full">
-                Request Overview
-              </button>
-            </LeadForm>
+            <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] text-[#C9A34C] hover:text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform w-full">
+              Request Overview
+            </button>
           </div>
         </div>
         
