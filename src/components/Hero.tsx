@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Music, TrendingUp, Globe } from 'lucide-react';
+import LeadForm from './LeadForm';
 
 const Hero = () => {
   return (
@@ -32,9 +33,11 @@ const Hero = () => {
               >
                 Investor Login
               </a>
-              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]">
-                Schedule Intro Call
-              </button>
+              <LeadForm>
+                <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]">
+                  Schedule Intro Call
+                </button>
+              </LeadForm>
             </div>
           </div>
           
