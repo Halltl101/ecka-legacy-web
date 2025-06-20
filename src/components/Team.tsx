@@ -35,12 +35,12 @@ const Team = () => {
           </p>
         </div>
         
-        {/* Atlanta Skyline Image */}
+        {/* Concert Performer Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="/lovable-uploads/8cbf983b-94cd-46e7-8d2b-4ab72a205152.png" 
-            alt="Atlanta city skyline at night featuring downtown skyscrapers and urban architecture representing business growth and opportunity"
-            className="w-full h-64 object-cover object-[center_20%] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            src="/lovable-uploads/cec0a1cb-f9ec-4e08-98b2-5ff6290c6eea.png" 
+            alt="Concert performer on stage with dramatic lighting"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         

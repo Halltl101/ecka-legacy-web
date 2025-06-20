@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -90,15 +89,6 @@ const TeamDetails = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Meet the experienced professionals driving Ecka Holdings' vision and strategic growth.
           </p>
-        </div>
-
-        {/* Hero Image */}
-        <div className="mb-16">
-          <img 
-            src="/lovable-uploads/cec0a1cb-f9ec-4e08-98b2-5ff6290c6eea.png" 
-            alt="Concert performer on stage with dramatic lighting"
-            className="w-full h-64 object-cover rounded-2xl shadow-xl"
-          />
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
