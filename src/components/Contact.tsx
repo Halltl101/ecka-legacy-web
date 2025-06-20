@@ -34,8 +34,8 @@ const Contact = () => {
         
         <div className="text-center animate-fade-in animation-delay-900">
           <p className="text-gray-400 mb-2">Direct inquiries:</p>
-          <a href="mailto:info@eckamusicgroup.com" className="text-[#C9A34C] hover:text-[#B8923E] font-medium text-lg transition-all duration-300 hover:scale-105 inline-block">
-            info@eckamusicgroup.com
+          <a href="mailto:info@eckaholdings.com" className="text-[#C9A34C] hover:text-[#B8923E] font-medium text-lg transition-all duration-300 hover:scale-105 inline-block">
+            info@eckaholdings.com
           </a>
         </div>
       </div>
