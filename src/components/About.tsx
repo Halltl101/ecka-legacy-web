@@ -16,9 +16,14 @@ const About = () => {
         {/* Concert with Fire Effects Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="https://media.istockphoto.com/id/1430729287/video/crowd-of-people-dancing-and-jumping-at-pop-music-festival-party-with-fire-effects.jpg?s=640x640&k=20&c=8QhV4wL5XVwZhxvF2nJ8uC4Hc6LvQvX7pZ9sE2dA1bY=" 
-            alt="Crowd of people dancing and jumping at pop music festival party with fire effects"
+            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=600" 
+            alt="Live music concert with crowd and stage lighting effects"
             className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              console.log('Concert image failed to load:', e);
+              // Fallback to a different concert image
+              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1200&h=600";
+            }}
           />
         </div>
         
