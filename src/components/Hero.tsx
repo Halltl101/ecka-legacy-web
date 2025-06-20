@@ -37,8 +37,8 @@ const Hero = () => {
             {/* Music Legacy Visual */}
             <div className="relative group">
               <img 
-                src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&h=600" 
-                alt="Professional music recording studio with mixing console and equipment"
+                src="/lovable-uploads/27248f9f-a898-4a2c-95a0-4d468e8478e9.png" 
+                alt="Professional female performer on stage with microphone and dramatic lighting"
                 className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl transition-opacity duration-300 group-hover:opacity-75"></div>
