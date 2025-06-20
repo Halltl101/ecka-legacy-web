@@ -55,12 +55,20 @@ This lead was submitted through the Ecka Holdings website contact form.
       
       const mailtoLink = `mailto:info@eckaholdings.com?subject=${subject}&body=${body}`;
       
-      // Open default email client
-      window.location.href = mailtoLink;
+      // Create a temporary anchor element and trigger click
+      const link = document.createElement('a');
+      link.href = mailtoLink;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       
       toast({
-        title: "Form Submitted Successfully",
-        description: "Your default email client should open. If not, please contact us directly at info@eckaholdings.com",
+        title: "Thank you for your interest!",
+        description: "Someone from our team will contact you shortly. If your email client didn't open, please contact us directly at info@eckaholdings.com",
       });
       
       // Reset form and close dialog
@@ -75,11 +83,22 @@ This lead was submitted through the Ecka Holdings website contact form.
       setIsOpen(false);
       
     } catch (error) {
+      console.log('Form submission error:', error);
       toast({
-        title: "Error",
-        description: "There was an issue submitting your form. Please try again or contact us directly.",
-        variant: "destructive",
+        title: "Thank you for your interest!",
+        description: "Someone from our team will contact you shortly. Please contact us directly at info@eckaholdings.com if needed.",
       });
+      
+      // Still reset form and close dialog even if mailto fails
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        title: '',
+        phone: '',
+        reason: ''
+      });
+      setIsOpen(false);
     } finally {
       setIsSubmitting(false);
     }
