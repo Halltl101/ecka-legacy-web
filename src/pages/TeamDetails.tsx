@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -83,7 +82,7 @@ const TeamDetails = () => {
 
   const getImageStyle = (memberName: string) => {
     if (memberName === "Alex Benton") {
-      return { objectPosition: 'center 30%' };
+      return { objectPosition: 'center 45%' };
     }
     return {};
   };
