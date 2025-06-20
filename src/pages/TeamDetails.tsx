@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -80,6 +81,13 @@ const TeamDetails = () => {
     return processedImages[memberName] || originalImage;
   };
 
+  const getImageStyle = (memberName: string) => {
+    if (memberName === "Alex Benton") {
+      return { objectPosition: 'center 30%' };
+    }
+    return {};
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-6 py-20">
@@ -115,6 +123,7 @@ const TeamDetails = () => {
                   src={getImageSrc(member.name, member.image)}
                   alt={member.name}
                   className="w-full h-full rounded-full object-cover"
+                  style={getImageStyle(member.name)}
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
                     (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-white font-bold text-2xl">${member.name.charAt(0)}</span>`;
