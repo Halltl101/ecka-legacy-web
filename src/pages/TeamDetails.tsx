@@ -48,7 +48,7 @@ const TeamDetails = () => {
       name: "Kate Hyman",
       role: "Acquisitions Lead",
       bio: "Kate Hyman comes from a family deeply entrenched in entertainment; her grandfather bought Warner Brothers, and her father led the studio. With a career spanning successful joint ventures and A&R roles across prestigious labels, Kate is a visionary in the industry. Her innovative approach merges creativity with commercial savvy. From crafting film soundtracks to pioneering tributes, Kate's influence reverberates worldwide.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png"
     },
     {
       name: "Ric Aliberte",
