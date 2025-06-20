@@ -18,7 +18,7 @@ const About = () => {
           <img 
             src="/lovable-uploads/ff2dfd68-f3d2-42c2-9860-7a314de0771f.png" 
             alt="Female performer on stage with microphone in dramatic lighting showcasing live music performance"
-            className="w-full h-96 object-cover object-top rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            className="w-full h-96 object-cover object-[center_top_20%] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         
