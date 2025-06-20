@@ -13,15 +13,6 @@ const About = () => {
           </p>
         </div>
         
-        {/* Music Industry Image */}
-        <div className="mb-16 animate-fade-in animation-delay-500">
-          <img 
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=400" 
-            alt="Music production studio with professional audio equipment"
-            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-        
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in animation-delay-700">
             <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 hover:bg-[#C9A34C]/40 hover:scale-110">

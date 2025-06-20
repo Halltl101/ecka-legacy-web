@@ -12,12 +12,12 @@ const WhyPartner = () => {
           </p>
         </div>
         
-        {/* Business Partnership Image */}
+        {/* Music Industry Image */}
         <div className="mb-16">
           <img 
-            src="/lovable-uploads/1f9dfec4-2751-47bb-9d05-364c46207911.png" 
-            alt="Diverse business executives in a professional meeting discussing strategic partnerships and collaboration"
-            className="w-full h-64 object-cover rounded-2xl shadow-xl"
+            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=400" 
+            alt="Music production studio with professional audio equipment"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         
