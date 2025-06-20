@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Music, Briefcase, Users, Scale, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -40,7 +41,7 @@ const Team = () => {
           <img 
             src="/lovable-uploads/cec0a1cb-f9ec-4e08-98b2-5ff6290c6eea.png" 
             alt="Concert performer on stage with dramatic lighting"
-            className="w-full h-64 object-cover object-[center_50%] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            className="w-full h-64 object-cover object-[center_55%] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
         </div>
         
@@ -120,3 +121,4 @@ const Team = () => {
 };
 
 export default Team;
+
