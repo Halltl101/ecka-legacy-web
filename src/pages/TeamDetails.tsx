@@ -43,7 +43,7 @@ const TeamDetails = () => {
       name: "Sean Collins",
       role: "VP of A&R and M&A",
       bio: "Sean Collins is a seasoned music industry professional with over 25 years of experience, excelling as a music executive. His career spans from collaborating with artists like Wyclef Jean and Canibus to placing records for industry giants such as Jay-Z, Chris Brown, and 50 Cent. He has successfully negotiated publishing and artist deals with major players like Warner Chappell, Sony ATV, and Empire, showcasing his versatile expertise in both artistic and business domains.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png"
     },
     {
       name: "Kate Hyman",
