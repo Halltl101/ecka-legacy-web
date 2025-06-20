@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[#1A1A1A] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center group">
+          <div className="flex items-center group mt-2">
             <img 
               src="/lovable-uploads/ceb4005b-d633-46e4-a183-4c991c0095a2.png" 
               alt="Ecka Holdings Logo" 
