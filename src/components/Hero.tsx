@@ -25,14 +25,14 @@ const Hero = () => {
             
             <div className="flex flex-col gap-4 animate-fade-in animation-delay-1000 items-center">
               <a 
-                href="https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5MC4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062"
+                href="https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5OS4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[200px] max-w-[200px]"
+                className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]"
               >
                 Investor Login
               </a>
-              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[200px] max-w-[200px]">
+              <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]">
                 Schedule Intro Call
               </button>
             </div>
