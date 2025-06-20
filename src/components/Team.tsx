@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Music, Briefcase, Users, Scale, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -62,7 +63,7 @@ const Team = () => {
                   <h3 className="text-xl font-semibold text-[#1A1A1A] mb-2 transition-colors duration-300 group-hover:text-[#C9A34C]">{member.name}</h3>
                   <p className="text-[#C9A34C] mb-4 font-medium transition-all duration-300 group-hover:font-bold">{member.role}</p>
                   <p className="text-[#1A1A1A] transition-colors duration-300">{member.description}</p>
-                  <div className="mt-4 text-[#C9A34C] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="mt-4 text-[#C9A34C] font-semibold transition-opacity duration-300">
                     Click to view team details →
                   </div>
                 </Link>
