@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import BackgroundRemovalProcessor from '../components/BackgroundRemovalProcessor';
 
 const TeamDetails = () => {
-  const [showProcessor, setShowProcessor] = useState(false);
-  const [processedImages, setProcessedImages] = useState<{ [key: string]: string }>({});
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -68,23 +65,6 @@ const TeamDetails = () => {
     }
   ];
 
-  const imagesToProcess = [
-    { name: "T.V. Hall", url: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png" },
-    { name: "Tony Hansen", url: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png" },
-    { name: "Alex Benton", url: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png" },
-    { name: "Brandon Jarnigan", url: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png" },
-    { name: "Christopher Meatto", url: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png" }
-  ];
-
-  const handleProcessedImages = (results: { [key: string]: string }) => {
-    setProcessedImages(results);
-    setShowProcessor(false);
-  };
-
-  const getImageSrc = (memberName: string, originalImage: string) => {
-    return processedImages[memberName] || originalImage;
-  };
-
   const getImageStyle = (memberName: string) => {
     if (memberName === "Alex Benton") {
       return { objectPosition: 'center 35%' };
@@ -95,7 +75,7 @@ const TeamDetails = () => {
   return (
     <div className="min-h-screen bg-black">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="flex justify-between items-center mb-8">
+        <div className="mb-8">
           <Link 
             to="/" 
             className="inline-flex items-center text-[#C9A34C] hover:text-white transition-colors duration-300"
@@ -103,13 +83,6 @@ const TeamDetails = () => {
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Home
           </Link>
-          
-          <button
-            onClick={() => setShowProcessor(true)}
-            className="bg-[#C9A34C] text-white px-4 py-2 rounded-lg hover:bg-[#B8923E] transition-colors"
-          >
-            Remove Backgrounds
-          </button>
         </div>
         
         <div className="text-center mb-16">
@@ -124,7 +97,7 @@ const TeamDetails = () => {
             <div key={index} className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform">
               <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
                 <img 
-                  src={getImageSrc(member.name, member.image)}
+                  src={member.image}
                   alt={member.name}
                   className="w-full h-full rounded-full object-cover"
                   style={getImageStyle(member.name)}
@@ -141,13 +114,6 @@ const TeamDetails = () => {
           ))}
         </div>
       </div>
-      
-      {showProcessor && (
-        <BackgroundRemovalProcessor 
-          images={imagesToProcess}
-          onProcessed={handleProcessedImages}
-        />
-      )}
     </div>
   );
 };
