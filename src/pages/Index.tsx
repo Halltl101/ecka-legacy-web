@@ -51,9 +51,9 @@ const Index = () => {
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
-            <div className="flex flex-col items-center">
+            <div>
               <span className="text-2xl font-bold text-white">ECKA</span>
-              <span className="text-sm text-gray-400">Holdings Corp</span>
+              <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
             </div>
           </div>
           <p className="text-gray-400">

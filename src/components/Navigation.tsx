@@ -9,7 +9,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[#1A1A1A] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center justify-center group">
+          <div className="flex items-center group">
             <img 
               src="/lovable-uploads/ceb4005b-d633-46e4-a183-4c991c0095a2.png" 
               alt="Ecka Holdings Logo" 
@@ -19,9 +19,9 @@ const Navigation = () => {
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
-            <div className="flex flex-col items-center transition-all duration-300 group-hover:scale-105">
+            <div className="transition-all duration-300 group-hover:scale-105">
               <span className="text-2xl font-bold text-white transition-colors duration-300 group-hover:text-[#C9A34C]">ECKA</span>
-              <span className="text-sm text-gray-400 transition-colors duration-300">Holdings Corp</span>
+              <span className="text-sm text-gray-400 ml-2 transition-colors duration-300">Holdings Corp</span>
             </div>
           </div>
           
