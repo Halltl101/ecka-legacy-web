@@ -70,7 +70,7 @@ const TeamDetails = () => {
       return { objectPosition: 'center 35%' };
     }
     if (memberName === "Ric Aliberte") {
-      return { objectPosition: 'center 20%' };
+      return { objectPosition: 'center 15%', transform: 'scale(1.2)' };
     }
     return {};
   };
