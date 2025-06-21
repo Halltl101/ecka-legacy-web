@@ -12,28 +12,6 @@ const Index = () => {
     <div className="min-h-screen bg-black">
       <Navigation />
       <Hero />
-      
-      {/* YouTube Video Section */}
-      <section className="bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-center">
-            <div className="w-full max-w-6xl">
-              <iframe 
-                width="100%" 
-                height="450" 
-                src="https://www.youtube.com/embed/YcXk7-gk414?si=nZlWd0JKJkZKXlgI&autoplay=1&loop=1&playlist=YcXk7-gk414&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
-                allowFullScreen
-                className="rounded-2xl shadow-xl"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       <About />
       <WhyPartner />
       <Team />

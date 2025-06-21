@@ -60,7 +60,7 @@ const Hero = () => {
                     <TrendingUp className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     Portfolio Value
                   </span>
-                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">$2B+</span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">$400M</span>
                 </div>
                 <div className="flex items-center justify-between group">
                   <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
