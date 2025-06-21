@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -54,7 +55,7 @@ const TeamDetails = () => {
       name: "Ric Aliberte",
       role: "Acquisitions Lead",
       bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.",
-      image: "/placeholder.svg"
+      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png"
     },
     {
       name: "Erik Steigen",
@@ -67,6 +68,9 @@ const TeamDetails = () => {
   const getImageStyle = (memberName: string) => {
     if (memberName === "Alex Benton") {
       return { objectPosition: 'center 35%' };
+    }
+    if (memberName === "Ric Aliberte") {
+      return { objectPosition: 'center 20%' };
     }
     return {};
   };
