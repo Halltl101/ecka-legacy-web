@@ -37,7 +37,7 @@ const Team = () => {
         {/* Concert Performer Image */}
         <div className="mb-16 animate-fade-in animation-delay-500">
           <img 
-            src="/lovable-uploads/cec0a1cb-f9ec-4e08-98b2-5ff6290c6eea.png" 
+            src="/lovable-uploads/db05f0c1-c57b-4168-a659-3323abdaffa5.png" 
             alt="Concert performer on stage with dramatic lighting"
             className="w-full h-64 object-cover object-[center_60%] rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
           />
