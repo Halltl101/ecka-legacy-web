@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
@@ -24,7 +23,7 @@ const TeamDetails = () => {
     {
       name: "Alex Benton",
       role: "Chief Operating Officer",
-      bio: "Entrepreneur with extensive experience scaling businesses in entertainment and real estate. Award-winning project leader for Capitol Records and Atlantic Records, excelling in operations and strategic leadership.",
+      bio: "A Harvard Business School and Howard University alum with over eight years of experience across film and music, he has led award-winning film projects from development to distribution and delivered acclaimed visual campaigns for Capitol Records and Atlantic Records.",
       image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
     },
     {
