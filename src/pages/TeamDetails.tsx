@@ -28,8 +28,8 @@ const TeamDetails = () => {
     },
     {
       name: "Brandon Jarnigan",
-      role: "Chief Financial Officer",
-      bio: "Master's in Finance from UNC. Former American Express executive and key leader at Built Technologies through successful funding rounds with Goldman Sachs and Google Ventures, achieving $1.5B valuation.",
+      role: "Finance and Royalties Director",
+      bio: "MBA graduate from UNC and former American Express executive, Brandon played a key leadership role at Built Technologies, where he helped drive funding rounds with Index Ventures and Goldman Sachs.",
       image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png"
     },
     {
