@@ -1,9 +1,8 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import WhyPartner from '../components/WhyPartner';
-import Team from '../components/Team';
+import Philosophy from '../components/Philosophy';
+import TeamTeaser from '../components/TeamTeaser';
 import Contact from '../components/Contact';
 
 const Index = () => {
@@ -11,10 +10,10 @@ const Index = () => {
     <div className="min-h-screen bg-navy text-ink">
       <Navigation />
       <Hero />
-      <About />
-      <WhyPartner />
-      <Team />
+      <Philosophy />
+      <TeamTeaser />
       <Contact />
+
 
       <footer className="bg-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
