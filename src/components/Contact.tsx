@@ -1,33 +1,56 @@
-
 import React from 'react';
 import LeadForm from './LeadForm';
 
+const audiences = [
+  {
+    tag: 'Catalog Sellers',
+    body: 'Explore liquidity and stewardship options for your catalog with a discreet, artist-first partner.',
+  },
+  {
+    tag: 'Capital Partners',
+    body: 'Institutional co-investment opportunities across acquisition, growth, and structured credit.',
+  },
+  {
+    tag: 'Label & Industry',
+    body: 'Joint ventures, publishing partnerships, and long-term catalog collaborations.',
+  },
+];
+
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-black transition-all duration-700">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6 animate-fade-in transition-all duration-300 hover:text-[#C9A34C]">Ready to Partner with Us?</h2>
-        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto animate-fade-in animation-delay-300">
-          Schedule a call to discuss investment opportunities and learn more about our approach to music IP investing.
+    <section id="contact" className="relative py-28 lg:py-36 bg-navy border-t border-white/5 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -bottom-40 left-1/2 -translate-x-1/2 w-[680px] h-[680px] bg-purple/[0.10] blur-[140px] rounded-full" />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-10 text-center">
+        <div className="eyebrow justify-center inline-flex mb-8 animate-fade-in">Get In Touch</div>
+        <h2 className="font-display text-4xl lg:text-6xl text-ink leading-[1.05] mb-6 animate-fade-in animation-delay-300">
+          Let's build the next <span className="italic text-gold">legacy</span>.
+        </h2>
+        <p className="text-ink-muted max-w-2xl mx-auto mb-16 animate-fade-in animation-delay-500">
+          Confidential introductions for catalog sellers, capital partners, and industry
+          collaborators. Every inquiry is reviewed by a principal.
         </p>
-        
-        <div className="flex justify-center mb-12">
-          <div className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/30 hover:border-[#C9A34C]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#C9A34C]/20 hover:-translate-y-2 transform animate-fade-in animation-delay-500 max-w-md w-full">
-            <h3 className="text-xl font-semibold text-white mb-4 transition-colors duration-300 hover:text-[#C9A34C]">Schedule a Call</h3>
-            <p className="text-gray-300 mb-6 transition-colors duration-300">
-              Book a confidential discussion about our current opportunities and investment thesis.
-            </p>
-            <LeadForm>
-              <button className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg transform w-full">
-                Schedule Intro Call
-              </button>
-            </LeadForm>
-          </div>
+
+        <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5 mb-16 text-left">
+          {audiences.map((a) => (
+            <div key={a.tag} className="bg-navy p-8">
+              <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-3">{a.tag}</div>
+              <p className="text-sm text-ink-muted leading-relaxed">{a.body}</p>
+            </div>
+          ))}
         </div>
-        
-        <div className="text-center animate-fade-in animation-delay-900">
-          <p className="text-gray-400 mb-2">Direct inquiries:</p>
-          <a href="mailto:info@eckaholdings.com" className="text-[#C9A34C] hover:text-[#B8923E] font-medium text-lg transition-all duration-300 hover:scale-105 inline-block">
+
+        <div className="flex flex-col items-center gap-6 animate-fade-in animation-delay-700">
+          <LeadForm>
+            <button className="btn-gold">Schedule Intro Call</button>
+          </LeadForm>
+          <div className="text-[10px] uppercase tracking-[0.24em] text-ink-subtle">Direct inquiries</div>
+          <a
+            href="mailto:info@eckaholdings.com"
+            className="font-display text-xl text-ink hover:text-gold transition-colors"
+          >
             info@eckaholdings.com
           </a>
         </div>
