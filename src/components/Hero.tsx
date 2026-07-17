@@ -1,6 +1,6 @@
 import React from 'react';
 import LeadForm from './LeadForm';
-import heroStage from '@/assets/hero-stage.jpg';
+import heroStage from '@/assets/hero-archive.jpg';
 
 const CARTA_URL =
   'https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5MC4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062';
