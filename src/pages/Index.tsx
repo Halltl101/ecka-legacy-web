@@ -32,7 +32,7 @@ const Index = () => {
             </span>
           </div>
           <p className="text-[11px] uppercase tracking-[0.22em] text-ink-subtle text-center">
-            © 2025 Ecka Holdings Corp · Institutional Music IP
+            © 2025 Ecka Holdings Corp
           </p>
         </div>
       </footer>
