@@ -59,9 +59,8 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
               </div>
 
-              <div className="mt-6 surface p-6 lg:p-8 grid grid-cols-3 divide-x divide-white/5">
+              <div className="mt-6 surface p-6 lg:p-8 grid grid-cols-2 divide-x divide-white/5">
                 {[
-                  { k: 'Portfolio', v: '$400M' },
                   { k: 'Experience', v: '15yr+' },
                   { k: 'Reach', v: 'Global' },
                 ].map((s) => (
