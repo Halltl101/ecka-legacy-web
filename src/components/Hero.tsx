@@ -18,7 +18,6 @@ const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 lg:pt-40 lg:pb-32 w-full">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           <div className="lg:col-span-7 space-y-8 animate-fade-in">
-            <div className="eyebrow">Institutional Music IP</div>
 
             <h1 className="font-display text-[42px] sm:text-6xl lg:text-7xl leading-[1.05] text-ink">
               Preserving the{' '}
