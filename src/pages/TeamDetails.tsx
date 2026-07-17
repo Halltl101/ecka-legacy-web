@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/dialog';
 
 const TeamDetails = () => {
+  const [selected, setSelected] = useState<null | number>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
