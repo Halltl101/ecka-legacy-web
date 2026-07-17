@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Link2, Check } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import {
   Dialog,
   DialogContent,
@@ -129,8 +130,58 @@ const TeamDetails = () => {
     } catch {}
   };
 
+  const SITE_URL = 'https://ecka-legacy-web.lovable.app';
+  const pageUrl = selectedMember
+    ? `${SITE_URL}/team/${selectedMember.slug}`
+    : `${SITE_URL}/team`;
+  const pageTitle = selectedMember
+    ? `${selectedMember.name} — ${selectedMember.role} · Ecka Holdings`
+    : 'Leadership Team · Ecka Holdings';
+  const pageDescription = selectedMember
+    ? selectedMember.bio
+    : 'Meet the operators, dealmakers, and industry veterans stewarding capital and catalogs at Ecka Holdings.';
+  const pageImage = selectedMember
+    ? `${SITE_URL}${selectedMember.image}`
+    : undefined;
+
   return (
     <div className="min-h-screen bg-navy text-ink">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:type" content={selectedMember ? 'profile' : 'website'} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={pageUrl} />
+        {pageImage && <meta property="og:image" content={pageImage} />}
+        {selectedMember && (
+          <meta property="profile:username" content={selectedMember.slug} />
+        )}
+        <meta name="twitter:card" content={pageImage ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        {pageImage && <meta name="twitter:image" content={pageImage} />}
+        {selectedMember && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: selectedMember.name,
+              jobTitle: selectedMember.role,
+              description: selectedMember.bio,
+              image: pageImage,
+              url: pageUrl,
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Ecka Holdings',
+                url: SITE_URL,
+              },
+            })}
+          </script>
+        )}
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
         <div className="mb-12">
           <Link
