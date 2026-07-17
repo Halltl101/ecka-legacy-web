@@ -8,9 +8,9 @@
 @layer base {
   :root {
     /* Brand */
-    --navy: 222 47% 6%;         /* #060b17 base */
-    --navy-800: 222 45% 9%;     /* elevated surface */
-    --navy-700: 222 40% 14%;    /* card border tone */
+    --navy: 0 0% 0%;            /* pure black base */
+    --navy-800: 0 0% 5%;        /* elevated surface */
+    --navy-700: 0 0% 10%;       /* card border tone */
     --ink: 220 24% 90%;
     --ink-muted: 220 12% 62%;
     --ink-subtle: 220 10% 44%;
