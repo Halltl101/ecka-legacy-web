@@ -1,7 +1,6 @@
 import React from 'react';
 import { Music, Briefcase, Users, Scale, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import teamHall from '@/assets/team-hall.jpg';
 
 const groups = [
   {
@@ -52,10 +51,9 @@ const Team = () => {
         <div className="relative mb-20 animate-fade-in animation-delay-500">
           <div className="relative overflow-hidden border border-white/5">
             <img
-              src={teamHall}
-              alt="Ornate concert hall interior"
-              loading="lazy"
-              className="w-full h-72 lg:h-[420px] object-cover"
+              src="/lovable-uploads/db05f0c1-c57b-4168-a659-3323abdaffa5.png"
+              alt="Concert stage in performance"
+              className="w-full h-72 lg:h-[420px] object-cover object-[center_60%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
           </div>

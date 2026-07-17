@@ -1,6 +1,5 @@
 import React from 'react';
 import LeadForm from './LeadForm';
-import heroStage from '@/assets/hero-stage.jpg';
 
 const CARTA_URL =
   'https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5MC4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062';
@@ -52,9 +51,9 @@ const Hero = () => {
               <div className="absolute -inset-1 bg-gradient-to-br from-gold/25 to-purple/30 blur-xl opacity-70" />
               <div className="relative surface overflow-hidden">
                 <img
-                  src={heroStage}
+                  src="/lovable-uploads/27248f9f-a898-4a2c-95a0-4d468e8478e9.png"
                   alt="Performer on stage under dramatic light"
-                  className="w-full h-[340px] lg:h-[440px] object-cover"
+                  className="w-full h-[340px] lg:h-[440px] object-cover grayscale-[15%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
               </div>

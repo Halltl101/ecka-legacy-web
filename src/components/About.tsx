@@ -1,6 +1,5 @@
 import React from 'react';
 import { Music, TrendingUp, Target } from 'lucide-react';
-import aboutAudience from '@/assets/about-audience.jpg';
 
 const pillars = [
   {
@@ -46,9 +45,8 @@ const About = () => {
           <div className="absolute -inset-1 bg-gradient-to-r from-gold/15 to-purple/20 blur-lg opacity-60" />
           <div className="relative overflow-hidden border border-white/5">
             <img
-              src={aboutAudience}
+              src="/lovable-uploads/8ac990a4-a3ee-420a-9326-b9322d10b9c0.png"
               alt="Live audience under stage light"
-              loading="lazy"
               className="w-full h-72 lg:h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
