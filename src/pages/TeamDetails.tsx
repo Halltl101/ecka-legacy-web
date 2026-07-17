@@ -24,60 +24,76 @@ const TeamDetails = () => {
     if (!slug) window.scrollTo(0, 0);
   }, [slug]);
 
-  const teamMembers = [
+  const teamMembers: {
+    name: string;
+    role: string;
+    bio: string;
+    image: string;
+    highlights: string[];
+    links?: { label: string; href: string }[];
+  }[] = [
     {
       name: "T.V. Hall",
       role: "Chief Executive Officer",
       bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist with MBA and MSF. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
-      image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
+      image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png",
+      highlights: ["$38B+ M&A", "MBA · MSF", "Billboard Artist"],
     },
     {
       name: "Tony Hansen",
       role: "Chief Marketing Officer",
       bio: "Seasoned entrepreneur managing Grammy-nominated platinum-selling artists. Proven track record with major labels including Atlantic Records and Columbia Records, specializing in brand promotion and artist development.",
-      image: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png"
+      image: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png",
+      highlights: ["Grammy-Nominated", "Atlantic · Columbia", "Artist Development"],
     },
     {
       name: "Alex Benton",
       role: "Chief Operating Officer",
       bio: "A Harvard Business School and Howard University alum with over eight years of experience across film and music, he has led award-winning film projects from development to distribution and delivered acclaimed visual campaigns for Capitol Records and Atlantic Records.",
-      image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
+      image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png",
+      highlights: ["Harvard MBA", "Howard University", "Capitol · Atlantic"],
     },
     {
       name: "Brandon Jarnigan",
       role: "Finance and Royalties Director",
       bio: "MBA graduate from UNC and former American Express executive, Brandon played a key leadership role at Built Technologies, where he helped drive funding rounds with Index Ventures and Goldman Sachs.",
-      image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png"
+      image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png",
+      highlights: ["UNC MBA", "AmEx Alum", "Index · Goldman"],
     },
     {
       name: "Christopher Meatto",
       role: "General Counsel",
       bio: "Over 45 years as attorney and financial executive. Harvard Law School J.D. and Fordham University graduate with distinguished career across diverse legal and financial sectors.",
-      image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png"
+      image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png",
+      highlights: ["45+ Years", "Harvard Law J.D.", "Fordham"],
     },
     {
       name: "Sean Collins",
       role: "VP of A&R and M&A",
       bio: "25+ years music industry veteran. Collaborated with major artists including Jay-Z, Chris Brown, and 50 Cent. Successfully negotiated deals with Warner Chappell, Sony ATV, and Empire.",
-      image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png"
+      image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png",
+      highlights: ["25+ Years", "Jay-Z · 50 Cent", "Warner · Sony ATV"],
     },
     {
       name: "Kate Hyman",
       role: "Acquisitions Lead",
       bio: "Entertainment industry legacy with grandfather who bought Warner Brothers. Extensive experience in joint ventures and A&R across prestigious labels, merging creativity with commercial expertise.",
-      image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png"
+      image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png",
+      highlights: ["Warner Bros Legacy", "Joint Ventures", "A&R Veteran"],
     },
     {
       name: "Ric Aliberte",
       role: "Acquisitions Lead",
       bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.",
-      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png"
+      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png",
+      highlights: ["Discovered Queen", "Elektra/Asylum", "Kiss · Billy Idol"],
     },
     {
       name: "Erik Steigen",
       role: "VP Publishing",
       bio: "20+ years in music publishing and royalty administration. Former LA business management firm executive managing catalogs for Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.",
-      image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png"
+      image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png",
+      highlights: ["20+ Years", "Lionel Richie · Brian Wilson", "USA Media Rights®"],
     }
   ];
 
