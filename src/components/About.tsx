@@ -1,5 +1,6 @@
 import React from 'react';
 import { Music, TrendingUp, Target } from 'lucide-react';
+import aboutHall from '@/assets/about-hall.jpg';
 
 const pillars = [
   {
