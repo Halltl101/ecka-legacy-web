@@ -107,14 +107,14 @@ const TeamDetails = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-navy p-10 group animate-fade-in"
-              style={{ animationDelay: `${index * 80}ms` }}
+              className="bg-navy p-8 group animate-fade-in flex flex-col items-center text-center"
+              style={{ animationDelay: `${index * 60}ms` }}
             >
-              <div className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
+              <div className="w-32 h-32 mb-6 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -126,16 +126,50 @@ const TeamDetails = () => {
                   }}
                 />
               </div>
-              <div className="text-center">
-                <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">{member.role}</div>
-                <h3 className="font-display text-2xl text-ink mb-4">{member.name}</h3>
-              </div>
-              <p className="text-sm text-ink-muted leading-relaxed">{member.bio}</p>
-              <div className="mt-6 h-px w-8 mx-auto bg-gold/60 group-hover:w-16 transition-all duration-500" />
+              <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">{member.role}</div>
+              <h3 className="font-display text-xl text-ink mb-5">{member.name}</h3>
+              <button
+                type="button"
+                onClick={() => setSelected(index)}
+                className="mt-auto text-[10px] font-semibold uppercase tracking-[0.22em] text-gold border border-gold/40 px-4 py-2 hover:bg-gold hover:text-navy transition-all"
+              >
+                Read Bio
+              </button>
+              <div className="mt-6 h-px w-8 bg-gold/60 group-hover:w-16 transition-all duration-500" />
             </div>
           ))}
         </div>
       </div>
+
+      <Dialog open={selected !== null} onOpenChange={(o) => !o && setSelected(null)}>
+        <DialogContent className="bg-navy-800 border-gold/30 text-ink sm:max-w-[560px]">
+          {selected !== null && (
+            <>
+              <div className="flex flex-col items-center text-center mb-2">
+                <div className="w-28 h-28 mb-5 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
+                  <img
+                    src={teamMembers[selected].image}
+                    alt={teamMembers[selected].name}
+                    className="w-full h-full object-cover"
+                    style={getImageStyle(teamMembers[selected].name)}
+                  />
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">
+                  {teamMembers[selected].role}
+                </div>
+                <DialogHeader className="items-center">
+                  <DialogTitle className="font-display text-2xl text-ink">
+                    {teamMembers[selected].name}
+                  </DialogTitle>
+                </DialogHeader>
+              </div>
+              <DialogDescription className="text-ink-muted text-sm leading-relaxed text-center">
+                {teamMembers[selected].bio}
+              </DialogDescription>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
