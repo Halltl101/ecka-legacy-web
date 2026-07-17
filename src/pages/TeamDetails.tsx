@@ -75,43 +75,54 @@ const TeamDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="mb-8">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-[#C9A34C] hover:text-white transition-colors duration-300"
+    <div className="min-h-screen bg-navy text-ink">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <div className="mb-12">
+          <Link
+            to="/"
+            className="inline-flex items-center text-[10px] uppercase tracking-[0.24em] text-gold hover:text-ink transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
+            <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
         </div>
-        
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-6">Leadership Team</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Meet the experienced professionals driving Ecka Holdings' vision and strategic growth.
+
+        <div className="max-w-3xl mb-20 animate-fade-in">
+          <div className="eyebrow mb-6">Leadership</div>
+          <h1 className="font-display text-4xl lg:text-6xl text-ink leading-[1.05] mb-6">
+            The principals behind <span className="italic text-gold">Ecka</span>.
+          </h1>
+          <p className="text-ink-muted leading-relaxed">
+            Operators, dealmakers, and industry veterans stewarding capital and catalogs with
+            institutional rigor.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                <img 
+            <div
+              key={index}
+              className="bg-navy p-10 group animate-fade-in"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
+              <div className="w-28 h-28 mx-auto mb-6 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
+                <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full rounded-full object-cover"
+                  className="w-full h-full object-cover"
                   style={getImageStyle(member.name)}
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-white font-bold text-2xl">${member.name.charAt(0)}</span>`;
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-ink font-display text-2xl flex items-center justify-center h-full">${member.name.charAt(0)}</span>`;
                   }}
                 />
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-2 text-center">{member.name}</h3>
-              <p className="text-[#C9A34C] mb-4 font-medium text-center">{member.role}</p>
-              <p className="text-gray-300 leading-relaxed">{member.bio}</p>
+              <div className="text-center">
+                <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">{member.role}</div>
+                <h3 className="font-display text-2xl text-ink mb-4">{member.name}</h3>
+              </div>
+              <p className="text-sm text-ink-muted leading-relaxed">{member.bio}</p>
+              <div className="mt-6 h-px w-8 mx-auto bg-gold/60 group-hover:w-16 transition-all duration-500" />
             </div>
           ))}
         </div>
