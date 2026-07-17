@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Link2, Check } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import {
   Dialog,
   DialogContent,
