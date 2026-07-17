@@ -91,6 +91,28 @@ const TeamDetails = () => {
     return {};
   };
 
+  const membersWithSlug = useMemo(
+    () => teamMembers.map((m) => ({ ...m, slug: slugify(m.name) })),
+    []
+  );
+
+  const selectedMember = slug
+    ? membersWithSlug.find((m) => m.slug === slug) ?? null
+    : null;
+
+  const openMember = (s: string) => navigate(`/team/${s}`);
+  const closeMember = () => navigate('/team');
+
+  const copyLink = async () => {
+    if (!selectedMember) return;
+    const url = `${window.location.origin}/team/${selectedMember.slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {}
+  };
+
   return (
     <div className="min-h-screen bg-navy text-ink">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
@@ -116,9 +138,9 @@ const TeamDetails = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
-          {teamMembers.map((member, index) => (
+          {membersWithSlug.map((member, index) => (
             <div
-              key={index}
+              key={member.slug}
               className="bg-navy p-8 group animate-fade-in flex flex-col items-center text-center"
               style={{ animationDelay: `${index * 60}ms` }}
             >
@@ -138,7 +160,7 @@ const TeamDetails = () => {
               <h3 className="font-display text-xl text-ink mb-5">{member.name}</h3>
               <button
                 type="button"
-                onClick={() => setSelected(index)}
+                onClick={() => openMember(member.slug)}
                 className="mt-auto text-[10px] font-semibold uppercase tracking-[0.22em] text-gold border border-gold/40 px-4 py-2 hover:bg-gold hover:text-navy transition-all"
               >
                 Read Bio
@@ -149,31 +171,41 @@ const TeamDetails = () => {
         </div>
       </div>
 
-      <Dialog open={selected !== null} onOpenChange={(o) => !o && setSelected(null)}>
+      <Dialog open={selectedMember !== null} onOpenChange={(o) => !o && closeMember()}>
         <DialogContent className="bg-navy-800 border-gold/30 text-ink sm:max-w-[560px]">
-          {selected !== null && (
+          {selectedMember && (
             <>
               <div className="flex flex-col items-center text-center mb-2">
                 <div className="w-28 h-28 mb-5 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
                   <img
-                    src={teamMembers[selected].image}
-                    alt={teamMembers[selected].name}
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
                     className="w-full h-full object-cover"
-                    style={getImageStyle(teamMembers[selected].name)}
+                    style={getImageStyle(selectedMember.name)}
                   />
                 </div>
                 <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">
-                  {teamMembers[selected].role}
+                  {selectedMember.role}
                 </div>
                 <DialogHeader className="items-center">
                   <DialogTitle className="font-display text-2xl text-ink">
-                    {teamMembers[selected].name}
+                    {selectedMember.name}
                   </DialogTitle>
                 </DialogHeader>
               </div>
               <DialogDescription className="text-ink-muted text-sm leading-relaxed text-center">
-                {teamMembers[selected].bio}
+                {selectedMember.bio}
               </DialogDescription>
+              <div className="mt-6 flex justify-center">
+                <button
+                  type="button"
+                  onClick={copyLink}
+                  className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold border border-gold/40 px-4 py-2 hover:bg-gold hover:text-navy transition-all"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5" /> : <Link2 className="w-3.5 h-3.5" />}
+                  {copied ? 'Link Copied' : 'Copy Link'}
+                </button>
+              </div>
             </>
           )}
         </DialogContent>
