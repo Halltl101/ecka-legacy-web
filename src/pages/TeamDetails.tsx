@@ -83,13 +83,6 @@ const TeamDetails = () => {
       highlights: ["Warner Bros Legacy", "Joint Ventures", "A&R Veteran"],
     },
     {
-      name: "Ric Aliberte",
-      role: "Acquisitions Lead",
-      bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.",
-      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png",
-      highlights: ["Discovered Queen", "Elektra/Asylum", "Kiss · Billy Idol"],
-    },
-    {
       name: "Erik Steigen",
       role: "VP Publishing",
       bio: "20+ years in music publishing and royalty administration. Former LA business management firm executive managing catalogs for Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.",
