@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Link2, Check } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -9,12 +9,20 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 
+const slugify = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
 const TeamDetails = () => {
-  const [selected, setSelected] = useState<null | number>(null);
+  const { slug } = useParams<{ slug?: string }>();
+  const navigate = useNavigate();
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!slug) window.scrollTo(0, 0);
+  }, [slug]);
 
   const teamMembers = [
     {
