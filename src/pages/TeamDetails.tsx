@@ -188,35 +188,83 @@ const TeamDetails = () => {
       </div>
 
       <Dialog open={selectedMember !== null} onOpenChange={(o) => !o && closeMember()}>
-        <DialogContent className="bg-navy-800 border-gold/30 text-ink sm:max-w-[560px]">
+        <DialogContent className="bg-navy-800 border border-gold/30 text-ink sm:max-w-[600px] p-0 overflow-hidden">
           {selectedMember && (
             <>
-              <div className="flex flex-col items-center text-center mb-2">
-                <div className="w-28 h-28 mb-5 rounded-full overflow-hidden border border-gold/30 bg-gradient-to-br from-gold/20 to-purple/20">
-                  <img
-                    src={selectedMember.image}
-                    alt={selectedMember.name}
-                    className="w-full h-full object-cover"
-                    style={getImageStyle(selectedMember.name)}
-                  />
+              {/* Header */}
+              <div className="relative px-8 pt-10 pb-8 border-b border-white/10 bg-gradient-to-b from-gold/[0.06] via-transparent to-transparent">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+                <div className="flex items-start gap-5">
+                  <div className="shrink-0 w-24 h-24 rounded-full overflow-hidden border border-gold/40 bg-gradient-to-br from-gold/20 to-purple/20">
+                    <img
+                      src={selectedMember.image}
+                      alt={selectedMember.name}
+                      className="w-full h-full object-cover"
+                      style={getImageStyle(selectedMember.name)}
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1 pt-1">
+                    <div className="eyebrow mb-2 text-gold">{selectedMember.role}</div>
+                    <DialogHeader className="space-y-0">
+                      <DialogTitle className="font-display text-3xl text-ink leading-tight">
+                        {selectedMember.name}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="mt-3 h-px w-10 bg-gold/60" />
+                  </div>
                 </div>
-                <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-2">
-                  {selectedMember.role}
-                </div>
-                <DialogHeader className="items-center">
-                  <DialogTitle className="font-display text-2xl text-ink">
-                    {selectedMember.name}
-                  </DialogTitle>
-                </DialogHeader>
+
+                {selectedMember.highlights?.length > 0 && (
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {selectedMember.highlights.map((h) => (
+                      <span
+                        key={h}
+                        className="text-[10px] uppercase tracking-[0.22em] text-gold-soft border border-gold/30 bg-gold/5 px-2.5 py-1.5"
+                      >
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-              <DialogDescription className="text-ink-muted text-sm leading-relaxed text-center">
-                {selectedMember.bio}
-              </DialogDescription>
-              <div className="mt-6 flex justify-center">
+
+              {/* Body */}
+              <div className="px-8 py-7">
+                <div className="eyebrow mb-3">Biography</div>
+                <DialogDescription className="text-ink-muted text-[15px] leading-[1.75]">
+                  {selectedMember.bio}
+                </DialogDescription>
+
+                {selectedMember.links && selectedMember.links.length > 0 && (
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <div className="eyebrow mb-3">Links</div>
+                    <ul className="flex flex-col gap-1.5">
+                      {selectedMember.links.map((l) => (
+                        <li key={l.href}>
+                          <a
+                            href={l.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-sm text-gold hover:text-ink underline decoration-gold/40 hover:decoration-ink underline-offset-4 transition-colors"
+                          >
+                            {l.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-8 py-5 border-t border-white/10 bg-white/[0.02] flex items-center justify-between gap-4">
+                <span className="text-[10px] uppercase tracking-[0.24em] text-ink-muted truncate">
+                  ecka.holdings/team/{selectedMember.slug}
+                </span>
                 <button
                   type="button"
                   onClick={copyLink}
-                  className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold border border-gold/40 px-4 py-2 hover:bg-gold hover:text-navy transition-all"
+                  className="shrink-0 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold border border-gold/40 px-3.5 py-2 hover:bg-gold hover:text-navy transition-all"
                 >
                   {copied ? <Check className="w-3.5 h-3.5" /> : <Link2 className="w-3.5 h-3.5" />}
                   {copied ? 'Link Copied' : 'Copy Link'}
