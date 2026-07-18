@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -11,26 +10,21 @@ interface LeadFormProps {
   children: React.ReactNode;
 }
 
+const inputClass =
+  "bg-background border border-gold/20 text-foreground placeholder:text-foreground/30 focus-visible:border-gold focus-visible:ring-gold/30 rounded-none";
+
 const LeadForm = ({ children }: LeadFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    title: '',
-    phone: '',
-    reason: ''
+    name: '', email: '', company: '', title: '', phone: '', reason: '',
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,10 +32,9 @@ const LeadForm = ({ children }: LeadFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent('New Lead - Schedule Intro Call Request');
-      const body = encodeURIComponent(`
-New Lead Information:
+      const subject = encodeURIComponent('New Lead — Schedule Intro Call Request');
+      const body = encodeURIComponent(
+`New Lead Information:
 
 Name: ${formData.name}
 Email: ${formData.email}
@@ -50,54 +43,31 @@ Title: ${formData.title}
 Phone: ${formData.phone}
 Reason for Interest: ${formData.reason}
 
-This lead was submitted through the Ecka Holdings website contact form.
-      `);
-      
+This lead was submitted through the Ecka Holdings website contact form.`
+      );
+
       const mailtoLink = `mailto:info@eckaholdings.com?subject=${subject}&body=${body}`;
-      
-      // Create a temporary anchor element and trigger click
       const link = document.createElement('a');
       link.href = mailtoLink;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      
-      // Append to body, click, and remove
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
+
       toast({
-        title: "Thank you for your interest!",
-        description: "Someone from our team will contact you shortly. If your email client didn't open, please contact us directly at info@eckaholdings.com",
+        title: "Thank you for your interest.",
+        description: "Someone from our team will be in touch shortly. If your mail client didn't open, please write to info@eckaholdings.com.",
       });
-      
-      // Reset form and close dialog
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        title: '',
-        phone: '',
-        reason: ''
-      });
+
+      setFormData({ name: '', email: '', company: '', title: '', phone: '', reason: '' });
       setIsOpen(false);
-      
-    } catch (error) {
-      console.log('Form submission error:', error);
+    } catch {
       toast({
-        title: "Thank you for your interest!",
-        description: "Someone from our team will contact you shortly. Please contact us directly at info@eckaholdings.com if needed.",
+        title: "Thank you for your interest.",
+        description: "Someone from our team will be in touch shortly. Please email info@eckaholdings.com if needed.",
       });
-      
-      // Still reset form and close dialog even if mailto fails
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        title: '',
-        phone: '',
-        reason: ''
-      });
+      setFormData({ name: '', email: '', company: '', title: '', phone: '', reason: '' });
       setIsOpen(false);
     } finally {
       setIsSubmitting(false);
@@ -106,109 +76,62 @@ This lead was submitted through the Ecka Holdings website contact form.
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] bg-[#1A1A1A] border-[#C9A34C]/30">
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent className="sm:max-w-[520px] bg-surface border border-gold/30 rounded-none">
         <DialogHeader>
-          <DialogTitle className="text-white text-xl">Schedule Intro Call</DialogTitle>
+          <span className="eyebrow-gold">Partnership</span>
+          <DialogTitle className="font-display text-3xl font-light text-foreground mt-2">
+            Schedule <span className="italic text-gold">Intro Call.</span>
+          </DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5 pt-2">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-white">Full Name *</Label>
-              <Input
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="bg-black border-gray-600 text-white"
-                placeholder="John Doe"
-              />
+              <Label htmlFor="name" className="eyebrow">Full Name *</Label>
+              <Input id="name" name="name" value={formData.name} onChange={handleInputChange} required className={inputClass} placeholder="Jane Doe" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">Email *</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="bg-black border-gray-600 text-white"
-                placeholder="john@company.com"
-              />
+              <Label htmlFor="email" className="eyebrow">Email *</Label>
+              <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} required className={inputClass} placeholder="jane@company.com" />
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="company" className="text-white">Company *</Label>
-              <Input
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleInputChange}
-                required
-                className="bg-black border-gray-600 text-white"
-                placeholder="Company Name"
-              />
+              <Label htmlFor="company" className="eyebrow">Company *</Label>
+              <Input id="company" name="company" value={formData.company} onChange={handleInputChange} required className={inputClass} placeholder="Company Name" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="title" className="text-white">Job Title</Label>
-              <Input
-                id="title"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                className="bg-black border-gray-600 text-white"
-                placeholder="CEO, CFO, etc."
-              />
+              <Label htmlFor="title" className="eyebrow">Job Title</Label>
+              <Input id="title" name="title" value={formData.title} onChange={handleInputChange} className={inputClass} placeholder="CEO, CFO, etc." />
             </div>
           </div>
-          
+
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white">Phone Number</Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="bg-black border-gray-600 text-white"
-              placeholder="+1 (555) 123-4567"
-            />
+            <Label htmlFor="phone" className="eyebrow">Phone Number</Label>
+            <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} className={inputClass} placeholder="+1 (555) 123-4567" />
           </div>
-          
+
           <div className="space-y-2">
-            <Label htmlFor="reason" className="text-white">Reason for Interest *</Label>
-            <Textarea
-              id="reason"
-              name="reason"
-              value={formData.reason}
-              onChange={handleInputChange}
-              required
-              className="bg-black border-gray-600 text-white min-h-[100px]"
-              placeholder="Please describe your interest in partnering with Ecka Holdings..."
-            />
+            <Label htmlFor="reason" className="eyebrow">Reason for Interest *</Label>
+            <Textarea id="reason" name="reason" value={formData.reason} onChange={handleInputChange} required className={`${inputClass} min-h-[100px]`} placeholder="Please describe your interest in partnering with Ecka Holdings…" />
           </div>
-          
+
           <div className="flex gap-3 pt-4">
             <Button
               type="button"
               variant="outline"
               onClick={() => setIsOpen(false)}
-              className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700"
+              className="flex-1 border-gold/30 text-foreground/70 hover:bg-surface hover:text-foreground rounded-none uppercase tracking-[0.2em] text-xs"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-[#C9A34C] hover:bg-[#B8923E] text-black"
+              className="flex-1 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.25em] text-xs font-bold"
             >
-              {isSubmitting ? 'Submitting...' : 'Submit Request'}
+              {isSubmitting ? 'Submitting…' : 'Submit Request'}
             </Button>
           </div>
         </form>
