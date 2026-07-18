@@ -140,9 +140,32 @@ const TeamDetails = () => {
                   <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
                 </DialogContent>
               </Dialog>
-              <h3 className="text-2xl font-semibold text-white mb-2 text-center">{member.name}</h3>
-              <p className="text-[#C9A34C] mb-4 font-medium text-center">{member.role}</p>
-              <p className="text-gray-300 leading-relaxed">{member.bio}</p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button type="button" className="block w-full text-center focus:outline-none group">
+                    <h3 className="text-2xl font-semibold text-white mb-2 text-center transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
+                    <p className="text-[#C9A34C] font-medium text-center">{member.role}</p>
+                    <p className="text-sm text-gray-400 mt-3 italic">Click to view bio</p>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="bg-[#1A1A1A] border border-[#C9A34C]/40 text-white max-w-lg">
+                  <DialogHeader>
+                    <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#C9A34C] to-[#B8923E] flex items-center justify-center">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        style={getImageStyle(member.name)}
+                      />
+                    </div>
+                    <DialogTitle className="text-2xl text-center text-white">{member.name}</DialogTitle>
+                    <DialogDescription className="text-center text-[#C9A34C] font-medium">
+                      {member.role}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
+                </DialogContent>
+              </Dialog>
             </div>
           ))}
         </div>
