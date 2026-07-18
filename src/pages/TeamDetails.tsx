@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Expand } from 'lucide-react';
+import { ArrowLeft, Expand, Linkedin } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const TeamDetails = () => {
@@ -13,55 +13,64 @@ const TeamDetails = () => {
       name: "T. Votte Hall",
       role: "Chief Executive Officer",
       bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist with MBA and MSF. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
-      image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
+      image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png",
+      linkedin: "#"
     },
     {
       name: "Tony Hansen",
       role: "Chief Marketing Officer",
       bio: "Seasoned entrepreneur managing Grammy-nominated platinum-selling artists. Proven track record with major labels including Atlantic Records and Columbia Records, specializing in brand promotion and artist development.",
-      image: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png"
+      image: "/lovable-uploads/0538ec46-6b86-4941-92b2-736699c6538e.png",
+      linkedin: "#"
     },
     {
       name: "Alex Benton",
       role: "Chief Operating Officer",
       bio: "A Harvard Business School and Howard University alum with over eight years of experience across film and music, he has led award-winning film projects from development to distribution and delivered acclaimed visual campaigns for Capitol Records and Atlantic Records.",
-      image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png"
+      image: "/lovable-uploads/4a46e31a-7f5b-4183-836a-bcbdcfc78e8e.png",
+      linkedin: "#"
     },
     {
       name: "Brandon Jarnigan",
       role: "Finance and Royalties Director",
       bio: "MBA graduate from UNC and former American Express executive, Brandon played a key leadership role at Built Technologies, where he helped drive funding rounds with Index Ventures and Goldman Sachs.",
-      image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png"
+      image: "/lovable-uploads/fb3556b8-3b10-4a61-a12a-5a4656493367.png",
+      linkedin: "#"
     },
     {
       name: "Christopher Meatto",
       role: "General Counsel",
       bio: "Over 45 years as attorney and financial executive. Harvard Law School J.D. and Fordham University graduate with distinguished career across diverse legal and financial sectors.",
-      image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png"
+      image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png",
+      linkedin: "#"
     },
     {
       name: "Sean Collins",
       role: "VP of A&R and M&A",
       bio: "25+ years music industry veteran. Collaborated with major artists including Jay-Z, Chris Brown, and 50 Cent. Successfully negotiated deals with Warner Chappell, Sony ATV, and Empire.",
-      image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png"
+      image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png",
+      linkedin: "#"
     },
     {
       name: "Kate Hyman",
       role: "Acquisitions Lead",
       bio: "Entertainment industry legacy with grandfather who bought Warner Brothers. Extensive experience in joint ventures and A&R across prestigious labels, merging creativity with commercial expertise.",
-      image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png"
+      image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png",
+      linkedin: "#"
     },
     {
       name: "Ric Aliberte",
       role: "Acquisitions Lead",
       bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.",
-      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png"
+      image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png",
+      linkedin: "#"
     },
     {
       name: "Erik Steigen",
       role: "VP Publishing",
       bio: "20+ years in music publishing and royalty administration. Former LA business management firm executive managing catalogs for Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.",
-      image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png"
+      image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png",
+      linkedin: "#"
     }
   ];
 
@@ -140,14 +149,14 @@ const TeamDetails = () => {
                   <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
                 </DialogContent>
               </Dialog>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button type="button" className="block w-full text-center focus:outline-none group">
-                    <h3 className="text-2xl font-semibold text-white mb-2 text-center transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
-                    <p className="text-[#C9A34C] font-medium text-center">{member.role}</p>
-                    
-                  </button>
-                </DialogTrigger>
+              <div className="flex items-center justify-center gap-2">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button type="button" className="text-center focus:outline-none group">
+                      <h3 className="text-2xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
+                      <p className="text-[#C9A34C] font-medium">{member.role}</p>
+                    </button>
+                  </DialogTrigger>
                 <DialogContent className="bg-[#1A1A1A] border border-[#C9A34C]/40 text-white max-w-lg">
                   <DialogHeader>
                     <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#C9A34C] to-[#B8923E] flex items-center justify-center">
@@ -165,7 +174,17 @@ const TeamDetails = () => {
                   </DialogHeader>
                   <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
                 </DialogContent>
-              </Dialog>
+                </Dialog>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                  className="text-[#C9A34C] hover:text-white transition-colors duration-300"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
           ))}
         </div>
