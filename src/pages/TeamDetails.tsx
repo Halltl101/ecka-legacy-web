@@ -10,7 +10,7 @@ const TeamDetails = () => {
 
   const teamMembers = [
     {
-      name: "T.V. Hall",
+      name: "T. Votte Hall",
       role: "Chief Executive Officer",
       bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist with MBA and MSF. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.",
       image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png"
