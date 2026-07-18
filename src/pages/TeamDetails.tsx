@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Expand, Linkedin } from 'lucide-react';
+import { ArrowLeft, Expand } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import Footer from '@/components/Footer';
 
@@ -176,15 +176,6 @@ const TeamDetails = () => {
                   <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
                 </DialogContent>
                 </Dialog>
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${member.name} on LinkedIn`}
-                  className="text-[#C9A34C] hover:text-white transition-colors duration-300"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
               </div>
             </div>
           ))}
