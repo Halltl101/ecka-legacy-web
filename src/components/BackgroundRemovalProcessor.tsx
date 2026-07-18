@@ -90,26 +90,26 @@ const BackgroundRemovalProcessor: React.FC<BackgroundRemovalProcessorProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-navy/85 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-navy-800 border border-white/10 p-8 rounded-none max-w-md w-full mx-4 text-ink">
-        <h3 className="font-display text-xl mb-4">Processing Team Photos</h3>
-        <p className="text-ink-muted mb-6 text-sm">
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+      <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4">
+        <h3 className="text-xl font-semibold mb-4">Processing Team Photos</h3>
+        <p className="text-gray-600 mb-6">
           Removing backgrounds from T.V. Hall and Brandon Jarnigan's photos to create a consistent look.
         </p>
         
         <div className="space-y-3 mb-6">
           {processedImages.map((img) => (
             <div key={img.name} className="flex items-center justify-between">
-              <span className="text-sm text-ink">{img.name}</span>
+              <span className="text-sm">{img.name}</span>
               <div className="flex items-center">
                 {img.isProcessing && (
-                  <div className="w-4 h-4 border-2 border-gold border-t-transparent rounded-full animate-spin mr-2"></div>
+                  <div className="w-4 h-4 border-2 border-[#C9A34C] border-t-transparent rounded-full animate-spin mr-2"></div>
                 )}
                 {img.processedUrl && (
-                  <span className="text-gold text-sm">✓ Done</span>
+                  <span className="text-green-600 text-sm">✓ Done</span>
                 )}
                 {img.error && (
-                  <span className="text-purple text-sm">✗ Error</span>
+                  <span className="text-red-600 text-sm">✗ Error</span>
                 )}
               </div>
             </div>
@@ -118,7 +118,7 @@ const BackgroundRemovalProcessor: React.FC<BackgroundRemovalProcessorProps> = ({
         
         <button
           onClick={handleProcessAll}
-          className="w-full bg-gold text-navy py-2 px-4 text-[11px] font-semibold uppercase tracking-[0.22em] hover:brightness-110 transition-all"
+          className="w-full bg-[#C9A34C] text-white py-2 px-4 rounded-lg hover:bg-[#B8923E] transition-colors"
         >
           Process Images
         </button>

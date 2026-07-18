@@ -1,105 +1,97 @@
 import React from 'react';
-import { Music2, Users, BarChart3, DollarSign, Globe2 } from 'lucide-react';
-
-const differentiators = [
-  {
-    title: '$2B+ Deal Experience',
-    body:
-      'Leadership with a proven M&A and IP track record — including participation in landmark catalog transactions such as Queen\'s $1.27B sale.',
-  },
-  {
-    title: 'Proprietary Access',
-    body:
-      'Direct access to under-marketed catalogs sourced through decades of trusted, artist-first relationships.',
-  },
-  {
-    title: 'Global Scalability',
-    body:
-      'Domestic and international expansion across Europe, Africa, Asia, and LATAM with cross-border deal capability.',
-  },
-];
-
-const capabilities = [
-  { icon: Music2, title: 'Strategic Expertise', body: '10+ years across entertainment, technology, and finance.' },
-  { icon: Users, title: 'Artist Relationships', body: 'Artist-first acquisition and stewardship.' },
-  { icon: BarChart3, title: 'Data-Driven', body: 'Quantitative forecasting and catalog scoring.' },
-  { icon: DollarSign, title: 'Flexible Capital', body: 'Joint ventures and bespoke deal structures.' },
-  { icon: Globe2, title: 'Domestic & International', body: 'Multi-market rights and revenue capture.' },
-];
+import { Music2, Users, BarChart3, DollarSign, Globe2, MapPin, Compass } from 'lucide-react';
 
 const WhyPartner = () => {
   return (
-    <section id="why-partner" className="relative py-28 lg:py-36 bg-navy border-t border-white/5">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 -right-40 w-[480px] h-[480px] bg-purple/[0.10] blur-[140px] rounded-full" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-12 gap-16 mb-20 items-end">
-          <div className="lg:col-span-7 space-y-6 animate-fade-in">
-            <div className="eyebrow">Investment Philosophy</div>
-            <h2 className="font-display text-4xl lg:text-5xl text-ink leading-[1.1]">
-              A forward-looking model for <span className="italic text-gold">enduring</span> music IP.
-            </h2>
-          </div>
-          <p className="lg:col-span-5 text-ink-muted leading-relaxed animate-fade-in animation-delay-300">
-            We identify catalogs with distinctive cultural staying power and pair them with disciplined
-            capital, active administration, and global distribution intelligence.
+    <section id="why-partner" className="py-20 bg-black">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-6">Why Partner with Ecka</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            We're redefining music IP with a forward-thinking acquisition model, artist-first relationships, and data-driven asset selection.
           </p>
         </div>
-
-        {/* Traditional vs Ecka */}
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 mb-24">
-          <div className="surface p-10 animate-fade-in">
-            <div className="text-[10px] uppercase tracking-[0.24em] text-ink-subtle mb-4">
-              Traditional Approach
+        
+        {/* Music Industry Image */}
+        <div className="mb-16">
+          <img 
+            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&h=400" 
+            alt="Music production studio with professional audio equipment"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="space-y-8">
+            <div className="bg-[#1A1A1A] p-6 rounded-xl border border-gray-700">
+              <h3 className="text-2xl font-semibold text-white mb-4">Traditional Approach</h3>
+              <p className="text-gray-300">Traditional asset managers focused on financial returns only</p>
             </div>
-            <h3 className="font-display text-2xl text-ink mb-4">Financial returns only</h3>
-            <p className="text-sm text-ink-muted leading-relaxed">
-              Conventional asset managers optimize for yield without stewardship of the underlying
-              cultural asset.
-            </p>
+            
+            <div className="bg-[#C9A34C]/10 p-6 rounded-xl border border-[#C9A34C]/30">
+              <h3 className="text-2xl font-semibold text-white mb-4">Ecka's Approach</h3>
+              <p className="text-[#C9A34C] mb-2">Strategic Growth Partner:</p>
+              <p className="text-gray-300">Artist-first relationships with culture-driven value creation</p>
+            </div>
           </div>
-
-          <div className="relative animate-fade-in animation-delay-300">
-            <div className="absolute -inset-px bg-gradient-to-br from-gold/40 to-purple/40 opacity-70" />
-            <div className="relative bg-navy p-10 border border-transparent">
-              <div className="text-[10px] uppercase tracking-[0.24em] text-gold mb-4">
-                The Ecka Approach
+          
+          <div className="space-y-6">
+            <div className="flex items-start space-x-4">
+              <div className="w-3 h-3 bg-[#C9A34C] rounded-full mt-2"></div>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">$2B+ Deal Experience</h4>
+                <p className="text-gray-300">Leadership with proven track record across M&A, IP, and entertainment including Queen's $1.27B catalog sale</p>
               </div>
-              <h3 className="font-display text-2xl text-ink mb-4">
-                Strategic growth partner
-              </h3>
-              <p className="text-sm text-ink-muted leading-relaxed">
-                Artist-first relationships, culture-driven value creation, and institutional
-                discipline in every transaction.
-              </p>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="w-3 h-3 bg-[#C9A34C] rounded-full mt-2"></div>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">Proprietary Access</h4>
+                <p className="text-gray-300">Exclusive access to undervalued catalogs through artist-first terms and deep industry relationships</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-4">
+              <div className="w-3 h-3 bg-[#C9A34C] rounded-full mt-2"></div>
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">Global Scalability</h4>
+                <p className="text-gray-300">Domestic and International expansion focus with cross-border capabilities in Europe, Africa, Asia and LATAM markets</p>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Differentiators */}
-        <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5 mb-24">
-          {differentiators.map((d, i) => (
-            <div key={d.title} className="bg-navy p-10 animate-fade-in" style={{ animationDelay: `${i * 120}ms` }}>
-              <div className="font-display text-gold text-lg mb-4">
-                {String(i + 1).padStart(2, '0')}
-              </div>
-              <h4 className="font-display text-xl text-ink mb-3">{d.title}</h4>
-              <p className="text-sm text-ink-muted leading-relaxed">{d.body}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Capabilities strip */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 border border-white/5">
-          {capabilities.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="bg-navy p-6 lg:p-8">
-              <Icon className="w-5 h-5 text-gold mb-4" strokeWidth={1.25} />
-              <h4 className="text-sm font-semibold text-ink mb-2 tracking-wide">{title}</h4>
-              <p className="text-xs text-ink-muted leading-relaxed">{body}</p>
-            </div>
-          ))}
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
+            <Music2 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
+            <h4 className="text-lg font-semibold text-white mb-2">Strategic Expertise</h4>
+            <p className="text-gray-400 text-sm">Decades in entertainment, tech, and finance</p>
+          </div>
+          
+          <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
+            <Users className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
+            <h4 className="text-lg font-semibold text-white mb-2">Artist Relationships</h4>
+            <p className="text-gray-400 text-sm">Artist-first acquisition and management</p>
+          </div>
+          
+          <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
+            <BarChart3 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
+            <h4 className="text-lg font-semibold text-white mb-2">Data-Driven</h4>
+            <p className="text-gray-400 text-sm">Tech-enabled forecasting and scoring</p>
+          </div>
+          
+          <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
+            <DollarSign className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
+            <h4 className="text-lg font-semibold text-white mb-2">Flexible Capital</h4>
+            <p className="text-gray-400 text-sm">Joint ventures and creative structuring</p>
+          </div>
+          
+          <div className="bg-[#1A1A1A] p-6 rounded-xl text-center border border-gray-700 hover:border-[#C9A34C]/50 transition-all">
+            <Globe2 className="w-8 h-8 text-[#C9A34C] mx-auto mb-3" />
+            <h4 className="text-lg font-semibold text-white mb-2">Global Expansion</h4>
+            <p className="text-gray-400 text-sm">Domestic and International market focus</p>
+          </div>
         </div>
       </div>
     </section>

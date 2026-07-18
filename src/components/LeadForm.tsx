@@ -109,26 +109,26 @@ This lead was submitted through the Ecka Holdings website contact form.
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] bg-navy-800 border-gold/30">
+      <DialogContent className="sm:max-w-[500px] bg-[#1A1A1A] border-[#C9A34C]/30">
         <DialogHeader>
-          <DialogTitle className="font-display text-ink text-xl">Schedule Intro Call</DialogTitle>
+          <DialogTitle className="text-white text-xl">Schedule Intro Call</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-ink text-[11px] uppercase tracking-[0.22em]">Full Name *</Label>
+              <Label htmlFor="name" className="text-white">Full Name *</Label>
               <Input
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40"
+                className="bg-black border-gray-600 text-white"
                 placeholder="John Doe"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-ink text-[11px] uppercase tracking-[0.22em]">Email *</Label>
+              <Label htmlFor="email" className="text-white">Email *</Label>
               <Input
                 id="email"
                 name="email"
@@ -136,7 +136,7 @@ This lead was submitted through the Ecka Holdings website contact form.
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40"
+                className="bg-black border-gray-600 text-white"
                 placeholder="john@company.com"
               />
             </div>
@@ -144,52 +144,52 @@ This lead was submitted through the Ecka Holdings website contact form.
           
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="company" className="text-ink text-[11px] uppercase tracking-[0.22em]">Company *</Label>
+              <Label htmlFor="company" className="text-white">Company *</Label>
               <Input
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleInputChange}
                 required
-                className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40"
+                className="bg-black border-gray-600 text-white"
                 placeholder="Company Name"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="title" className="text-ink text-[11px] uppercase tracking-[0.22em]">Job Title</Label>
+              <Label htmlFor="title" className="text-white">Job Title</Label>
               <Input
                 id="title"
                 name="title"
                 value={formData.title}
                 onChange={handleInputChange}
-                className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40"
+                className="bg-black border-gray-600 text-white"
                 placeholder="CEO, CFO, etc."
               />
             </div>
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-ink text-[11px] uppercase tracking-[0.22em]">Phone Number</Label>
+            <Label htmlFor="phone" className="text-white">Phone Number</Label>
             <Input
               id="phone"
               name="phone"
               type="tel"
               value={formData.phone}
               onChange={handleInputChange}
-              className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40"
+              className="bg-black border-gray-600 text-white"
               placeholder="+1 (555) 123-4567"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="reason" className="text-ink text-[11px] uppercase tracking-[0.22em]">Reason for Interest *</Label>
+            <Label htmlFor="reason" className="text-white">Reason for Interest *</Label>
             <Textarea
               id="reason"
               name="reason"
               value={formData.reason}
               onChange={handleInputChange}
               required
-              className="bg-navy border-white/10 text-ink placeholder:text-ink-muted focus-visible:ring-gold/40 min-h-[100px]"
+              className="bg-black border-gray-600 text-white min-h-[100px]"
               placeholder="Please describe your interest in partnering with Ecka Holdings..."
             />
           </div>
@@ -199,14 +199,14 @@ This lead was submitted through the Ecka Holdings website contact form.
               type="button"
               variant="outline"
               onClick={() => setIsOpen(false)}
-              className="flex-1 border-white/15 text-ink-muted hover:bg-white/5 hover:text-ink"
+              className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-gold hover:brightness-110 text-navy"
+              className="flex-1 bg-[#C9A34C] hover:bg-[#B8923E] text-black"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </Button>

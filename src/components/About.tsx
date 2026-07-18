@@ -1,74 +1,62 @@
+
 import React from 'react';
 import { Music, TrendingUp, Target } from 'lucide-react';
-import aboutHall from '@/assets/about-hall.jpg';
-
-const pillars = [
-  {
-    icon: Target,
-    title: 'Mission Focus',
-    body:
-      'We preserve and extend the cultural relevance of artist-driven intellectual property across generations.',
-  },
-  {
-    icon: Music,
-    title: 'Legacy Stewardship',
-    body:
-      'Active management ensures each catalog remains a living, revenue-generating cultural asset.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Strategic Growth',
-    body:
-      'Disciplined rights administration and partnerships maximize long-term catalog value.',
-  },
-];
 
 const About = () => {
   return (
-    <section id="about" className="relative py-28 lg:py-36 bg-navy border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-end mb-20">
-          <div className="lg:col-span-7 space-y-6 animate-fade-in">
-            <div className="eyebrow">The Firm</div>
-            <h2 className="font-display text-4xl lg:text-5xl text-ink leading-[1.1]">
-              At the intersection of <span className="italic text-gold">capital</span>, culture,
-              and catalog.
-            </h2>
-          </div>
-          <p className="lg:col-span-5 text-ink-muted leading-relaxed animate-fade-in animation-delay-300">
-            Ecka Holdings acquires and manages distinctive music intellectual property with the
-            rigor of institutional finance and the sensibility of industry insiders — building
-            enduring value for artists, sellers, and capital partners.
+    <section id="about" className="py-20 bg-[#E8D8B9] transition-all duration-700">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-[#1A1A1A] mb-6 transition-all duration-300 hover:text-[#C9A34C]">About Ecka Holdings</h2>
+          <p className="text-xl text-[#1A1A1A] max-w-3xl mx-auto animate-fade-in animation-delay-300">
+            Positioned at the intersection of IP, technology, and culture, we redefine how music intellectual property creates lasting value.
           </p>
         </div>
-
-        <div className="relative mb-20 animate-fade-in animation-delay-500">
-          <div className="absolute -inset-1 bg-gradient-to-r from-gold/15 to-purple/20 blur-lg opacity-60" />
-          <div className="relative overflow-hidden border border-white/5">
-            <img
-              src="/lovable-uploads/8ac990a4-a3ee-420a-9326-b9322d10b9c0.png"
-              alt="Live audience under stage light"
-              className="w-full h-72 lg:h-96 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-          </div>
+        
+        {/* Concert with Fire Effects Image */}
+        <div className="mb-16 animate-fade-in animation-delay-500">
+          <img 
+            src="/lovable-uploads/8ac990a4-a3ee-420a-9326-b9322d10b9c0.png" 
+            alt="Live music concert with crowd and stage lighting effects"
+            className="w-full h-64 object-cover rounded-2xl shadow-xl transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              console.log('Concert image failed to load:', e);
+              // Fallback to a different concert image
+              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1200&h=600";
+            }}
+          />
         </div>
-
-        <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-          {pillars.map(({ icon: Icon, title, body }, i) => (
-            <div
-              key={title}
-              className="bg-navy p-10 group animate-fade-in"
-              style={{ animationDelay: `${200 + i * 120}ms` }}
-            >
-              <div className="text-gold mb-6">
-                <Icon className="w-6 h-6" strokeWidth={1.25} />
-              </div>
-              <h3 className="font-display text-2xl text-ink mb-4">{title}</h3>
-              <p className="text-sm text-ink-muted leading-relaxed">{body}</p>
-              <div className="mt-8 h-px w-8 bg-gold/60 group-hover:w-16 transition-all duration-500" />
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in animation-delay-700">
+            <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 hover:bg-[#C9A34C]/40 hover:scale-110">
+              <Target className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 hover:rotate-12" />
             </div>
-          ))}
+            <h3 className="text-xl font-semibold text-[#1A1A1A] mb-4 transition-colors duration-300 hover:text-[#C9A34C]">Mission Focus</h3>
+            <p className="text-[#1A1A1A] transition-colors duration-300">
+              Preserving the relevance of artists and culturally significant intellectual property for future generations.
+            </p>
+          </div>
+          
+          <div className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in animation-delay-900">
+            <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 hover:bg-[#C9A34C]/40 hover:scale-110">
+              <Music className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 hover:rotate-12" />
+            </div>
+            <h3 className="text-xl font-semibold text-[#1A1A1A] mb-4 transition-colors duration-300 hover:text-[#C9A34C]">Legacy Management</h3>
+            <p className="text-[#1A1A1A] transition-colors duration-300">
+              Ensuring artistic endeavors remain active, revenue-generating assets that honor their cultural impact.
+            </p>
+          </div>
+          
+          <div className="bg-white p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform animate-fade-in animation-delay-1100">
+            <div className="w-12 h-12 bg-[#C9A34C]/20 rounded-lg flex items-center justify-center mb-6 transition-all duration-300 hover:bg-[#C9A34C]/40 hover:scale-110">
+              <TrendingUp className="w-6 h-6 text-[#C9A34C] transition-transform duration-300 hover:rotate-12" />
+            </div>
+            <h3 className="text-xl font-semibold text-[#1A1A1A] mb-4 transition-colors duration-300 hover:text-[#C9A34C]">Strategic Growth</h3>
+            <p className="text-[#1A1A1A] transition-colors duration-300">
+              Brand and rights management that maximizes value through strategic partnerships and innovative monetization.
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,75 +1,81 @@
-import React from 'react';
-import LeadForm from './LeadForm';
-import heroStage from '@/assets/hero-archive.jpg';
 
-const CARTA_URL =
-  'https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5MC4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062';
+import React from 'react';
+import { Music, TrendingUp, Globe } from 'lucide-react';
+import LeadForm from './LeadForm';
 
 const Hero = () => {
   return (
-    <section id="top" className="relative min-h-screen flex items-center overflow-hidden bg-navy">
-      {/* Ambient depth */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 w-full h-[600px] bg-gradient-to-b from-purple/25 to-transparent" />
-        <div className="absolute -top-40 -left-40 w-[420px] h-[420px] bg-gold/[0.06] blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[520px] h-[520px] bg-purple/[0.12] blur-[140px] rounded-full" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 lg:pt-40 lg:pb-32 w-full">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
-          <div className="lg:col-span-7 space-y-8 animate-fade-in">
-
-            <h1 className="font-display text-[42px] sm:text-6xl lg:text-7xl leading-[1.05] text-ink">
-              Preserving the{' '}
-              <span className="italic text-gold">Architecture</span>
-              <br className="hidden sm:block" /> of Sound.
-            </h1>
-
-            <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-xl font-light">
-              Ecka Holdings deploys sophisticated capital structures for iconic music
-              catalogs and industry-shaping creative enterprises — bridging artistic
-              heritage with institutional-grade returns.
+    <section className="min-h-screen bg-black flex items-center">
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 animate-fade-in">
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-700 hover:scale-105">
+                Turning Assets to
+                <span className="text-[#C9A34C] block animate-fade-in animation-delay-300">Legacy</span>
+              </h1>
+              <p className="text-xl text-white font-medium animate-fade-in animation-delay-500">
+                Growing IP Value Year After Year
+              </p>
+            </div>
+            
+            <p className="text-lg text-gray-300 leading-relaxed max-w-2xl animate-fade-in animation-delay-700">
+              Ecka Holdings is an intellectual property investment firm focused on music and entertainment assets, 
+              with a mission to preserve and grow culturally significant works while delivering exceptional returns.
             </p>
-
-            <div className="pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md">
-              <LeadForm>
-                <button className="btn-gold w-full">Partner With Us</button>
-              </LeadForm>
-              <a
-                href={CARTA_URL}
+            
+            <div className="flex flex-col gap-4 animate-fade-in animation-delay-1000 items-center">
+              <a 
+                href="https://login.app.carta.com/credentials/login/?_gl=1*6wvs0v*_gcl_au*MTYyMTk5MjUwMi4xNzUwMzgzMDYy*_ga*MTAyMjQxNDk5OS4xNzUwMzgzMDYy*_ga_HB6KGNG78T*czE3NTAzODMwNjIkbzEkZzAkdDE3NTAzODMwNjIkajYwJGwwJGgw&_ga=2.175256101.62353039.1750383063-1022414990.1750383062"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-ghost w-full"
+                className="bg-[#C9A34C] hover:bg-[#B8923E] text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]"
               >
                 Investor Login
               </a>
+              <LeadForm>
+                <button className="border-2 border-[#C9A34C] hover:bg-[#C9A34C] hover:text-black text-[#C9A34C] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg transform text-center w-full sm:min-w-[300px] max-w-[300px]">
+                  Schedule Intro Call
+                </button>
+              </LeadForm>
             </div>
           </div>
-
-          <div className="lg:col-span-5 animate-fade-in animation-delay-500">
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-br from-gold/25 to-purple/30 blur-xl opacity-70" />
-              <div className="relative surface overflow-hidden">
-                <img
-                  src={heroStage}
-                  alt="Musician performing on a dark stage under a golden spotlight"
-                  className="w-full h-[340px] lg:h-[440px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
-              </div>
-
-              <div className="mt-6 surface p-6 lg:p-8 grid grid-cols-2 divide-x divide-white/5">
-                {[
-                  { k: 'Experience', v: '15yr+' },
-                  { k: 'Reach', v: 'Global' },
-                ].map((s) => (
-                  <div key={s.k} className="px-3 first:pl-0 last:pr-0 text-center">
-                    <div className="font-display text-2xl lg:text-3xl text-gold">{s.v}</div>
-                    <div className="mt-1 text-[9px] uppercase tracking-[0.24em] text-ink-subtle">
-                      {s.k}
-                    </div>
-                  </div>
-                ))}
+          
+          <div className="space-y-8 animate-fade-in animation-delay-500">
+            {/* Music Legacy Visual */}
+            <div className="relative group">
+              <img 
+                src="/lovable-uploads/27248f9f-a898-4a2c-95a0-4d468e8478e9.png" 
+                alt="Professional female performer on stage with microphone and dramatic lighting"
+                className="rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#C9A34C]/20 to-[#C9A34C]/30 rounded-2xl transition-opacity duration-300 group-hover:opacity-75"></div>
+            </div>
+            
+            {/* Stats Card */}
+            <div className="bg-[#1A1A1A] p-8 rounded-2xl border border-[#C9A34C]/30 hover:border-[#C9A34C]/60 transition-all duration-300 hover:shadow-2xl hover:shadow-[#C9A34C]/20 transform hover:-translate-y-2">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <TrendingUp className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    Portfolio Value
+                  </span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">$400M</span>
+                </div>
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <Music className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    Deal Experience
+                  </span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">15 years+</span>
+                </div>
+                <div className="flex items-center justify-between group">
+                  <span className="text-gray-300 flex items-center gap-2 transition-colors duration-300 group-hover:text-white">
+                    <Globe className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    Global Reach
+                  </span>
+                  <span className="text-2xl font-bold text-[#C9A34C] transition-all duration-300 group-hover:scale-110">Worldwide</span>
+                </div>
               </div>
             </div>
           </div>
