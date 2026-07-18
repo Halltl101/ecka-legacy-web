@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Expand } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const TeamDetails = () => {
   useEffect(() => {
@@ -97,18 +98,48 @@ const TeamDetails = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-[#1A1A1A] p-8 rounded-xl border border-[#C9A34C]/20 hover:border-[#C9A34C]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 transform">
-              <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-                <img 
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full rounded-full object-cover"
-                  style={getImageStyle(member.name)}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-white font-bold text-2xl">${member.name.charAt(0)}</span>`;
-                  }}
-                />
-              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label={`View ${member.name} bio`}
+                    className="group relative w-32 h-32 mx-auto mb-6 block rounded-full focus:outline-none focus:ring-2 focus:ring-[#C9A34C] focus:ring-offset-2 focus:ring-offset-[#1A1A1A]"
+                  >
+                    <div className="w-32 h-32 bg-gradient-to-br from-[#C9A34C] to-[#B8923E] rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full rounded-full object-cover"
+                        style={getImageStyle(member.name)}
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                          (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="text-white font-bold text-2xl">${member.name.charAt(0)}</span>`;
+                        }}
+                      />
+                    </div>
+                    <span className="absolute inset-0 rounded-full bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Expand className="w-6 h-6 text-white" />
+                    </span>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="bg-[#1A1A1A] border border-[#C9A34C]/40 text-white max-w-lg">
+                  <DialogHeader>
+                    <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#C9A34C] to-[#B8923E] flex items-center justify-center">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        style={getImageStyle(member.name)}
+                      />
+                    </div>
+                    <DialogTitle className="text-2xl text-center text-white">{member.name}</DialogTitle>
+                    <DialogDescription className="text-center text-[#C9A34C] font-medium">
+                      {member.role}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
+                </DialogContent>
+              </Dialog>
               <h3 className="text-2xl font-semibold text-white mb-2 text-center">{member.name}</h3>
               <p className="text-[#C9A34C] mb-4 font-medium text-center">{member.role}</p>
               <p className="text-gray-300 leading-relaxed">{member.bio}</p>
