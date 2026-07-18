@@ -149,14 +149,14 @@ const TeamDetails = () => {
                   <p className="text-gray-300 leading-relaxed mt-2">{member.bio}</p>
                 </DialogContent>
               </Dialog>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button type="button" className="block w-full text-center focus:outline-none group">
-                    <h3 className="text-2xl font-semibold text-white mb-2 text-center transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
-                    <p className="text-[#C9A34C] font-medium text-center">{member.role}</p>
-                    
-                  </button>
-                </DialogTrigger>
+              <div className="flex items-center justify-center gap-2">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button type="button" className="text-center focus:outline-none group">
+                      <h3 className="text-2xl font-semibold text-white mb-2 transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
+                      <p className="text-[#C9A34C] font-medium">{member.role}</p>
+                    </button>
+                  </DialogTrigger>
                 <DialogContent className="bg-[#1A1A1A] border border-[#C9A34C]/40 text-white max-w-lg">
                   <DialogHeader>
                     <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-[#C9A34C] to-[#B8923E] flex items-center justify-center">
