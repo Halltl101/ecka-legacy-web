@@ -145,7 +145,7 @@ const TeamDetails = () => {
                   <button type="button" className="block w-full text-center focus:outline-none group">
                     <h3 className="text-2xl font-semibold text-white mb-2 text-center transition-colors duration-300 group-hover:text-[#C9A34C] cursor-pointer">{member.name}</h3>
                     <p className="text-[#C9A34C] font-medium text-center">{member.role}</p>
-                    <p className="text-sm text-gray-400 mt-3 italic">Click to view bio</p>
+                    
                   </button>
                 </DialogTrigger>
                 <DialogContent className="bg-[#1A1A1A] border border-[#C9A34C]/40 text-white max-w-lg">
