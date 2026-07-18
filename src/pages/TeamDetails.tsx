@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Expand, Linkedin } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import Footer from '@/components/Footer';
 
 const TeamDetails = () => {
   useEffect(() => {
@@ -189,6 +190,7 @@ const TeamDetails = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
