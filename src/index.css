@@ -1,183 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Karla:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Ecka Holdings — Classical Prestige design system.
+   All colors defined here as HSL tokens; components consume via Tailwind. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Noir & Gold palette */
+    --background: 0 0% 5%;             /* #0d0d0d */
+    --foreground: 48 33% 95%;          /* #f5f5f0 cream */
+    --surface: 0 0% 10%;               /* #1a1a1a elevated panels */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --gold: 43 53% 55%;                /* #C9A84C primary gold */
+    --gold-highlight: 43 76% 74%;      /* #F0D78C */
+    --hairline: 43 53% 55%;            /* used with /10-/20 opacity */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* shadcn tokens mapped to the noir palette */
+    --card: 0 0% 10%;
+    --card-foreground: 48 33% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 48 33% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 53% 55%;
+    --primary-foreground: 0 0% 5%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 48 33% 95%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 48 15% 70%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 43 53% 55%;
+    --accent-foreground: 0 0% 5%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 48 33% 95%;
 
-    --radius: 0.5rem;
+    --border: 43 53% 55%;              /* used with alpha */
+    --input: 0 0% 20%;
+    --ring: 43 53% 55%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.25rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 48 33% 95%;
+    --sidebar-primary: 43 53% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 48 33% 95%;
+    --sidebar-border: 43 53% 55%;
+    --sidebar-ring: 43 53% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 5%;
+    --foreground: 48 33% 95%;
+    --surface: 0 0% 10%;
+    --gold: 43 53% 55%;
+    --gold-highlight: 43 76% 74%;
+    --hairline: 43 53% 55%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --card: 0 0% 10%;
+    --card-foreground: 48 33% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 48 33% 95%;
+    --primary: 43 53% 55%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 48 33% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 48 15% 70%;
+    --accent: 43 53% 55%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 48 33% 95%;
+    --border: 43 53% 55%;
+    --input: 0 0% 20%;
+    --ring: 43 53% 55%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border/20;
+  }
+
+  html {
+    color-scheme: dark;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    font-feature-settings: "liga", "dlig";
+  }
+
+  ::selection {
+    background: hsl(var(--gold));
+    color: hsl(var(--background));
   }
 }
 
-/* Custom animations */
+@layer components {
+  .eyebrow {
+    @apply text-[10px] tracking-[0.3em] uppercase text-foreground/50 font-medium font-sans;
+  }
+
+  .eyebrow-gold {
+    @apply text-[10px] tracking-[0.3em] uppercase text-gold font-bold font-sans;
+  }
+
+  .hairline {
+    @apply border-gold/20;
+  }
+
+  .gold-link {
+    @apply relative inline-flex items-center text-gold uppercase text-xs tracking-[0.25em] font-bold
+      after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full
+      after:bg-gold after:origin-right after:scale-x-0 after:transition-transform after:duration-500
+      hover:after:origin-left hover:after:scale-x-100;
+  }
+}
+
+/* Animations */
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-  opacity: 0;
+@keyframes gold-shimmer {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.7; }
 }
 
-.animate-scale-in {
-  animation: scale-in 0.4s ease-out forwards;
-  opacity: 0;
-}
+.animate-fade-in { animation: fade-in 0.8s ease-out forwards; opacity: 0; }
+.animate-scale-in { animation: scale-in 0.6s ease-out forwards; opacity: 0; }
 
-/* Animation delays */
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
+.animation-delay-200  { animation-delay: 200ms; }
+.animation-delay-300  { animation-delay: 300ms; }
+.animation-delay-500  { animation-delay: 500ms; }
+.animation-delay-700  { animation-delay: 700ms; }
+.animation-delay-900  { animation-delay: 900ms; }
+.animation-delay-1000 { animation-delay: 1000ms; }
+.animation-delay-1100 { animation-delay: 1100ms; }
+.animation-delay-1300 { animation-delay: 1300ms; }
 
-.animation-delay-500 {
-  animation-delay: 500ms;
-}
+html { scroll-behavior: smooth; }
 
-.animation-delay-700 {
-  animation-delay: 700ms;
-}
-
-.animation-delay-900 {
-  animation-delay: 900ms;
-}
-
-.animation-delay-1000 {
-  animation-delay: 1000ms;
-}
-
-.animation-delay-1100 {
-  animation-delay: 1100ms;
-}
-
-.animation-delay-1300 {
-  animation-delay: 1300ms;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Scroll animations */
-@media (prefers-reduced-motion: no-preference) {
-  .animate-fade-in {
-    animation-play-state: running;
-  }
-}
-
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
   .animate-scale-in {
@@ -185,7 +167,6 @@ html {
     opacity: 1;
     transform: none;
   }
-  
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
