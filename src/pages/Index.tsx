@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Linkedin, Instagram } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -33,6 +34,26 @@ const Index = () => {
               <span className="text-2xl font-bold text-white">ECKA</span>
               <span className="text-sm text-gray-400 ml-2">Holdings Corp</span>
             </div>
+          </div>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <a
+              href="https://www.linkedin.com/company/eckaholdings/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ecka Holdings on LinkedIn"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/eckaholdings?igsh=YWR2Z3JwcDlxdDl5"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ecka Holdings on Instagram"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
           </div>
           <p className="text-gray-400">
             © 2025 Ecka Holdings Corp. All rights reserved. | Turning Assets to Legacy.
