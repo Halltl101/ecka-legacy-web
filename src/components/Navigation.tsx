@@ -31,7 +31,7 @@ const Navigation = () => {
             <span className="font-display text-xl md:text-2xl font-semibold tracking-[0.25em] text-gold group-hover:text-gold-highlight transition-colors">
               ECKA
             </span>
-            <span className="hidden sm:inline-block text-[10px] tracking-[0.3em] uppercase text-foreground/50 border-l border-gold/20 pl-3 whitespace-nowrap">
+            <span className="hidden xl:inline-block text-[10px] tracking-[0.3em] uppercase text-foreground/50 border-l border-gold/20 pl-3 whitespace-nowrap">
               Holdings Corp
             </span>
           </a>
