@@ -34,9 +34,46 @@ const TeamDetails = () => {
     return {};
   };
 
+  const employeeLd = teamMembers.map(m => ({
+    "@type": "Person",
+    name: m.name,
+    jobTitle: m.role,
+  }));
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    url: PAGE_URL,
+    name: PAGE_TITLE,
+    description: PAGE_DESC,
+    mainEntity: {
+      "@type": "Organization",
+      name: "Ecka Holdings",
+      url: SITE_URL,
+      employee: employeeLd,
+    },
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>{PAGE_TITLE}</title>
+        <meta name="description" content={PAGE_DESC} />
+        <link rel="canonical" href={PAGE_URL} />
+        <meta property="og:title" content={PAGE_TITLE} />
+        <meta property="og:description" content={PAGE_DESC} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={PAGE_TITLE} />
+        <meta name="twitter:description" content={PAGE_DESC} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="twitter:url" content={PAGE_URL} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
       <Navigation />
+
       <div className="max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24">
         <div className="mb-12 animate-fade-in">
           <Link to="/" className="gold-link">
