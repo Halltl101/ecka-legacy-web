@@ -1,5 +1,5 @@
 import React from 'react';
-import boardroomAsset from '@/assets/boardroom-diverse.jpeg.asset.json';
+import masterTapes from '@/assets/master-tapes.jpg';
 
 const pillars = [
   {
