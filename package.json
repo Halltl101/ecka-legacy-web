@@ -12,7 +12,9 @@
     "validate:seo": "tsx scripts/validate-structured-data.ts",
     "validate:seo:live": "tsx scripts/validate-live-structured-data.ts",
     "validate:rich-results": "tsx scripts/rich-results-check.ts",
-    "prebuild": "tsx scripts/validate-structured-data.ts && tsx scripts/rich-results-check.ts"
+    "prerender": "tsx scripts/prerender-social-metadata.ts",
+    "prebuild": "tsx scripts/validate-structured-data.ts && tsx scripts/rich-results-check.ts",
+    "postbuild": "tsx scripts/prerender-social-metadata.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
