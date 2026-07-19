@@ -1,0 +1,41 @@
+name: Live SEO Monitor
+
+on:
+  schedule:
+    # Every 6 hours — catches regressions shortly after any deploy.
+    - cron: "0 */6 * * *"
+  workflow_run:
+    # Also re-check right after a successful deploy.
+    workflows: ["Deploy to GitHub Pages"]
+    types: ["completed"]
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL to crawl (defaults to production)"
+        required: false
+        default: "https://eckaholdings.com"
+
+jobs:
+  validate-live-seo:
+    # Skip when the upstream deploy failed
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Install Playwright Chromium
+        run: bunx playwright install --with-deps chromium
+
+      - name: Validate live JSON-LD
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://eckaholdings.com' }}
+        run: bun run validate:seo:live
