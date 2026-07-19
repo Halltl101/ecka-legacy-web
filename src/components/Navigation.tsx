@@ -14,7 +14,10 @@ const CARTA_URL = 'https://login.app.carta.com/credentials/login/';
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const resolveHref = (href: string) =>
+    href.startsWith('#') && pathname !== '/' ? `/${href}` : href;
   const isActive = (href: string) => href.startsWith('/') && pathname === href;
+
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-gold/10">
@@ -41,7 +44,7 @@ const Navigation = () => {
             {links.map(l => (
               <a
                 key={l.href}
-                href={l.href}
+                href={resolveHref(l.href)}
                 aria-current={isActive(l.href) ? 'page' : undefined}
                 className={`relative whitespace-nowrap transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:transition-transform after:duration-500 ${
                   isActive(l.href)
@@ -65,7 +68,7 @@ const Navigation = () => {
               Investor Login
             </a>
             <a
-              href="#contact"
+              href={resolveHref("#contact")}
               className="whitespace-nowrap px-5 py-2.5 bg-gold text-background text-xs font-bold uppercase tracking-[0.25em] hover:bg-gold-highlight transition-colors"
             >
               Schedule Call
@@ -90,7 +93,7 @@ const Navigation = () => {
               {links.map(l => (
                 <a
                   key={l.href}
-                  href={l.href}
+                  href={resolveHref(l.href)}
                   onClick={() => setOpen(false)}
                   aria-current={isActive(l.href) ? 'page' : undefined}
                   className={`transition-colors ${
@@ -110,7 +113,7 @@ const Navigation = () => {
                 Investor Login
               </a>
               <a
-                href="#contact"
+                href={resolveHref("#contact")}
                 onClick={() => setOpen(false)}
                 className="inline-block w-fit px-5 py-2 bg-gold text-background font-bold hover:bg-gold-highlight transition-colors"
               >
