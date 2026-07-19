@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const links = [
   { href: '#about', label: 'About' },
@@ -12,6 +13,8 @@ const CARTA_URL = 'https://login.app.carta.com/credentials/login/';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isActive = (href: string) => href.startsWith('/') && pathname === href;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-gold/10">
@@ -39,7 +42,12 @@ const Navigation = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="relative hover:text-gold-highlight transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:origin-right after:scale-x-0 after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100"
+                aria-current={isActive(l.href) ? 'page' : undefined}
+                className={`relative transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:transition-transform after:duration-500 ${
+                  isActive(l.href)
+                    ? 'text-gold after:origin-left after:scale-x-100'
+                    : 'hover:text-gold-highlight after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100'
+                }`}
               >
                 {l.label}
               </a>
@@ -83,7 +91,10 @@ const Navigation = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-foreground/70 hover:text-gold transition-colors"
+                  aria-current={isActive(l.href) ? 'page' : undefined}
+                  className={`transition-colors ${
+                    isActive(l.href) ? 'text-gold' : 'text-foreground/70 hover:text-gold'
+                  }`}
                 >
                   {l.label}
                 </a>
