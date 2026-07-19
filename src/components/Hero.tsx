@@ -43,7 +43,6 @@ const Hero = () => {
       <section className="border-y border-gold/20 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
           {[
-            { value: '$400M+', label: 'Portfolio Value' },
             { value: '15 Years+', label: 'Deal Experience' },
             { value: 'Global', label: 'Reach' },
           ].map((s) => (
