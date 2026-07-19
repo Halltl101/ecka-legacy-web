@@ -88,15 +88,15 @@ const Navigation = () => {
 
         {/* Mobile sheet */}
         {open && (
-          <div className="lg:hidden border-t border-gold/10 py-4 animate-fade-in">
-            <div className="flex flex-col gap-5 text-xs tracking-[0.25em] uppercase">
+          <div className="lg:hidden border-t border-gold/10 py-2 animate-fade-in">
+            <div className="flex flex-col text-xs tracking-[0.25em] uppercase">
               {links.map(l => (
                 <a
                   key={l.href}
                   href={resolveHref(l.href)}
                   onClick={() => setOpen(false)}
                   aria-current={isActive(l.href) ? 'page' : undefined}
-                  className={`transition-colors ${
+                  className={`py-3 min-h-[44px] flex items-center border-b border-gold/5 transition-colors ${
                     isActive(l.href) ? 'text-gold' : 'text-foreground/70 hover:text-gold'
                   }`}
                 >
@@ -108,14 +108,14 @@ const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="text-gold hover:text-gold-highlight transition-colors"
+                className="py-3 min-h-[44px] flex items-center border-b border-gold/5 text-gold hover:text-gold-highlight transition-colors"
               >
                 Investor Login
               </a>
               <a
                 href={resolveHref("#contact")}
                 onClick={() => setOpen(false)}
-                className="inline-block w-fit px-5 py-2 bg-gold text-background font-bold hover:bg-gold-highlight transition-colors"
+                className="mt-4 mb-2 inline-flex items-center justify-center w-full min-h-[44px] px-5 py-3 bg-gold text-background font-bold hover:bg-gold-highlight transition-colors"
               >
                 Schedule Call
               </a>
@@ -123,6 +123,7 @@ const Navigation = () => {
           </div>
         )}
       </div>
+
     </nav>
   );
 };
