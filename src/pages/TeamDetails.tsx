@@ -79,7 +79,7 @@ const TeamDetails = () => {
       </Helmet>
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-24 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-24 md:pt-28 pb-20 md:pb-28">
         <div className="mb-8 animate-fade-in">
           <Link to="/" className="gold-link">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -87,29 +87,29 @@ const TeamDetails = () => {
           </Link>
         </div>
 
-        <div className="text-center mb-14 animate-fade-in animation-delay-200">
+        <div className="text-center mb-16 md:mb-20 animate-fade-in animation-delay-200">
           <span className="eyebrow-gold mb-6 block">Leadership</span>
-          <h1 className="font-display text-5xl md:text-7xl font-light leading-tight mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] tracking-tight mb-6 text-balance">
             The <span className="italic text-gold">Ecka</span> Team.
           </h1>
-          <p className="text-lg text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed text-balance">
             The experienced professionals driving Ecka Holdings&rsquo; vision, capital, and strategic growth.
           </p>
           <div className="w-16 h-px bg-gold mx-auto mt-10" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
           {teamMembers.map((member, index) => (
             <Dialog key={member.name}>
               <div
-                className="group bg-surface border border-gold/15 hover:border-gold/50 transition-all duration-500 p-6 sm:p-8 animate-fade-in flex flex-col"
+                className="group bg-surface border border-gold/15 hover:border-gold/50 transition-all duration-500 p-6 md:p-7 lg:p-8 animate-fade-in flex flex-col h-full"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <DialogTrigger asChild>
                   <button
                     type="button"
                     aria-label={`View ${member.name} bio`}
-                    className="relative w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 mx-auto mb-5 sm:mb-6 block rounded-full focus:outline-none"
+                    className="relative w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 mx-auto mb-6 block rounded-full focus:outline-none"
                   >
                     <div className="w-full h-full rounded-full overflow-hidden ring-1 ring-gold/30 group-hover:ring-gold ring-offset-4 ring-offset-surface transition-all duration-500">
                       <img
@@ -125,10 +125,10 @@ const TeamDetails = () => {
                   </button>
                 </DialogTrigger>
 
-                <div className="text-center">
+                <div className="text-center mt-auto">
                   <DialogTrigger asChild>
                     <button type="button" className="focus:outline-none">
-                      <h3 className="font-display text-2xl font-light mb-2 hover:text-gold transition-colors">
+                      <h3 className="font-display text-xl md:text-2xl font-light leading-tight mb-2 hover:text-gold transition-colors text-balance min-h-[3.5rem] flex items-center justify-center">
                         {member.name}
                       </h3>
                       <p className="eyebrow-gold">{member.role}</p>
@@ -136,6 +136,7 @@ const TeamDetails = () => {
                   </DialogTrigger>
                 </div>
               </div>
+
 
               <DialogContent className="bg-surface border border-gold/30 rounded-none max-w-lg text-foreground">
                 <DialogHeader>
