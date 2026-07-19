@@ -81,17 +81,8 @@ const WhyPartner = () => {
               alt="Vintage master tape reels on an archival shelf"
               className="w-full h-64 md:h-[420px] object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-background/85 via-background/30 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-end pr-8 md:pr-16">
-              <div className="text-right">
-                <div className="font-display text-5xl md:text-7xl font-light text-gold-highlight leading-none">
-                  Global
-                </div>
-                <div className="font-display italic text-3xl md:text-5xl text-gold mt-2">
-                  Reach.
-                </div>
-              </div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
+
           </div>
         </div>
 
