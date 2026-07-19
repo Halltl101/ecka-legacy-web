@@ -37,20 +37,42 @@ const TeamDetails = () => {
     "@type": "Person",
     name: m.name,
     jobTitle: m.role,
+    description: m.bio,
+    image: `${SITE_URL}${m.image}`,
+    worksFor: {
+      "@type": "Organization",
+      name: "Ecka Holdings",
+      url: SITE_URL,
+    },
   }));
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    url: PAGE_URL,
-    name: PAGE_TITLE,
-    description: PAGE_DESC,
-    mainEntity: {
-      "@type": "Organization",
-      name: "Ecka Holdings",
-      url: SITE_URL,
-      employee: employeeLd,
-    },
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": `${PAGE_URL}#aboutpage`,
+        url: PAGE_URL,
+        name: PAGE_TITLE,
+        description: PAGE_DESC,
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: { "@id": `${SITE_URL}#organization` },
+      },
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}#organization`,
+        name: "Ecka Holdings",
+        url: SITE_URL,
+        employee: employeeLd,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Leadership Team", item: PAGE_URL },
+        ],
+      },
+    ],
   };
 
   return (
