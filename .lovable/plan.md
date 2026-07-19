@@ -1,27 +1,20 @@
 ## Goal
-Verify that the "Team" link in the site navigation routes to `/team` (the full Leadership Team page) from every page, on both desktop and mobile viewports.
+Rebuild the `/team` page grid to match the selected "Editorial noir grid — uniform 3-up with visible bios" direction, keeping all existing content (9 members, real photos, real bios) and the existing bio Dialog.
 
-## Approach
-Drive the running preview at `http://localhost:8080` with Playwright — no code changes, read-only verification.
+## File
+`src/pages/TeamDetails.tsx` (grid section only — header, Helmet, data, and Dialog markup preserved).
 
-## Steps
+## Design commitments (from the picked prototype, locked)
+- 3-column grid on `lg`, 2 on `md`, 1 on mobile. Column gap `12`, row gap `24`.
+- Portrait: `aspect-[4/5]`, full-width in card, `grayscale` → colorized on hover over 700ms; subtle `scale-[1.03]` on hover.
+- Gold hairline "offset frame": `absolute inset-0 border border-gold/20 translate-x-2 translate-y-2` behind the portrait, nudges further on hover.
+- Text block below portrait, left-aligned: gold Cormorant name (`text-2xl`), tiny uppercase gold-muted role (`text-[10px] tracking-[0.2em]`), 3-line clamped bio in Karla body.
+- Header: centered "Leadership" gold display, gold hairline divider, uppercase eyebrow "Stewards of Artistic Legacy". Replaces current "The Ecka Team." block.
+- `Expand` icon appears top-right of the portrait on hover only.
+- Entire portrait + name still trigger the existing bio Dialog. Dialog markup unchanged.
 
-1. **Enumerate routes** by reading `src/App.tsx` to get every public route (e.g., `/`, `/team`, and any others registered).
+## Tokens
+Use existing semantic tokens (`text-gold`, `bg-surface`, `text-foreground/70`, `font-display`). No hardcoded colors.
 
-2. **Desktop check** (viewport 1280×1800): for each route
-   - Navigate to the route.
-   - Click the desktop nav "Team" link.
-   - Assert `page.url()` ends with `/team` and the "The Ecka Team." heading is visible.
-   - Screenshot to `/tmp/browser/team-nav/desktop_<route>.png`.
-
-3. **Mobile check** (viewport 390×844, iPhone-ish): for each route
-   - Navigate to the route.
-   - Open the mobile menu (hamburger button).
-   - Click the "Team" link inside the mobile sheet.
-   - Assert same URL + heading.
-   - Screenshot to `/tmp/browser/team-nav/mobile_<route>.png`.
-
-4. **Report** back per route / per viewport: pass/fail, final URL, and any console errors captured during navigation.
-
-## Notes
-Read-only verification — no files edited. If a failure surfaces (e.g., a page uses a different Navigation component, or the mobile menu link is wrong), report the exact page and selector so a follow-up fix plan can be scoped.
+## Out of scope
+Header nav, Helmet/SEO, footer, Dialog contents, team data, image positioning helpers — all preserved as-is.

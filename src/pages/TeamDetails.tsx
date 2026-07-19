@@ -82,54 +82,57 @@ const TeamDetails = () => {
           </Link>
         </div>
 
-        <div className="text-center mb-20 animate-fade-in animation-delay-200">
-          <span className="eyebrow-gold mb-6 block">Leadership</span>
-          <h1 className="font-display text-5xl md:text-7xl font-light leading-tight mb-6">
-            The <span className="italic text-gold">Ecka</span> Team.
+        <div className="text-center mb-24 animate-fade-in animation-delay-200">
+          <h1 className="font-display text-5xl md:text-6xl font-light text-gold mb-4">
+            Leadership
           </h1>
-          <p className="text-lg text-foreground/60 max-w-2xl mx-auto font-light leading-relaxed">
-            The experienced professionals driving Ecka Holdings&rsquo; vision, capital, and strategic growth.
+          <div className="w-24 h-px bg-gold/40 mx-auto mb-6" />
+          <p className="text-xs uppercase tracking-[0.3em] text-foreground/50 font-light">
+            Stewards of Artistic Legacy
           </p>
-          <div className="w-16 h-px bg-gold mx-auto mt-10" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
           {teamMembers.map((member, index) => (
             <Dialog key={member.name}>
               <div
-                className="group bg-surface border border-gold/15 hover:border-gold/50 transition-all duration-500 p-8 animate-fade-in"
+                className="flex flex-col group animate-fade-in"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <DialogTrigger asChild>
                   <button
                     type="button"
                     aria-label={`View ${member.name} bio`}
-                    className="relative w-36 h-36 mx-auto mb-6 block focus:outline-none"
+                    className="relative mb-8 block w-full focus:outline-none focus-visible:ring-1 focus-visible:ring-gold"
                   >
-                    <div className="w-36 h-36 overflow-hidden border border-gold/30 group-hover:border-gold transition-colors duration-500">
+                    <div className="relative overflow-hidden aspect-[4/5] w-full bg-surface border border-white/5 grayscale group-hover:grayscale-0 transition-all duration-700">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-[1.03]"
                         style={getImageStyle(member.name)}
                       />
+                      <span className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/70 p-1.5 border border-gold/40">
+                        <Expand className="w-3.5 h-3.5 text-gold" />
+                      </span>
                     </div>
-                    <span className="absolute inset-0 bg-background/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Expand className="w-5 h-5 text-gold" />
-                    </span>
+                    <div className="absolute inset-0 border border-gold/20 pointer-events-none translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-500" />
                   </button>
                 </DialogTrigger>
 
-                <div className="text-center">
-                  <DialogTrigger asChild>
-                    <button type="button" className="focus:outline-none">
-                      <h3 className="font-display text-2xl font-light mb-2 hover:text-gold transition-colors">
-                        {member.name}
-                      </h3>
-                      <p className="eyebrow-gold">{member.role}</p>
-                    </button>
-                  </DialogTrigger>
-                </div>
+                <DialogTrigger asChild>
+                  <button type="button" className="text-left focus:outline-none">
+                    <h3 className="font-display text-2xl font-light text-gold mb-1 hover:opacity-80 transition-opacity">
+                      {member.name}
+                    </h3>
+                  </button>
+                </DialogTrigger>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 mb-4">
+                  {member.role}
+                </p>
+                <p className="text-sm text-foreground/70 leading-relaxed font-light line-clamp-3">
+                  {member.bio}
+                </p>
               </div>
 
               <DialogContent className="bg-surface border border-gold/30 rounded-none max-w-lg text-foreground">
@@ -150,6 +153,7 @@ const TeamDetails = () => {
             </Dialog>
           ))}
         </div>
+
       </div>
       <Footer />
     </div>
