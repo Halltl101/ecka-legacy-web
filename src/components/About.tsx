@@ -25,7 +25,7 @@ const About = () => {
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
           {/* Left: heading */}
           <div className="md:col-span-5 animate-fade-in">
-            <span className="eyebrow-gold mb-6 block">The Firm</span>
+            
             <h2 className="font-display text-5xl md:text-6xl font-light leading-tight mb-8">
               About <span className="italic text-gold">Ecka.</span>
             </h2>
