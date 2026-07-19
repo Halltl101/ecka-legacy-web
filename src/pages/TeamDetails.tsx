@@ -92,20 +92,20 @@ const TeamDetails = () => {
           <div className="w-16 h-px bg-gold mx-auto mt-10" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {teamMembers.map((member, index) => (
             <Dialog key={member.name}>
               <div
-                className="group bg-surface border border-gold/15 hover:border-gold/50 transition-all duration-500 p-8 animate-fade-in"
+                className="group bg-surface border border-gold/15 hover:border-gold/50 transition-all duration-500 p-6 sm:p-8 animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <DialogTrigger asChild>
                   <button
                     type="button"
                     aria-label={`View ${member.name} bio`}
-                    className="relative w-40 h-40 mx-auto mb-6 block rounded-full focus:outline-none"
+                    className="relative w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 mx-auto mb-5 sm:mb-6 block rounded-full focus:outline-none"
                   >
-                    <div className="w-40 h-40 rounded-full overflow-hidden ring-1 ring-gold/30 group-hover:ring-gold ring-offset-4 ring-offset-surface transition-all duration-500">
+                    <div className="w-full h-full rounded-full overflow-hidden ring-1 ring-gold/30 group-hover:ring-gold ring-offset-4 ring-offset-surface transition-all duration-500">
                       <img
                         src={member.image}
                         alt={member.name}
