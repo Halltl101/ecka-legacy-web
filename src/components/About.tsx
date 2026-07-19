@@ -20,7 +20,7 @@ const pillars = [
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background">
+    <section id="about" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
           {/* Left: heading */}

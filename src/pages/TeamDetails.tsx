@@ -74,15 +74,15 @@ const TeamDetails = () => {
       </Helmet>
       <Navigation />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-32 pb-24">
-        <div className="mb-12 animate-fade-in">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-24 pb-16">
+        <div className="mb-8 animate-fade-in">
           <Link to="/" className="gold-link">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
         </div>
 
-        <div className="text-center mb-20 animate-fade-in animation-delay-200">
+        <div className="text-center mb-14 animate-fade-in animation-delay-200">
           <span className="eyebrow-gold mb-6 block">Leadership</span>
           <h1 className="font-display text-5xl md:text-7xl font-light leading-tight mb-6">
             The <span className="italic text-gold">Ecka</span> Team.

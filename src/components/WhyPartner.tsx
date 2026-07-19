@@ -37,10 +37,10 @@ const proofPoints = [
 
 const WhyPartner = () => {
   return (
-    <section id="why-partner" className="py-24 md:py-32 bg-surface border-y border-gold/10">
+    <section id="why-partner" className="py-16 md:py-24 bg-surface border-y border-gold/10">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header row: 1/3 + 2/3 */}
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 mb-20">
+        <div className="flex flex-col md:flex-row gap-10 md:gap-12 mb-14">
           <div className="md:w-1/3 animate-fade-in">
             
             <h2 className="font-display text-5xl md:text-6xl font-light leading-[1.05] mb-6">
@@ -74,7 +74,7 @@ const WhyPartner = () => {
         </div>
 
         {/* Editorial image */}
-        <div className="mb-20 relative animate-fade-in animation-delay-500">
+        <div className="mb-14 relative animate-fade-in animation-delay-500">
           <div className="relative overflow-hidden border border-gold/20">
             <img
               src={masterTapes}
@@ -97,7 +97,7 @@ const WhyPartner = () => {
 
 
         {/* Proof points */}
-        <div className="grid md:grid-cols-3 gap-10 md:gap-14 pt-16 border-t border-gold/10">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-14 pt-12 border-t border-gold/10">
           {proofPoints.map((p, i) => (
             <div
               key={p.title}
