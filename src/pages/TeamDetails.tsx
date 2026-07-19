@@ -134,7 +134,7 @@ const TeamDetails = () => {
 
               <DialogContent className="bg-surface border border-gold/30 rounded-none max-w-lg text-foreground">
                 <DialogHeader>
-                  <div className="w-40 h-40 mx-auto mb-6 overflow-hidden border border-gold/40">
+                  <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden ring-1 ring-gold/40 ring-offset-4 ring-offset-surface">
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover" style={getImageStyle(member.name)} />
                   </div>
                   <DialogTitle className="font-display text-3xl font-light text-center">
