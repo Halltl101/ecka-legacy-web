@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Expand } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+const SITE_URL = 'https://ecka-legacy-web.lovable.app';
+const PAGE_URL = `${SITE_URL}/team`;
+const OG_IMAGE = `${SITE_URL}/lovable-uploads/c1ce9ac2-cfcf-42dc-83b2-981a548ee073.png`;
+const PAGE_TITLE = 'Leadership Team — Ecka Holdings';
+const PAGE_DESC = 'Meet the Ecka Holdings leadership team — executives across investment, acquisitions, legal, finance, and publishing driving our music IP portfolio.';
+
 const TeamDetails = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+
 
   const teamMembers = [
     { name: "T.V. Hall", role: "Chief Executive Officer", bio: "Founder with over $38B in M&A transaction experience. Former Billboard-charting artist with MBA and MSF. Minority owner of ECHL Allen Americans hockey team and VP of Harvard Business School Alumni Club of Atlanta.", image: "/lovable-uploads/c02206e8-f7ce-45f4-bc6c-14ed5c8b0c1c.png" },
