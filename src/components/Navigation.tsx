@@ -31,19 +31,19 @@ const Navigation = () => {
             <span className="font-display text-xl md:text-2xl font-semibold tracking-[0.25em] text-gold group-hover:text-gold-highlight transition-colors">
               ECKA
             </span>
-            <span className="hidden sm:inline-block text-[10px] tracking-[0.3em] uppercase text-foreground/50 border-l border-gold/20 pl-3">
+            <span className="hidden sm:inline-block text-[10px] tracking-[0.3em] uppercase text-foreground/50 border-l border-gold/20 pl-3 whitespace-nowrap">
               Holdings Corp
             </span>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-10 text-xs tracking-[0.2em] uppercase font-medium text-foreground/70">
+          <div className="hidden lg:flex items-center gap-8 text-xs tracking-[0.2em] uppercase font-medium text-foreground/70">
             {links.map(l => (
               <a
                 key={l.href}
                 href={l.href}
                 aria-current={isActive(l.href) ? 'page' : undefined}
-                className={`relative transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:transition-transform after:duration-500 ${
+                className={`relative whitespace-nowrap transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:transition-transform after:duration-500 ${
                   isActive(l.href)
                     ? 'text-gold after:origin-left after:scale-x-100'
                     : 'hover:text-gold-highlight after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100'
@@ -55,18 +55,18 @@ const Navigation = () => {
           </div>
 
           {/* Right CTAs */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
             <a
               href={CARTA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs tracking-[0.25em] uppercase text-foreground/80 hover:text-gold transition-colors"
+              className="whitespace-nowrap text-xs tracking-[0.25em] uppercase text-foreground/80 hover:text-gold transition-colors"
             >
               Investor Login
             </a>
             <a
               href="#contact"
-              className="px-6 py-2.5 bg-gold text-background text-xs font-bold uppercase tracking-[0.25em] hover:bg-gold-highlight transition-colors"
+              className="whitespace-nowrap px-5 py-2.5 bg-gold text-background text-xs font-bold uppercase tracking-[0.25em] hover:bg-gold-highlight transition-colors"
             >
               Schedule Call
             </a>
@@ -74,17 +74,18 @@ const Navigation = () => {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-foreground hover:text-gold transition-colors"
+            className="lg:hidden text-foreground hover:text-gold transition-colors"
             onClick={() => setOpen(v => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
+
         </div>
 
         {/* Mobile sheet */}
         {open && (
-          <div className="md:hidden border-t border-gold/10 py-4 animate-fade-in">
+          <div className="lg:hidden border-t border-gold/10 py-4 animate-fade-in">
             <div className="flex flex-col gap-5 text-xs tracking-[0.25em] uppercase">
               {links.map(l => (
                 <a
