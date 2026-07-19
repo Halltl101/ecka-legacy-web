@@ -11,7 +11,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(var(--gold)/0.06)_0%,_transparent_65%)] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto animate-fade-in">
-          <span className="block eyebrow-gold mb-10">Intellectual Property Investment Firm</span>
 
           <h1 className="font-display font-light italic leading-[0.95] text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-12">
             Turning Assets to<br />
