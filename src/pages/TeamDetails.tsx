@@ -25,7 +25,7 @@ const TeamDetails = () => {
     { name: "Sean Collins", role: "VP of A&R and M&A", bio: "25+ years music industry veteran. Collaborated with major artists including Jay-Z, Chris Brown, and 50 Cent. Successfully negotiated deals with Warner Chappell, Sony ATV, and Empire.", image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png" },
     { name: "Kate Hyman", role: "Acquisitions Lead", bio: "Entertainment industry legacy with grandfather who bought Warner Brothers. Extensive experience in joint ventures and A&R across prestigious labels, merging creativity with commercial expertise.", image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png" },
     { name: "Ric Aliberte", role: "Acquisitions Lead", bio: "Music industry veteran who discovered Queen and worked at Elektra/Asylum Records. Managed major acts including Kiss and Billy Idol. Founded R.A.M. Inc. and contributed to Bohemian Rhapsody movie success.", image: "/lovable-uploads/518559b1-d3b2-4b65-8c84-f8cc2d6f9bf7.png" },
-    { name: "Erik Steigen", role: "VP Publishing", bio: "20+ years in music publishing and royalty administration. Former LA business management firm executive managing catalogs for Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.", image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png" },
+    { name: "Erik Steigen", role: "VP Publishing", bio: "20+ years of experience in publishing and royalty administration. Has managed catalogs for artists including Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.", image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png" },
   ];
 
   const getImageStyle = (memberName: string): React.CSSProperties => {
