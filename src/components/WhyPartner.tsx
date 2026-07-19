@@ -77,8 +77,8 @@ const WhyPartner = () => {
         <div className="mb-20 relative animate-fade-in animation-delay-500">
           <div className="relative overflow-hidden border border-gold/20">
             <img
-              src={boardroomAsset.url}
-              alt="Diverse executive team in boardroom meeting"
+              src={masterTapes}
+              alt="Vintage master tape reels on an archival shelf"
               className="w-full h-64 md:h-[420px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
