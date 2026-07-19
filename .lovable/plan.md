@@ -1,78 +1,30 @@
 ## Goal
+Add per-route SEO + Open Graph metadata to the `/team` page (Leadership Team) so search engines and social crawlers see team-specific title, description, canonical, and OG/Twitter tags instead of the sitewide defaults.
 
-Elevate every page of ecka­holdings.com to feel like a private members' library — velvet-black, gold-foil, culturally reverent — so the visual language matches the thesis: an IP investment firm preserving culturally significant music and entertainment works while delivering exceptional returns.
+## Approach
+Use `react-helmet-async` (per the project's head-metadata pattern) so `/team` can override the static `index.html` tags for JS-executing crawlers, while `index.html` continues to serve as the fallback for non-JS social crawlers.
 
-## Locked design tokens (Classical Prestige)
+## Steps
 
-Applied globally so every page inherits the same feel — no one-off overrides.
+1. **Install dependency**
+   - `react-helmet-async`
 
-- Background: `#0d0d0d` (primary) / `#1a1a1a` (elevated panels)
-- Text: `#f5f5f0` (cream) with `/70` and `/60` opacity for supporting copy
-- Gold accents: `#C9A84C` (primary gold), `#F0D78C` (highlight gold), gold `/10`–`/20` for hairline dividers
-- Heading font: **Cormorant Garamond** (light + italic for display)
-- Body / UI font: **Karla**
-- Eyebrow labels: `text-[10px]` / `text-xs`, `tracking-[0.3em]`, uppercase, gold or cream/50
-- Buttons: solid gold `#C9A84C` on black text, or gold-hairline outline; letter-spaced uppercase
-- Motion: fade-and-rise on section reveal, gold underline draw on links, gentle backdrop-blur on sticky nav — no bounce, no glow, no purple
+2. **Wire the provider once** (`src/main.tsx`)
+   - Wrap `<App />` in `<HelmetProvider>`.
 
-## Page-by-page changes
+3. **Add `<Helmet>` to `src/pages/TeamDetails.tsx`**
+   Tags to set:
+   - `<title>`: "Leadership Team — Ecka Holdings"
+   - `<meta name="description">`: Short summary of the leadership team (music IP investment executives, catalog acquisitions, legal, finance).
+   - `<link rel="canonical" href="https://ecka-legacy-web.lovable.app/team">`
+   - `og:title`, `og:description`, `og:type=website`, `og:url` (self-referencing `/team`)
+   - `og:image` + `twitter:image`: reuse the existing absolute-friendly logo/preview image already referenced in `index.html` (`/lovable-uploads/c1ce9ac2-cfcf-42dc-83b2-981a548ee073.png`), promoted to an absolute URL on `ecka-legacy-web.lovable.app`.
+   - `twitter:card=summary_large_image`, `twitter:title`, `twitter:description`, `twitter:url`
+   - JSON-LD: `AboutPage` (or `Organization` with `employee` array) listing the 9 team members with `name` and `jobTitle` so search engines can associate the roster with the page.
 
-**Global / Navigation (`src/components/Navigation.tsx`)**
-- Sticky, backdrop-blurred bar with gold hairline bottom border
-- "ECKA HOLDINGS" wordmark in Cormorant Garamond, gold, wide tracking (logo image kept, reduced)
-- Nav links: uppercase, `tracking-[0.2em]`, hover to `#F0D78C`
-- Right side: text "Investor Login" link + gold-filled "Schedule Call" pill
-- Mobile: same treatment, hamburger opens a full-screen noir sheet
+4. **Leave `index.html` untouched**
+   - Sitewide OG tags stay as fallback for non-JS social crawlers (LinkedIn, Slack, Facebook).
 
-**Hero (`src/components/Hero.tsx`)**
-- Centered composition (replaces current split layout)
-- Gold eyebrow: "Intellectual Property Investment Firm"
-- Massive Cormorant italic headline: *Turning Assets to* **Legacy.** (Legacy in `#F0D78C`)
-- Subhead: the thesis sentence, max-w-2xl, `/70` cream
-- Two CTAs centered: gold-filled "Schedule Intro Call" + gold-outline "Investor Login" (keeps existing routing/forms)
-- Subtle radial gold glow behind the composition; hero imagery moves down into an editorial band later (not in the hero itself)
-
-**Stats Ribbon (new band under Hero, still in `Hero.tsx`)**
-- Full-width `#1a1a1a` band with gold `/20` top and bottom hairlines
-- Three columns divided by vertical gold hairlines: $400M+ / 15 Years+ / Worldwide
-- Numerals in Cormorant `text-5xl` `#F0D78C`; labels in tiny tracked uppercase cream/50
-
-**About / Thesis (`src/components/About.tsx`)**
-- Editorial two-column: oversized Cormorant heading left, thesis paragraph + numbered pillars (01 / 02 / 03) right
-- Existing about imagery moves here, treated with a subtle gold overlay and a gold hairline frame
-
-**Why Partner (`src/components/WhyPartner.tsx`)**
-- 1/3 + 2/3 layout: heading + italic pull-quote on the left, "Meet the team →" gold link
-- Right: 2×2 grid of pillars (Capital Preservation, Cultural Stewardship, Strategic Optimization, Global Access — Domestic & International: Europe, Africa, Asia, LATAM). Each pillar: gold uppercase eyebrow + short cream/70 body
-- Existing partnership image moves into an asymmetric feature block above the grid
-
-**Team teaser (`src/components/Team.tsx`)**
-- Reworked as a single editorial card: Atlanta skyline image with a gold hairline frame, gold eyebrow "Leadership", Cormorant headline, and an unmissable gold-outline "Meet the team →" button (keeps existing `/team` route)
-
-**Team Details (`src/pages/TeamDetails.tsx`)**
-- Same nav + footer, same tokens
-- Grid of member cards on `#1a1a1a` with gold hairline borders, gold hover ring
-- Names in Cormorant, roles in tracked gold uppercase, click still opens the bio Dialog (kept as-is)
-
-**Contact (`src/components/Contact.tsx`)**
-- Centered "Inquire for Partnership" Cormorant headline
-- Single centered gold-outline "Schedule Intro Call" card (already centered — restyled to match)
-- LeadForm restyled with cream inputs on `#1a1a1a`, gold focus ring
-
-**Footer (`src/components/Footer.tsx`)**
-- Three-column: brand mark + short mission blurb / Navigation links / Social (LinkedIn + Instagram) as gold-hairline circular icons
-- Bottom rule with tiny tracked uppercase "© 2025 ECKA Holdings Corp. All rights reserved. | Turning Assets to Legacy."
-
-## Technical section
-
-- **`src/index.css`**: add Google Fonts import for Cormorant Garamond + Karla; define semantic HSL tokens: `--background`, `--foreground`, `--surface`, `--gold`, `--gold-highlight`, `--hairline`; add utility classes for eyebrow labels and gold hairline dividers.
-- **`tailwind.config.ts`**: register the new tokens as colors (`background`, `foreground`, `surface`, `gold`, `gold-highlight`, `hairline`) and add `fontFamily.display` (Cormorant Garamond) and `fontFamily.sans` (Karla) so components use `font-display` / `font-sans` instead of arbitrary values. Keep shadcn's existing token set intact.
-- Replace hardcoded colors (`bg-black`, `text-white`, `#C9A34C`, `#1A1A1A`, etc.) across the touched components with the new semantic tokens so the palette stays consistent and dark-mode-safe.
-- No route changes, no data changes, no removal of existing behavior: LeadForm, TeamDetails Dialog, Carta Investor Login URL, mailto, LinkedIn/Instagram links, favicon, and OG metadata all preserved.
-- After the refresh, capture the home + `/team` pages with Playwright and diff against the prototype to confirm composition, hierarchy, and gold usage match.
-
-## Out of scope
-
-- No new pages, no CMS, no backend changes
-- No new copy beyond section eyebrows already shown in the prototype
-- No animation library added — CSS transitions + existing Tailwind keyframes only
+## Notes for the user
+- Because this is a static SPA, per-route OG tags are only picked up by JS-executing crawlers (Googlebot). Non-JS social scrapers will still see the sitewide `index.html` preview when someone pastes a `/team` link. True per-route social previews require SSR.
+- Social platforms cache previews — after publishing, forcing a refresh in each platform's link debugger is needed to see changes immediately.
