@@ -24,7 +24,6 @@ const TeamDetails = () => {
     { name: "Christopher Meatto", role: "General Counsel", bio: "Attorney and financial executive with over 45 years of experience across law, finance, and business. Harvard Law School J.D. and Fordham University graduate with extensive experience advising companies, entrepreneurs, and investors on complex legal and financial matters.", image: "/lovable-uploads/eeeb763b-772e-4564-9a23-53b3a29029c3.png" },
     { name: "Sean Collins", role: "VP of A&R and M&A", bio: "25+ years music industry veteran. Collaborated with major artists including Jay-Z, Chris Brown, and 50 Cent. Successfully negotiated deals with Warner Chappell, Sony ATV, and Empire.", image: "/lovable-uploads/15691bfc-f7ef-42ae-96d3-ad4fd5f13a79.png" },
     { name: "Kate Hyman", role: "Acquisitions Lead", bio: "Veteran A&R executive who has helped discover and develop influential artists including Jeff Buckley, The Cranberries, The Flaming Lips, and Moby. Held A&R roles across major and independent labels, building a career identifying distinctive talent and guiding artist development.", image: "/lovable-uploads/a8d63e21-1a53-4f4c-8a42-150b7d4a88d9.png" },
-    
     { name: "Erik Steigen", role: "VP Publishing", bio: "20+ years of experience in publishing and royalty administration. Has managed catalogs for artists including Lionel Richie, Brian Wilson, and Don Felder. Founder of USA Media Rights®.", image: "/lovable-uploads/387678dd-6e24-416b-bf4f-715083b5f5d0.png" },
   ];
 
@@ -93,7 +92,7 @@ const TeamDetails = () => {
           <div className="w-16 h-px bg-gold mx-auto mt-10" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {teamMembers.map((member, index) => (
             <Dialog key={member.name}>
               <div
