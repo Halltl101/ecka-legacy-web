@@ -1,30 +1,27 @@
 ## Goal
-Add per-route SEO + Open Graph metadata to the `/team` page (Leadership Team) so search engines and social crawlers see team-specific title, description, canonical, and OG/Twitter tags instead of the sitewide defaults.
+Verify that the "Team" link in the site navigation routes to `/team` (the full Leadership Team page) from every page, on both desktop and mobile viewports.
 
 ## Approach
-Use `react-helmet-async` (per the project's head-metadata pattern) so `/team` can override the static `index.html` tags for JS-executing crawlers, while `index.html` continues to serve as the fallback for non-JS social crawlers.
+Drive the running preview at `http://localhost:8080` with Playwright — no code changes, read-only verification.
 
 ## Steps
 
-1. **Install dependency**
-   - `react-helmet-async`
+1. **Enumerate routes** by reading `src/App.tsx` to get every public route (e.g., `/`, `/team`, and any others registered).
 
-2. **Wire the provider once** (`src/main.tsx`)
-   - Wrap `<App />` in `<HelmetProvider>`.
+2. **Desktop check** (viewport 1280×1800): for each route
+   - Navigate to the route.
+   - Click the desktop nav "Team" link.
+   - Assert `page.url()` ends with `/team` and the "The Ecka Team." heading is visible.
+   - Screenshot to `/tmp/browser/team-nav/desktop_<route>.png`.
 
-3. **Add `<Helmet>` to `src/pages/TeamDetails.tsx`**
-   Tags to set:
-   - `<title>`: "Leadership Team — Ecka Holdings"
-   - `<meta name="description">`: Short summary of the leadership team (music IP investment executives, catalog acquisitions, legal, finance).
-   - `<link rel="canonical" href="https://ecka-legacy-web.lovable.app/team">`
-   - `og:title`, `og:description`, `og:type=website`, `og:url` (self-referencing `/team`)
-   - `og:image` + `twitter:image`: reuse the existing absolute-friendly logo/preview image already referenced in `index.html` (`/lovable-uploads/c1ce9ac2-cfcf-42dc-83b2-981a548ee073.png`), promoted to an absolute URL on `ecka-legacy-web.lovable.app`.
-   - `twitter:card=summary_large_image`, `twitter:title`, `twitter:description`, `twitter:url`
-   - JSON-LD: `AboutPage` (or `Organization` with `employee` array) listing the 9 team members with `name` and `jobTitle` so search engines can associate the roster with the page.
+3. **Mobile check** (viewport 390×844, iPhone-ish): for each route
+   - Navigate to the route.
+   - Open the mobile menu (hamburger button).
+   - Click the "Team" link inside the mobile sheet.
+   - Assert same URL + heading.
+   - Screenshot to `/tmp/browser/team-nav/mobile_<route>.png`.
 
-4. **Leave `index.html` untouched**
-   - Sitewide OG tags stay as fallback for non-JS social crawlers (LinkedIn, Slack, Facebook).
+4. **Report** back per route / per viewport: pass/fail, final URL, and any console errors captured during navigation.
 
-## Notes for the user
-- Because this is a static SPA, per-route OG tags are only picked up by JS-executing crawlers (Googlebot). Non-JS social scrapers will still see the sitewide `index.html` preview when someone pastes a `/team` link. True per-route social previews require SSR.
-- Social platforms cache previews — after publishing, forcing a refresh in each platform's link debugger is needed to see changes immediately.
+## Notes
+Read-only verification — no files edited. If a failure surfaces (e.g., a page uses a different Navigation component, or the mobile menu link is wrong), report the exact page and selector so a follow-up fix plan can be scoped.
