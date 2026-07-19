@@ -4,8 +4,8 @@ import { Linkedin, Instagram } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-gold/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-20 pb-10">
-        <div className="grid md:grid-cols-3 gap-12 md:gap-16 mb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 pt-14 pb-8">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-12 mb-12">
           {/* Brand */}
           <div className="max-w-sm">
             <div className="flex items-center gap-3 mb-6">

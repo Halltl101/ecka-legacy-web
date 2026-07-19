@@ -84,7 +84,7 @@ const Navigation = () => {
 
         {/* Mobile sheet */}
         {open && (
-          <div className="md:hidden border-t border-gold/10 py-6 animate-fade-in">
+          <div className="md:hidden border-t border-gold/10 py-4 animate-fade-in">
             <div className="flex flex-col gap-5 text-xs tracking-[0.25em] uppercase">
               {links.map(l => (
                 <a

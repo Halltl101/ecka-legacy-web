@@ -6,7 +6,7 @@ const CARTA_URL = 'https://login.app.carta.com/credentials/login/';
 const Hero = () => {
   return (
     <>
-      <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-6 pt-32 pb-24 text-center overflow-hidden bg-background">
+      <section className="relative min-h-[80vh] flex flex-col justify-center items-center px-6 pt-24 pb-16 text-center overflow-hidden bg-background">
         {/* Soft radial gold glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_hsl(var(--gold)/0.06)_0%,_transparent_65%)] pointer-events-none" />
 

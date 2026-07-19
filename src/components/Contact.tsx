@@ -3,7 +3,7 @@ import LeadForm from './LeadForm';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-surface border-t border-gold/10">
+    <section id="contact" className="py-16 md:py-24 bg-surface border-t border-gold/10">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <span className="eyebrow-gold mb-6 block animate-fade-in">Partnership Inquiries</span>
         <h2 className="font-display text-5xl md:text-6xl font-light leading-tight mb-8 animate-fade-in animation-delay-200">
