@@ -42,7 +42,12 @@ const Navigation = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="relative hover:text-gold-highlight transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:origin-right after:scale-x-0 after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100"
+                aria-current={isActive(l.href) ? 'page' : undefined}
+                className={`relative transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-gold after:transition-transform after:duration-500 ${
+                  isActive(l.href)
+                    ? 'text-gold after:origin-left after:scale-x-100'
+                    : 'hover:text-gold-highlight after:origin-right after:scale-x-0 hover:after:origin-left hover:after:scale-x-100'
+                }`}
               >
                 {l.label}
               </a>
