@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "validate:seo": "tsx scripts/validate-structured-data.ts",
+    "validate:seo:live": "tsx scripts/validate-live-structured-data.ts",
     "prebuild": "tsx scripts/validate-structured-data.ts"
   },
   "dependencies": {
