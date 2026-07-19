@@ -1,18 +1,12 @@
-## Plan: Circular team portraits
+## Move "Global Reach" wording into Our Approach section
 
-Update `src/pages/TeamDetails.tsx` to render each team member's photo as a circular headshot instead of a square.
+**Changes**
 
-### Changes
-1. **Grid card portrait** (currently a 144px square with a gold-bordered box)
-   - Change the outer `<div>` and `<button>` from `w-36 h-36` square to `w-40 h-40 rounded-full`.
-   - Add `rounded-full` to the inner `overflow-hidden` wrapper and drop the hard square border in favor of a full ring: `ring-1 ring-gold/30 group-hover:ring-gold ring-offset-4 ring-offset-surface`.
-   - Keep the hover expand-icon overlay but round it (`rounded-full`) so it matches the new shape.
+1. `src/components/Hero.tsx` — Delete the entire Stats Ribbon section (currently only holds "Global / Reach"), since it will now live in Our Approach.
 
-2. **Dialog portrait** (bio modal header, currently 160px square)
-   - Change the wrapper to `rounded-full` with the same gold ring treatment for consistency.
+2. `src/components/WhyPartner.tsx` — Add a "Global Reach" editorial callout overlaid on the existing master-tapes image (in the currently empty right side of the gradient). Large gold display "Global" with an italic "Reach" underneath, matching the site's Cormorant/Karla + gold styling. No new data plumbing — pure presentation inside the existing image block.
 
-3. **Preserve per-person tuning**
-   - Keep `getImageStyle()` as-is so Alex Benton and Ric Aliberte's manual `objectPosition` / `scale` values continue to apply inside the circular crop.
+**Result**
 
-### Out of scope
-- No changes to the images themselves, the grid layout, bios, or any other page.
+- Hero becomes cleaner without the stats strip.
+- Our Approach gains a bold editorial anchor tying imagery to the "Global Access" pillar already listed.

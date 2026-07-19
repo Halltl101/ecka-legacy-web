@@ -39,21 +39,6 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Stats Ribbon */}
-      <section className="border-y border-gold/20 bg-surface">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/20">
-          {[
-            { value: 'Global', label: 'Reach' },
-          ].map((s) => (
-            <div key={s.label} className="py-14 flex flex-col items-center">
-              <span className="font-display text-5xl md:text-6xl font-light text-gold-highlight mb-3">
-                {s.value}
-              </span>
-              <span className="eyebrow">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
     </>
   );
 };
