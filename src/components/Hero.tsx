@@ -46,7 +46,7 @@ const Hero = () => {
           {[
             { value: '$400M+', label: 'Portfolio Value' },
             { value: '15 Years+', label: 'Deal Experience' },
-            { value: 'Worldwide', label: 'Global Reach' },
+            { value: 'Global', label: 'Reach' },
           ].map((s) => (
             <div key={s.label} className="py-14 flex flex-col items-center">
               <span className="font-display text-5xl md:text-6xl font-light text-gold-highlight mb-3">
