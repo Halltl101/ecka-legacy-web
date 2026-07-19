@@ -151,6 +151,11 @@ const TeamDetails = () => {
                 </DialogHeader>
                 <div className="w-10 h-px bg-gold mx-auto my-4" />
                 <p className="text-foreground/70 leading-relaxed font-light text-center">{member.bio}</p>
+                <div className="text-center mt-6">
+                  <Link to={`/team/${member.slug}`} className="gold-link text-sm">
+                    View full profile →
+                  </Link>
+                </div>
               </DialogContent>
             </Dialog>
           ))}
