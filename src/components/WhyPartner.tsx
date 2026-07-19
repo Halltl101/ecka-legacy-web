@@ -1,4 +1,5 @@
 import React from 'react';
+import boardroomAsset from '@/assets/boardroom-diverse.jpeg.asset.json';
 
 const pillars = [
   {
@@ -76,13 +77,9 @@ const WhyPartner = () => {
         <div className="mb-20 relative animate-fade-in animation-delay-500">
           <div className="relative overflow-hidden border border-gold/20">
             <img
-              src="/lovable-uploads/1f9dfec4-2751-47bb-9d05-364c46207911.png"
-              alt="Executive partnership handshake"
+              src={boardroomAsset.url}
+              alt="Diverse executive team in boardroom meeting"
               className="w-full h-64 md:h-[420px] object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src =
-                  'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&h=600';
-              }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
           </div>
