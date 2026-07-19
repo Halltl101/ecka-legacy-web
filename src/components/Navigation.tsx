@@ -91,7 +91,10 @@ const Navigation = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-foreground/70 hover:text-gold transition-colors"
+                  aria-current={isActive(l.href) ? 'page' : undefined}
+                  className={`transition-colors ${
+                    isActive(l.href) ? 'text-gold' : 'text-foreground/70 hover:text-gold'
+                  }`}
                 >
                   {l.label}
                 </a>
