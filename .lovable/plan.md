@@ -1,27 +1,14 @@
-## Goal
-Verify that the "Team" link in the site navigation routes to `/team` (the full Leadership Team page) from every page, on both desktop and mobile viewports.
+## Current state
 
-## Approach
-Drive the running preview at `http://localhost:8080` with Playwright — no code changes, read-only verification.
+The homepage (`src/pages/Index.tsx`) already does **not** include the Leadership/Team section. It renders: `Navigation → Hero → About → WhyPartner → Contact → Footer`. The `Team` component (`src/components/Team.tsx`) still exists in the codebase but isn't imported or rendered anywhere on `/`.
 
-## Steps
+The full leadership page remains accessible at `/team` via the nav link.
 
-1. **Enumerate routes** by reading `src/App.tsx` to get every public route (e.g., `/`, `/team`, and any others registered).
+## Options
 
-2. **Desktop check** (viewport 1280×1800): for each route
-   - Navigate to the route.
-   - Click the desktop nav "Team" link.
-   - Assert `page.url()` ends with `/team` and the "The Ecka Team." heading is visible.
-   - Screenshot to `/tmp/browser/team-nav/desktop_<route>.png`.
+1. **No-op** — nothing to remove; confirm and leave as is.
+2. **Delete the unused component** — remove `src/components/Team.tsx` so it can't be re-added accidentally. `/team` (which uses `src/pages/TeamDetails.tsx`) is unaffected.
 
-3. **Mobile check** (viewport 390×844, iPhone-ish): for each route
-   - Navigate to the route.
-   - Open the mobile menu (hamburger button).
-   - Click the "Team" link inside the mobile sheet.
-   - Assert same URL + heading.
-   - Screenshot to `/tmp/browser/team-nav/mobile_<route>.png`.
+## Question
 
-4. **Report** back per route / per viewport: pass/fail, final URL, and any console errors captured during navigation.
-
-## Notes
-Read-only verification — no files edited. If a failure surfaces (e.g., a page uses a different Navigation component, or the mobile menu link is wrong), report the exact page and selector so a follow-up fix plan can be scoped.
+Which would you like? If you're seeing a Leadership section on the live site, it may be a cached view — try a hard refresh. If it still appears, let me know where (screenshot or section heading) so I can trace it.
