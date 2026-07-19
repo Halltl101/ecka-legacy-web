@@ -13,6 +13,8 @@ const CARTA_URL = 'https://login.app.carta.com/credentials/login/';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isActive = (href: string) => href.startsWith('/') && pathname === href;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-gold/10">
