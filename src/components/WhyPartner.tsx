@@ -44,7 +44,7 @@ const WhyPartner = () => {
           <div className="md:w-1/3 animate-fade-in">
             <span className="eyebrow-gold mb-6 block">Our Advantage</span>
             <h2 className="font-display text-5xl md:text-6xl font-light leading-[1.05] mb-6">
-              Why Partner with <span className="italic text-gold">Ecka.</span>
+              Our <span className="italic text-gold">Approach.</span>
             </h2>
             <p className="text-foreground/60 italic leading-relaxed mb-8">
               We believe in the enduring value of artistic expression — and the financial potential of its lifecycle.
