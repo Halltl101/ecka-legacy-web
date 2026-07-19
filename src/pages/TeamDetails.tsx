@@ -104,9 +104,9 @@ const TeamDetails = () => {
                   <button
                     type="button"
                     aria-label={`View ${member.name} bio`}
-                    className="relative w-36 h-36 mx-auto mb-6 block focus:outline-none"
+                    className="relative w-40 h-40 mx-auto mb-6 block rounded-full focus:outline-none"
                   >
-                    <div className="w-36 h-36 overflow-hidden border border-gold/30 group-hover:border-gold transition-colors duration-500">
+                    <div className="w-40 h-40 rounded-full overflow-hidden ring-1 ring-gold/30 group-hover:ring-gold ring-offset-4 ring-offset-surface transition-all duration-500">
                       <img
                         src={member.image}
                         alt={member.name}
@@ -114,7 +114,7 @@ const TeamDetails = () => {
                         style={getImageStyle(member.name)}
                       />
                     </div>
-                    <span className="absolute inset-0 bg-background/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="absolute inset-0 rounded-full bg-background/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <Expand className="w-5 h-5 text-gold" />
                     </span>
                   </button>
