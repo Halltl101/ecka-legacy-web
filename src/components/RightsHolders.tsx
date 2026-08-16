@@ -41,10 +41,10 @@ const RightsHolders = () => {
             {/* Capital highlight */}
             <div className="mt-12 border border-gold/25 bg-surface p-8 md:p-10 animate-fade-in animation-delay-300">
               <p className="font-display text-3xl md:text-4xl font-light tracking-tight mb-4">
-                <span className="text-gold-highlight">$10M+</span> Capital Network
+                <span className="text-gold-highlight">$5M–$50M+</span> Capital Network
               </p>
               <p className="text-foreground/60 leading-relaxed font-light max-w-xl">
-                Ecka works alongside a network of strategic capital partners with the capacity to deploy $10M+ across qualified music and entertainment opportunities.
+                Ecka works alongside a network of strategic capital partners with the capacity to deploy $5M–$50M+ across qualified music and entertainment opportunities.
               </p>
             </div>
 
