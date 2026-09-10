@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import masterTapes from '@/assets/master-tapes.jpg';
 
 const pillars = [
@@ -49,12 +50,12 @@ const WhyPartner = () => {
             <p className="text-foreground/60 italic leading-relaxed max-w-md text-base md:text-lg mb-8">
               We believe in the enduring value of artistic expression — and the financial potential of its lifecycle.
             </p>
-            <a href="#team" className="gold-link">
+            <Link to="/team" className="gold-link">
               Meet the team
               <svg className="ml-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10 md:gap-x-14 md:gap-y-14">
