@@ -12,13 +12,6 @@ const audiences = [
   },
 ];
 
-const steps = [
-  { num: '01', title: 'Confidential Submission', body: 'Share your catalog details in confidence. A mutual NDA is available before any data is exchanged.' },
-  { num: '02', title: 'Royalty & Streaming Analysis', body: 'We review historical earnings, PRO and distributor statements, and streaming trends.' },
-  { num: '03', title: 'Valuation & Offer Structuring', body: 'A bespoke valuation with flexible structures — full or partial sale, or liquidity options.' },
-  { num: '04', title: 'Execution & Stewardship', body: 'We close efficiently and actively steward the catalog to protect its legacy.' },
-];
-
 const assetClasses = ['Master Recordings', 'Publishing & Writer’s Share', 'Neighboring Rights', 'Producer Royalties', 'Sync & Licensing'];
 
 const RightsHolders = () => {
@@ -78,22 +71,6 @@ const RightsHolders = () => {
                   <span key={a} className="px-4 py-2 border border-gold/25 text-sm text-foreground/70 font-light">{a}</span>
                 ))}
               </div>
-            </div>
-
-            {/* Process */}
-            <div className="mt-12 pt-12 border-t border-gold/10">
-              <h3 className="eyebrow-gold mb-8">How We Evaluate Catalogs</h3>
-              <ol className="grid sm:grid-cols-2 gap-8 md:gap-10 list-none p-0 m-0">
-                {steps.map(st => (
-                  <li key={st.num} className="grid grid-cols-[3rem_1fr] gap-4">
-                    <span className="font-display text-3xl text-gold/70 leading-none">{st.num}</span>
-                    <div>
-                      <h4 className="font-display text-xl md:text-2xl mb-2 leading-tight">{st.title}</h4>
-                      <p className="text-foreground/60 leading-relaxed font-light text-sm md:text-base">{st.body}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
             </div>
 
             <p className="mt-12 font-display text-2xl md:text-3xl font-light italic leading-snug text-balance animate-fade-in animation-delay-500">
