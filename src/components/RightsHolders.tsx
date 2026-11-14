@@ -12,8 +12,6 @@ const audiences = [
   },
 ];
 
-const assetClasses = ['Master Recordings', 'Publishing & Writer’s Share', 'Neighboring Rights', 'Producer Royalties', 'Sync & Licensing'];
-
 const RightsHolders = () => {
   return (
     <section id="rights-holders" className="py-20 md:py-28 lg:py-32 bg-background border-b border-gold/10">
@@ -61,16 +59,6 @@ const RightsHolders = () => {
                   <p className="text-foreground/60 leading-relaxed font-light">{a.body}</p>
                 </div>
               ))}
-            </div>
-
-            {/* Asset classes */}
-            <div className="mt-12 pt-12 border-t border-gold/10">
-              <h3 className="eyebrow-gold mb-6">Assets We Evaluate</h3>
-              <div className="flex flex-wrap gap-3">
-                {assetClasses.map(a => (
-                  <span key={a} className="px-4 py-2 border border-gold/25 text-sm text-foreground/70 font-light">{a}</span>
-                ))}
-              </div>
             </div>
 
             <p className="mt-12 font-display text-2xl md:text-3xl font-light italic leading-snug text-balance animate-fade-in animation-delay-500">
