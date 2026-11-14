@@ -29,10 +29,11 @@ const Footer = () => {
           <div>
             <h4 className="eyebrow-gold mb-6">Navigation</h4>
             <ul className="space-y-3 text-sm text-foreground/70">
-              <li><a href="#about" className="hover:text-gold transition-colors">About</a></li>
-              <li><a href="#why-partner" className="hover:text-gold transition-colors">Why Partner</a></li>
-              <li><a href="#team" className="hover:text-gold transition-colors">Team</a></li>
-              <li><a href="#contact" className="hover:text-gold transition-colors">Contact</a></li>
+              <li><a href="/#about" className="hover:text-gold transition-colors">About</a></li>
+              <li><a href="/#why-partner" className="hover:text-gold transition-colors">Why Partner</a></li>
+              <li><a href="/#rights-holders" className="hover:text-gold transition-colors">Rights Holders</a></li>
+              <li><a href="/team" className="hover:text-gold transition-colors">Team</a></li>
+              <li><a href="/#contact" className="hover:text-gold transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -63,7 +64,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-foreground/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] tracking-[0.25em] uppercase text-foreground/40">
-          <span>&copy; 2025 Ecka Holdings Corp. All rights reserved.</span>
+          <span>&copy; 2026 Ecka Holdings Corp. All rights reserved.</span>
           <span className="italic tracking-normal font-display text-sm text-gold/70 normal-case">Turning Assets to Legacy.</span>
         </div>
       </div>

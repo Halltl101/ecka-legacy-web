@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 const links = [
   { href: '#about', label: 'About' },
   { href: '#why-partner', label: 'Why Partner' },
+  { href: '#rights-holders', label: 'Rights Holders' },
   { href: '/team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
 ];
