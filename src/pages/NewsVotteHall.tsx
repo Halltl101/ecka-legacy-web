@@ -20,7 +20,7 @@ const NewsVotteHall = () => (
     <Navigation />
   <main id="main" className="pt-36 pb-20 md:pt-40 md:pb-28">
     <article className="max-w-7xl mx-auto px-6 md:px-8">
-      <Link to="/#news" className="inline-block mb-10 text-xs tracking-[0.25em] uppercase text-foreground/60 hover:text-gold transition-colors">← Back to News</Link>
+      <Link to="/#news" className="inline-block mb-10 text-xs tracking-[0.25em] uppercase text-foreground/60 hover:text-gold transition-colors">← Back to Portfolio Briefing</Link>
       <p className="text-xs tracking-[0.3em] uppercase text-gold mb-6">Portfolio Briefing · Ecka Music Group</p>
       <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight mb-6 max-w-5xl text-balance">
         Ecka Holdings Expands Its <span className="italic text-gold">Music Rights Portfolio.</span>
