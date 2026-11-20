@@ -1,0 +1,2 @@
+- [x] Make all scheduling buttons open the contact form, then continue to the supplied Calendly booking page.
+- [x] Preserve catalog valuation inquiries and verify desktop/mobile scheduling.

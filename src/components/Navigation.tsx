@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import LeadForm from './LeadForm';
+import { Button } from './ui/button';
 
 const links = [
   { href: '#about', label: 'About' },
@@ -37,6 +39,8 @@ const Navigation = () => {
     if (!open) return;
 
     const handleKey = (e: KeyboardEvent) => {
+      // Let the inquiry dialog manage its own keyboard focus while open.
+      if (document.querySelector('[role="dialog"][data-state="open"]')) return;
       if (e.key === 'Escape') {
         e.stopPropagation();
         setOpen(false);
@@ -138,12 +142,11 @@ const Navigation = () => {
             >
               Investor Login
             </a>
-            <a
-              href={resolveHref('#contact')}
-              className={`whitespace-nowrap px-5 py-2.5 bg-gold text-background text-xs font-bold uppercase tracking-[0.25em] hover:bg-gold-highlight transition-colors ${focusRing}`}
-            >
-              Schedule Call
-            </a>
+            <LeadForm>
+              <Button className={`h-auto rounded-none whitespace-nowrap px-5 py-2.5 bg-gold text-background text-xs font-bold uppercase tracking-[0.25em] hover:bg-gold-highlight transition-colors ${focusRing}`}>
+                Schedule Call
+              </Button>
+            </LeadForm>
           </div>
 
           {/* Mobile toggle */}
@@ -197,13 +200,11 @@ const Navigation = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href={resolveHref('#contact')}
-                  onClick={() => setOpen(false)}
-                  className={`mt-4 mb-2 inline-flex items-center justify-center w-full min-h-11 px-5 py-3 bg-gold text-background font-bold hover:bg-gold-highlight transition-colors ${focusRing}`}
-                >
-                  Schedule Call
-                </a>
+                <LeadForm onOpenChange={isOpen => { if (!isOpen) setOpen(false); }}>
+                  <Button className={`mt-4 mb-2 h-auto rounded-none inline-flex items-center justify-center w-full min-h-11 px-5 py-3 bg-gold text-background text-xs uppercase tracking-[0.25em] font-bold hover:bg-gold-highlight transition-colors ${focusRing}`}>
+                    Schedule Call
+                  </Button>
+                </LeadForm>
               </li>
             </ul>
           </div>

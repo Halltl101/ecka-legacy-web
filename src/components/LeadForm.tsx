@@ -5,10 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { getCalendlyBookingUrl } from '@/lib/scheduling';
 
 interface LeadFormProps {
   children: React.ReactNode;
   mode?: 'general' | 'rights';
+  onOpenChange?: (open: boolean) => void;
 }
 
 const assetTypes = ['Master Recordings', 'Publishing / Writer\'s Share', 'Neighboring Rights', 'Producer Royalties', 'Sync Rights'];
@@ -18,11 +20,18 @@ const royaltyRanges = ['Under $50K', '$50K–$250K', '$250K–$1M', '$1M–$5M',
 const inputClass =
   "bg-background border border-gold/20 text-foreground placeholder:text-foreground/30 focus-visible:border-gold focus-visible:ring-gold/30 rounded-none";
 
-const LeadForm = ({ children, mode = 'general' }: LeadFormProps) => {
+const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) => {
   const isRights = mode === 'rights';
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [bookingUrl, setBookingUrl] = useState<string | null>(null);
   const { toast } = useToast();
+
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) setBookingUrl(null);
+    onOpenChange?.(open);
+  };
 
   const [formData, setFormData] = useState({
     name: '', email: '', company: '', title: '', phone: '', reason: '',
@@ -74,6 +83,11 @@ This lead was submitted through the Ecka Holdings website contact form.`
       link.click();
       document.body.removeChild(link);
 
+      if (!isRights) {
+        setBookingUrl(getCalendlyBookingUrl(formData.name, formData.email));
+        return;
+      }
+
       toast({
         title: "Thank you for your interest.",
         description: "Someone from our team will be in touch shortly. If your mail client didn't open, please write to info@eckaholdings.com.",
@@ -94,16 +108,23 @@ This lead was submitted through the Ecka Holdings website contact form.`
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[520px] bg-surface border border-gold/30 rounded-none">
+      <DialogContent className="sm:max-w-[520px] max-h-[90dvh] overflow-y-auto bg-surface border border-gold/30 rounded-none">
         <DialogHeader>
           <span className="eyebrow-gold">{isRights ? 'Confidential Valuation' : 'Partnership'}</span>
           <DialogTitle className="font-display text-3xl font-light text-foreground mt-2">
             {isRights ? <>Evaluate <span className="italic text-gold">Your Catalog.</span></> : <>Schedule <span className="italic text-gold">Intro Call.</span></>}
           </DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-5 pt-2">
+        {bookingUrl ? (
+          <div className="space-y-6 pt-2">
+            <p className="text-foreground/70 leading-relaxed">Thank you for your interest. Send the inquiry draft in your email app, then choose a time for your confidential discussion.</p>
+            <Button asChild className="w-full h-auto py-4 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.2em] text-xs font-bold">
+              <a href={bookingUrl}>Choose a Time</a>
+            </Button>
+          </div>
+        ) : <form onSubmit={handleSubmit} className="space-y-5 pt-2">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name" className="eyebrow">Full Name *</Label>
@@ -177,7 +198,7 @@ This lead was submitted through the Ecka Holdings website contact form.`
             <Button
               type="button"
               variant="outline"
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleOpenChange(false)}
               className="flex-1 border-gold/30 text-foreground/70 hover:bg-surface hover:text-foreground rounded-none uppercase tracking-[0.2em] text-xs"
             >
               Cancel
@@ -187,10 +208,10 @@ This lead was submitted through the Ecka Holdings website contact form.`
               disabled={isSubmitting}
               className="flex-1 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.25em] text-xs font-bold"
             >
-              {isSubmitting ? 'Submitting…' : 'Submit Request'}
+              {isSubmitting ? 'Submitting…' : isRights ? 'Submit Request' : 'Continue'}
             </Button>
           </div>
-        </form>
+        </form>}
       </DialogContent>
     </Dialog>
   );
