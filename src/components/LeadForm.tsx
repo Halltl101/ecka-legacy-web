@@ -50,6 +50,11 @@ const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) =
     setIsSubmitting(true);
 
     try {
+      if (!isRights) {
+        setBookingUrl(getCalendlyBookingUrl(formData.name, formData.email));
+        return;
+      }
+
       const subject = encodeURIComponent(isRights ? 'New Catalog Valuation Request' : 'New Lead — Schedule Intro Call Request');
       const body = encodeURIComponent(isRights ?
 `Catalog Valuation Request:
@@ -82,11 +87,6 @@ This lead was submitted through the Ecka Holdings website contact form.`
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      if (!isRights) {
-        setBookingUrl(getCalendlyBookingUrl(formData.name, formData.email));
-        return;
-      }
 
       toast({
         title: "Thank you for your interest.",
