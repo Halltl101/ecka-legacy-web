@@ -14,3 +14,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ecka-legacy-web.lovable.app/sitemap.xml
+
+User-agent: *
+Disallow: /admin

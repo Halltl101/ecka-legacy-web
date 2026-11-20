@@ -9,6 +9,7 @@ import TeamDetails from "./pages/TeamDetails";
 import TeamMember from "./pages/TeamMember";
 import NewsVotteHall from "./pages/NewsVotteHall";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/team" element={<TeamDetails />} />
           <Route path="/team/:slug" element={<TeamMember />} />
           <Route path="/news/votte-hall" element={<NewsVotteHall />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

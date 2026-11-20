@@ -1,8 +1,11 @@
 import React from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
+import Newsletter from './Newsletter';
 
 const Footer = () => {
   return (
+    <>
+    <Newsletter />
     <footer className="bg-background border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6 md:px-8 pt-14 pb-8">
         <div className="grid md:grid-cols-3 gap-10 md:gap-12 mb-12">
@@ -69,6 +72,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { getCalendlyBookingUrl } from '@/lib/scheduling';
+import { supabase } from '@/integrations/supabase/client';
 
 interface LeadFormProps {
   children: React.ReactNode;
@@ -50,6 +51,16 @@ const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) =
     setIsSubmitting(true);
 
     try {
+      const opt = (v: string) => v.trim() || null;
+      const { error: saveError } = await supabase.from('contact_submissions').insert({
+        kind: isRights ? 'rights' : 'general',
+        name: formData.name.trim().slice(0, 100),
+        email: formData.email.trim().slice(0, 255),
+        company: opt(formData.company), title: opt(formData.title), phone: opt(formData.phone),
+        reason: opt(formData.reason.slice(0, 2000)), catalog: opt(formData.catalog), role: opt(formData.role),
+        assets: formData.assets.length ? formData.assets : null, royalties: opt(formData.royalties),
+      });
+      if (saveError) console.error('Could not save submission');
       if (!isRights) {
         setBookingUrl(getCalendlyBookingUrl(formData.name, formData.email));
         return;
