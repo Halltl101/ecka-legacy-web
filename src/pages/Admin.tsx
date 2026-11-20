@@ -4,6 +4,8 @@ import type { Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { monthlyCounts } from '@/lib/monthly';
 
 type Submission = {
   id: string; kind: string; name: string; email: string; company: string | null; title: string | null;
@@ -88,8 +90,69 @@ const FollowUpDraft = ({ id }: { id: string }) => {
   );
 };
 
+const monthStr = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+const monthLabel = (m: string) => new Date(`${m}-01T00:00:00`).toLocaleDateString(undefined, { month: 'short', year: 'numeric' });
+
+const Insights = ({ subs, news }: { subs: Submission[]; news: Subscriber[] }) => {
+  const now = new Date();
+  const [from, setFrom] = useState(monthStr(new Date(now.getFullYear(), now.getMonth() - 5, 1)));
+  const [to, setTo] = useState(monthStr(now));
+  const presets: [string, number][] = [['3 months', 2], ['6 months', 5], ['12 months', 11]];
+  const rows = from && to && from <= to ? monthlyCounts(news, subs, from, to) : [];
+  const total = rows.reduce((a, r) => ({ newsletter: a.newsletter + r.newsletter, intro: a.intro + r.intro, catalog: a.catalog + r.catalog }), { newsletter: 0, intro: 0, catalog: 0 });
+  const series = [
+    { key: 'newsletter', label: 'Newsletter signups', color: 'hsl(var(--gold))' },
+    { key: 'intro', label: 'Intro-call requests', color: 'hsl(var(--foreground) / 0.55)' },
+    { key: 'catalog', label: 'Catalog valuations', color: 'hsl(var(--gold-highlight) / 0.45)' },
+  ] as const;
+  return (
+    <div className="space-y-8">
+      <div className="flex flex-wrap items-end gap-4">
+        <label className="text-xs eyebrow">From<input type="month" value={from} max={to} onChange={e => setFrom(e.target.value)} className="block mt-1 h-10 px-3 bg-background border border-gold/20 text-foreground text-sm normal-case tracking-normal" /></label>
+        <label className="text-xs eyebrow">To<input type="month" value={to} min={from} onChange={e => setTo(e.target.value)} className="block mt-1 h-10 px-3 bg-background border border-gold/20 text-foreground text-sm normal-case tracking-normal" /></label>
+        <div className="flex gap-2">
+          {presets.map(([l, n]) => (
+            <button key={l} onClick={() => { setFrom(monthStr(new Date(now.getFullYear(), now.getMonth() - n, 1))); setTo(monthStr(now)); }}
+              className="h-10 px-3 text-xs border border-gold/20 text-foreground/70 hover:border-gold hover:text-gold">{l}</button>
+          ))}
+        </div>
+      </div>
+      {rows.length === 0 ? <p className="text-foreground/50">Pick a start month before the end month.</p> : <>
+      <div className="grid sm:grid-cols-3 gap-4">
+        {series.map(s => (
+          <div key={s.key} className="border border-gold/20 p-5">
+            <p className="eyebrow mb-2">{s.label}</p>
+            <p className="font-display text-4xl text-gold">{total[s.key]}</p>
+          </div>
+        ))}
+      </div>
+      <div className="h-80 border border-gold/10 p-4">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={rows.map(r => ({ ...r, label: monthLabel(r.month) }))}>
+            <CartesianGrid stroke="hsl(var(--gold) / 0.1)" vertical={false} />
+            <XAxis dataKey="label" stroke="hsl(var(--foreground) / 0.5)" fontSize={12} />
+            <YAxis allowDecimals={false} stroke="hsl(var(--foreground) / 0.5)" fontSize={12} />
+            <Tooltip contentStyle={{ background: 'hsl(var(--background))', border: '1px solid hsl(var(--gold) / 0.3)' }} cursor={{ fill: 'hsl(var(--gold) / 0.05)' }} />
+            <Legend />
+            {series.map(s => <Bar key={s.key} dataKey={s.key} name={s.label} fill={s.color} />)}
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <table className="w-full text-sm border border-gold/10">
+        <thead><tr className="text-left eyebrow"><th className="p-3">Month</th>{series.map(s => <th key={s.key} className="p-3 text-right">{s.label}</th>)}</tr></thead>
+        <tbody className="divide-y divide-gold/10">
+          {[...rows].reverse().map(r => (
+            <tr key={r.month}><td className="p-3">{monthLabel(r.month)}</td><td className="p-3 text-right">{r.newsletter}</td><td className="p-3 text-right">{r.intro}</td><td className="p-3 text-right">{r.catalog}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      </>}
+    </div>
+  );
+};
+
 const Dashboard = ({ session }: { session: Session }) => {
-  const [tab, setTab] = useState<'contacts' | 'newsletter'>('contacts');
+  const [tab, setTab] = useState<'insights' | 'contacts' | 'newsletter'>('insights');
   const [subs, setSubs] = useState<Submission[]>([]);
   const [news, setNews] = useState<Subscriber[]>([]);
   const [open, setOpen] = useState<string | null>(null);
@@ -129,13 +192,13 @@ const Dashboard = ({ session }: { session: Session }) => {
         </div>
       </div>
       <div className="flex justify-between items-end border-b border-gold/10 mb-6">
-        <div>{tabBtn('contacts', `Contact Submissions (${subs.length})`)}{tabBtn('newsletter', `Newsletter (${news.length})`)}</div>
-        <Button onClick={tab === 'contacts' ? exportContacts : exportNews} className="mb-2 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.2em] text-xs">
+        <div>{tabBtn('insights', 'Dashboard')}{tabBtn('contacts', `Contact Submissions (${subs.length})`)}{tabBtn('newsletter', `Newsletter (${news.length})`)}</div>
+        {tab !== 'insights' && <Button onClick={tab === 'contacts' ? exportContacts : exportNews} className="mb-2 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.2em] text-xs">
           Download CSV
-        </Button>
+        </Button>}
       </div>
 
-      {tab === 'contacts' ? (
+      {tab === 'insights' ? <Insights subs={subs} news={news} /> : tab === 'contacts' ? (
         subs.length === 0 ? <p className="text-foreground/50">No submissions yet.</p> :
         <ul className="divide-y divide-gold/10 border border-gold/10">
           {subs.map(s => (
