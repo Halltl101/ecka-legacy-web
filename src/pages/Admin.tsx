@@ -26,32 +26,23 @@ const download = (name: string, rows: string[][]) => {
 
 const Login = () => {
   const [email, setEmail] = useState(''); const [password, setPassword] = useState('');
-  const [mode, setMode] = useState<'in' | 'up'>('in');
   const [msg, setMsg] = useState(''); const [busy, setBusy] = useState(false);
   const submit = async (e: React.FormEvent) => {
     e.preventDefault(); setBusy(true); setMsg('');
-    if (mode === 'in') {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) setMsg(error.message);
-    } else {
-      const { error } = await supabase.auth.signUp({ email, password, options: { emailRedirectTo: `${window.location.origin}/admin` } });
-      setMsg(error ? error.message : 'Check your email to confirm your account, then sign in.');
-    }
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) setMsg('Incorrect email or password.');
     setBusy(false);
   };
   return (
     <form onSubmit={submit} className="max-w-sm mx-auto mt-24 bg-surface border border-gold/30 p-8 space-y-4">
       <span className="eyebrow-gold">Private</span>
-      <h1 className="font-display text-3xl font-light">Admin <span className="italic text-gold">{mode === 'in' ? 'Sign In' : 'Create Account'}</span></h1>
-      <Input type="email" required placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="rounded-none" />
-      <Input type="password" required minLength={8} placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="rounded-none" />
-      {msg && <p className="text-sm text-foreground/70">{msg}</p>}
+      <h1 className="font-display text-3xl font-light">Admin <span className="italic text-gold">Sign In</span></h1>
+      <Input type="email" required autoComplete="username" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="rounded-none" />
+      <Input type="password" required autoComplete="current-password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} className="rounded-none" />
+      {msg && <p role="alert" className="text-sm text-destructive">{msg}</p>}
       <Button type="submit" disabled={busy} className="w-full bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.25em] text-xs font-bold">
-        {mode === 'in' ? 'Sign In' : 'Create Account'}
+        {busy ? 'Signing in…' : 'Sign In'}
       </Button>
-      <button type="button" onClick={() => setMode(mode === 'in' ? 'up' : 'in')} className="text-xs text-foreground/50 hover:text-gold w-full">
-        {mode === 'in' ? 'First time? Create your admin account' : 'Have an account? Sign in'}
-      </button>
     </form>
   );
 };
