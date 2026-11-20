@@ -1,4 +1,8 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const highlights = [
   { value: '50%', label: 'Licensing Interest', note: 'Select master recordings' },
@@ -6,9 +10,17 @@ const highlights = [
   { value: 'On Air', label: 'Commercial Visibility', note: 'Music currently receiving radio airplay' },
 ];
 
-const PortfolioArticle = () => (
-  <section id="news" className="py-20 md:py-28 lg:py-32 bg-background border-t border-gold/20">
+const NewsVotteHall = () => (
+  <div className="min-h-screen bg-background text-foreground">
+    <Helmet>
+      <title>Ecka Holdings Expands Music Rights Portfolio | Ecka Holdings</title>
+      <meta name="description" content="Ecka Holdings secures a 50% licensing interest in select master recordings from Billboard-charting artist Votte Hall." />
+      <link rel="canonical" href="https://eckaholdings.com/news/votte-hall" />
+    </Helmet>
+    <Navigation />
+  <main id="main" className="pt-36 pb-20 md:pt-40 md:pb-28">
     <article className="max-w-7xl mx-auto px-6 md:px-8">
+      <Link to="/#news" className="inline-block mb-10 text-xs tracking-[0.25em] uppercase text-foreground/60 hover:text-gold transition-colors">← Back to News</Link>
       <p className="text-xs tracking-[0.3em] uppercase text-gold mb-6">Portfolio Briefing · Ecka Music Group</p>
       <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight mb-6 max-w-5xl text-balance">
         Ecka Holdings Expands Its <span className="italic text-gold">Music Rights Portfolio.</span>
@@ -48,13 +60,15 @@ const PortfolioArticle = () => (
             <p className="font-display text-xl md:text-2xl italic text-gold mb-2">Building Assets. Expanding Opportunities. Creating Long-Term Value.</p>
             <p className="text-xs tracking-[0.2em] uppercase text-foreground/50">Ecka Holdings Corp. | Music Investments &amp; Intellectual Property</p>
           </div>
-          <a href="#contact" className="inline-block mt-4 text-sm tracking-[0.2em] uppercase text-gold border-b border-gold/50 pb-1 hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+          <a href="/#contact" className="inline-block mt-4 text-sm tracking-[0.2em] uppercase text-gold border-b border-gold/50 pb-1 hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
             Inquire About Asset Opportunities →
           </a>
         </div>
       </div>
     </article>
-  </section>
+  </main>
+    <Footer />
+  </div>
 );
 
-export default PortfolioArticle;
+export default NewsVotteHall;

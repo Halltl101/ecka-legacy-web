@@ -6,6 +6,7 @@ const links = [
   { href: '#about', label: 'About' },
   { href: '#why-partner', label: 'Why Partner' },
   { href: '#rights-holders', label: 'Rights Holders' },
+  { href: '#news', label: 'News' },
   { href: '/team', label: 'Team' },
   { href: '#contact', label: 'Contact' },
 ];
