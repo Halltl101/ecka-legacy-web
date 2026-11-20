@@ -48,6 +48,10 @@ const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) =
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(formData.email.trim()) || formData.email.trim().length > 255) {
+      toast({ title: 'Invalid email', description: 'Please enter a valid email address.', variant: 'destructive' });
+      return;
+    }
     setIsSubmitting(true);
 
     try {

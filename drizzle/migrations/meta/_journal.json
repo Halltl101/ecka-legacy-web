@@ -15,6 +15,13 @@
       "when": 1795197318634,
       "tag": "0001_tighten_newsletter_insert",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795197382233,
+      "tag": "0002_validate_contact_email",
+      "breakpoints": true
     }
   ]
 }
