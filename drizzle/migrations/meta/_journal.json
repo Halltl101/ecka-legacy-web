@@ -8,6 +8,13 @@
       "when": 1795194517563,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795197318634,
+      "tag": "0001_tighten_newsletter_insert",
+      "breakpoints": true
     }
   ]
 }

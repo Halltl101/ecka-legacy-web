@@ -15,7 +15,7 @@ type Submission = {
 type Subscriber = { id: string; email: string; created_at: string };
 
 const fmt = (d: string) => new Date(d).toLocaleString();
-const csvCell = (v: string) => `"${v.replace(/"/g, '""')}"`;
+const csvCell = (v: string) => { const s = /^[=+\-@\t\r]/.test(v) ? `'${v}` : v; return `"${s.replace(/"/g, '""')}"`; };
 
 const download = (name: string, rows: string[][]) => {
   const csv = rows.map(r => r.map(csvCell).join(',')).join('\n');
