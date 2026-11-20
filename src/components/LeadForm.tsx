@@ -61,6 +61,7 @@ const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) =
         assets: formData.assets.length ? formData.assets : null, royalties: opt(formData.royalties),
       });
       if (saveError) console.error('Could not save submission');
+      if (!saveError) window.__lovableEvents?.track?.(isRights ? "project.catalog_valuation_submitted" : "project.intro_call_requested", {});
       if (!isRights) {
         setBookingUrl(getCalendlyBookingUrl(formData.name, formData.email));
         return;

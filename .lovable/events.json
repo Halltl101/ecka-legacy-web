@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "events": {
+    "project.catalog_valuation_submitted": {
+      "event_schema_version": 1,
+      "description": "A rights holder submitted the catalog valuation form.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    },
+    "project.intro_call_requested": {
+      "event_schema_version": 1,
+      "description": "A visitor submitted the intro-call form (before picking a time).",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    },
+    "project.newsletter_signup": {
+      "event_schema_version": 1,
+      "description": "A visitor subscribed to the Ecka Newsletter.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    }
+  }
+}

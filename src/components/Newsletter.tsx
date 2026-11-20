@@ -17,6 +17,7 @@ const Newsletter = () => {
     const { error } = await supabase.from('newsletter_subscribers').insert({ email: parsed.data.toLowerCase() });
     if (error && error.code !== '23505') { setStatus('error'); setMessage('Something went wrong. Please try again.'); return; }
     setStatus('done');
+    if (!error) window.__lovableEvents?.track?.("project.newsletter_signup", {});
     setMessage(error ? "You're already on the list — thank you." : "Thank you. You're subscribed to the Ecka Newsletter.");
     setEmail('');
   };
