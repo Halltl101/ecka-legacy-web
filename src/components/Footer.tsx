@@ -69,6 +69,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-foreground/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] tracking-[0.25em] uppercase text-foreground/40">
           <span>&copy; 2026 Ecka Holdings Corp. All rights reserved.</span>
           <span className="italic tracking-normal font-display text-sm text-gold/70 normal-case">Turning Assets to Legacy.</span>
+          <a href="/admin" rel="nofollow" className="hover:text-gold transition-colors">Admin Login</a>
         </div>
       </div>
     </footer>
