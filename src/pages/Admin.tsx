@@ -54,6 +54,40 @@ const Login = () => {
   );
 };
 
+const FollowUpDraft = ({ id }: { id: string }) => {
+  const [notes, setNotes] = useState('');
+  const [draft, setDraft] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState('');
+  const [copied, setCopied] = useState(false);
+  const run = async () => {
+    setBusy(true); setErr(''); setCopied(false);
+    const { data, error } = await supabase.functions.invoke('draft-followup', { body: { submissionId: id, notes } });
+    if (error) {
+      let msg = 'Could not draft a reply.';
+      try { msg = (await (error as { context?: Response }).context?.json())?.error ?? msg; } catch { /* keep default */ }
+      setErr(msg);
+    } else setDraft(data.draft);
+    setBusy(false);
+  };
+  return (
+    <div className="sm:col-span-2 mt-3 border-t border-gold/10 pt-4 space-y-3">
+      <p className="eyebrow-gold">AI Follow-up Draft</p>
+      <Input value={notes} onChange={e => setNotes(e.target.value)} maxLength={2000} placeholder="Optional notes (e.g. offer Tuesday call, mention NDA)" className="rounded-none" />
+      <Button onClick={run} disabled={busy} className="bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.2em] text-xs">
+        {busy ? 'Drafting…' : draft ? 'Redraft' : 'Draft follow-up'}
+      </Button>
+      {err && <p role="alert" className="text-sm text-destructive">{err}</p>}
+      {draft && (
+        <div className="space-y-2">
+          <textarea value={draft} onChange={e => setDraft(e.target.value)} className="w-full min-h-[320px] bg-background border border-gold/20 p-3 text-sm text-foreground font-sans" />
+          <button onClick={() => { navigator.clipboard.writeText(draft); setCopied(true); }} className="text-xs text-gold hover:underline">{copied ? 'Copied' : 'Copy to clipboard'}</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const Dashboard = ({ session }: { session: Session }) => {
   const [tab, setTab] = useState<'contacts' | 'newsletter'>('contacts');
   const [subs, setSubs] = useState<Submission[]>([]);
@@ -121,6 +155,7 @@ const Dashboard = ({ session }: { session: Session }) => {
                   {([['Phone', s.phone], ['Company', s.company], ['Title', s.title], ['Catalog', s.catalog], ['Role', s.role], ['Assets', s.assets?.join(', ')], ['Royalties', s.royalties]] as [string, string | null | undefined][])
                     .filter(([, v]) => v).map(([k, v]) => <div key={k}><dt className="eyebrow inline mr-2">{k}</dt><dd className="inline text-foreground/80">{v}</dd></div>)}
                   {s.reason && <div className="sm:col-span-2"><dt className="eyebrow mb-1">Message</dt><dd className="text-foreground/80 whitespace-pre-wrap">{s.reason}</dd></div>}
+                  <FollowUpDraft id={s.id} />
                 </dl>
               )}
             </li>
