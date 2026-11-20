@@ -110,7 +110,7 @@ This lead was submitted through the Ecka Holdings website contact form.`
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[520px] max-h-[90dvh] overflow-y-auto bg-surface border border-gold/30 rounded-none">
+      <DialogContent className={`${bookingUrl ? 'sm:max-w-[720px]' : 'sm:max-w-[520px]'} max-h-[90dvh] overflow-y-auto bg-surface border border-gold/30 rounded-none`}>
         <DialogHeader>
           <span className="eyebrow-gold">{isRights ? 'Confidential Valuation' : 'Partnership'}</span>
           <DialogTitle className="font-display text-3xl font-light text-foreground mt-2">
@@ -118,11 +118,13 @@ This lead was submitted through the Ecka Holdings website contact form.`
           </DialogTitle>
         </DialogHeader>
         {bookingUrl ? (
-          <div className="space-y-6 pt-2">
-            <p className="text-foreground/70 leading-relaxed">Thank you for your interest. Send the inquiry draft in your email app, then choose a time for your confidential discussion.</p>
-            <Button asChild className="w-full h-auto py-4 bg-gold text-background hover:bg-gold-highlight rounded-none uppercase tracking-[0.2em] text-xs font-bold">
-              <a href={bookingUrl}>Choose a Time</a>
-            </Button>
+          <div className="space-y-4 pt-2">
+            <p className="text-foreground/70 leading-relaxed">Thank you. Pick a time below to book your confidential discussion.</p>
+            <iframe
+              title="Choose a time with Ecka Holdings"
+              src={`${bookingUrl}&embed_type=Inline&embed_domain=${encodeURIComponent(window.location.hostname)}&hide_gdpr_banner=1`}
+              className="w-full h-[640px] border border-gold/20 bg-background"
+            />
           </div>
         ) : <form onSubmit={handleSubmit} className="space-y-5 pt-2">
           <div className="grid grid-cols-2 gap-4">
