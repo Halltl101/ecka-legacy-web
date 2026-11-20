@@ -122,7 +122,7 @@ const Insights = ({ subs, news }: { subs: Submission[]; news: Subscriber[] }) =>
         {series.map(s => (
           <div key={s.key} className="border border-gold/20 p-5">
             <p className="eyebrow mb-2">{s.label}</p>
-            <p className="font-display text-4xl text-gold">{total[s.key]}</p>
+            <p className="font-sans tabular-nums text-4xl font-light text-gold">{total[s.key]}</p>
           </div>
         ))}
       </div>
