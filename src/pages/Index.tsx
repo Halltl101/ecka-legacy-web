@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import WhyPartner from '../components/WhyPartner';
+import RoyaltyAnatomy from '../components/RoyaltyAnatomy';
 import RightsHolders from '../components/RightsHolders';
 import News from '../components/News';
 import Contact from '../components/Contact';
@@ -16,6 +17,7 @@ const Index = () => {
       <Hero />
       <About />
       <WhyPartner />
+      <RoyaltyAnatomy />
       <RightsHolders />
       <News />
       <Contact />
