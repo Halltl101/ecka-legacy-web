@@ -6,8 +6,7 @@ import { Button } from './ui/button';
 
 const links = [
   { href: '#about', label: 'About' },
-  { href: '#why-partner', label: 'Why Partner' },
-  { href: '#rights-holders', label: 'Rights Holders' },
+  { href: '#rights-holders', label: 'Work With Us' },
   { href: '#news', label: 'Portfolio Briefing' },
   { href: '/team', label: 'Team' },
   { href: '#contact', label: 'Contact' },

@@ -3,34 +3,34 @@ import React, { useState } from 'react';
 const layers = [
   {
     key: 'master',
-    label: 'Master Recording',
-    short: 'The sound itself',
-    streams: ['Streaming', 'Downloads & physical sales', 'Neighboring rights', 'Master use licensing'],
-    body: 'The master is the specific recorded performance. Ownership earns income every time that recording is streamed, sold, broadcast or licensed — often the most visible and actively traded layer of a catalog.',
-    investor: 'Highly liquid, data-rich cash flows that track global streaming adoption.',
+    label: 'Masters & Negatives',
+    short: 'The finished work',
+    streams: ['Music streaming & sales', 'Film & TV distribution', 'Neighboring rights', 'Library & catalog licensing'],
+    body: 'The recorded song or the finished picture. Ownership earns every time the work is streamed, sold, broadcast or licensed.',
+    investor: 'Data-rich cash flows that track global streaming adoption.',
   },
   {
     key: 'publishing',
-    label: 'Publishing / Composition',
-    short: 'The song as written',
-    streams: ['Performance royalties (ASCAP, BMI, SESAC, PRS)', 'Mechanical royalties', 'Print & lyric licensing', 'Writer’s share & publisher’s share'],
-    body: 'Every recording, cover, live performance and broadcast of a song pays the writers and publishers of the underlying composition. Publishing income can persist for decades beyond the original release.',
-    investor: 'Long-duration, diversified income across many recordings of the same work.',
+    label: 'Publishing & Story Rights',
+    short: 'The underlying creation',
+    streams: ['Performance & mechanical royalties', 'Screenplay & format rights', 'Remake & adaptation rights', 'Print & lyric licensing'],
+    body: 'The composition behind a song, or the story behind a film. These rights pay across every new recording, remake or adaptation.',
+    investor: 'Long-duration income across many versions of one work.',
   },
   {
     key: 'sync',
-    label: 'Sync & Media',
-    short: 'Music meets picture',
-    streams: ['Film & television', 'Advertising', 'Video games', 'Trailers & social content'],
-    body: 'Synchronization licenses pair music with visual media. A single placement can reintroduce a classic to a new generation and lift income across every other layer.',
-    investor: 'Upside driven by active stewardship and creative pitching.',
+    label: 'Sync, Broadcast & Streaming',
+    short: 'Where film meets music',
+    streams: ['Soundtrack & sync placements', 'TV syndication', 'Streaming platform licenses', 'Advertising & trailers'],
+    body: 'Music placed in picture, and pictures licensed to broadcasters and platforms. One placement can reintroduce a classic to a new generation.',
+    investor: 'Upside driven by active stewardship and pitching.',
   },
   {
     key: 'emerging',
-    label: 'Emerging Rights',
+    label: 'Emerging & Franchise Rights',
     short: 'The next frontier',
-    streams: ['Spatial & immersive audio', 'Fitness & interactive platforms', 'AI & data licensing', 'Live and virtual experiences'],
-    body: 'New formats and platforms continually create new ways for catalogs to earn. Thoughtful rights management positions works to benefit as these markets mature.',
+    streams: ['Games & interactive', 'Spatial & immersive formats', 'AI & data licensing', 'Live and virtual experiences'],
+    body: 'New formats and platforms keep creating ways for film and music to earn. Careful rights management positions works to benefit.',
     investor: 'Optionality on future formats, built into the asset.',
   },
 ];
@@ -43,12 +43,12 @@ const RoyaltyAnatomy = () => {
     <section id="anatomy" className="py-20 md:py-28 lg:py-32 bg-surface border-y border-gold/10">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl mb-12 md:mb-16 animate-fade-in">
-          <span className="eyebrow-gold mb-6 block">Anatomy of a Music Asset</span>
+          <span className="eyebrow-gold mb-6 block">Anatomy of an Entertainment Asset</span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight text-balance">
-            One song. <span className="italic text-gold">Many streams of value.</span>
+            One work. <span className="italic text-gold">Many streams of value.</span>
           </h2>
           <p className="mt-6 text-foreground/60 leading-relaxed font-light">
-            Select a layer to see how a single work generates income — and why each layer matters to rights holders and investors alike.
+            Select a layer to see how a single film or song generates income — and why each layer matters to rights holders and investors alike.
           </p>
         </div>
 
@@ -65,8 +65,7 @@ const RoyaltyAnatomy = () => {
                   aria-controls="anatomy-panel"
                   onClick={() => setActive(i)}
                   onMouseEnter={() => setActive(i)}
-                  className={`group w-full text-left border px-6 py-5 transition-all duration-300 flex items-center gap-5 ${on ? 'border-gold bg-gold/10 md:translate-x-3' : 'border-gold/20 bg-background hover:border-gold/50'}`}
-                  style={{ marginLeft: `${i * 4}%`, width: `${100 - i * 4}%` }}
+                  className={`group w-full text-left border px-6 py-5 transition-all duration-300 flex items-center gap-5 ${on ? 'border-gold bg-gold/10' : 'border-gold/20 bg-background hover:border-gold/50'}`}
                 >
                   <span className={`font-display text-2xl tabular-nums ${on ? 'text-gold' : 'text-foreground/30'}`}>0{i + 1}</span>
                   <span className="flex-1">

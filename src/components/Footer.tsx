@@ -24,7 +24,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-foreground/50 leading-relaxed font-light">
-              Premier investment management specializing in the acquisition and stewardship of culturally significant intellectual property assets.
+              Premier investment management specializing in the acquisition and stewardship of culturally significant film and music intellectual property.
             </p>
           </div>
 
@@ -33,8 +33,7 @@ const Footer = () => {
             <h4 className="eyebrow-gold mb-6">Navigation</h4>
             <ul className="space-y-3 text-sm text-foreground/70">
               <li><a href="/#about" className="hover:text-gold transition-colors">About</a></li>
-              <li><a href="/#why-partner" className="hover:text-gold transition-colors">Why Partner</a></li>
-              <li><a href="/#rights-holders" className="hover:text-gold transition-colors">Rights Holders</a></li>
+              <li><a href="/#rights-holders" className="hover:text-gold transition-colors">Work With Us</a></li>
               <li><a href="/team" className="hover:text-gold transition-colors">Team</a></li>
               <li><a href="/#contact" className="hover:text-gold transition-colors">Contact</a></li>
             </ul>
