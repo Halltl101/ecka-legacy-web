@@ -1,5 +1,6 @@
 import React from 'react';
 import LeadForm from './LeadForm';
+import ValuationEstimator from './ValuationEstimator';
 
 const audiences = [
   {
@@ -47,6 +48,8 @@ const RightsHolders = () => {
                 Ecka works alongside a network of strategic capital partners with the capacity to deploy $5M–$50M+ across qualified music and entertainment opportunities.
               </p>
             </div>
+
+            <ValuationEstimator />
 
             {/* Two-sided positioning */}
             <div className="mt-12 grid sm:grid-cols-2 gap-10 md:gap-12 pt-12 border-t border-gold/10">
