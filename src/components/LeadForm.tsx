@@ -12,7 +12,6 @@ interface LeadFormProps {
   children: React.ReactNode;
   mode?: 'general' | 'rights';
   onOpenChange?: (open: boolean) => void;
-  initial?: { royalties?: string; assets?: string[] };
 }
 
 const assetTypes = ['Master Recordings', 'Publishing / Writer\'s Share', 'Neighboring Rights', 'Producer Royalties', 'Sync Rights'];
@@ -22,7 +21,7 @@ const royaltyRanges = ['Under $50K', '$50K–$250K', '$250K–$1M', '$1M–$5M',
 const inputClass =
   "bg-background border border-gold/20 text-foreground placeholder:text-foreground/30 focus-visible:border-gold focus-visible:ring-gold/30 rounded-none";
 
-const LeadForm = ({ children, mode = 'general', onOpenChange, initial }: LeadFormProps) => {
+const LeadForm = ({ children, mode = 'general', onOpenChange }: LeadFormProps) => {
   const isRights = mode === 'rights';
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +30,6 @@ const LeadForm = ({ children, mode = 'general', onOpenChange, initial }: LeadFor
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
-    if (open && initial) setFormData(prev => ({ ...prev, royalties: initial.royalties ?? prev.royalties, assets: initial.assets ?? prev.assets }));
     if (!open) setBookingUrl(null);
     onOpenChange?.(open);
   };
